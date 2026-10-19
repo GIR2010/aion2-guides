@@ -1,0 +1,119 @@
+import { defineCollection, reference } from 'astro:content';
+import { file, glob } from 'astro/loaders';
+import { z } from 'astro/zod';
+
+/** Текст на двух языках. `ru: null` — официальное русское название ещё не подтверждено. */
+const text = z.object({
+  ru: z.string().nullable(),
+  en: z.string().nullable(),
+});
+
+/**
+ * Насколько можно доверять факту:
+ * verified — проверено в игре (скриншот), multi-source — 2+ независимых источника,
+ * single-source — один источник, unknown — данных нет.
+ */
+const status = z.enum(['verified', 'multi-source', 'single-source', 'unknown']);
+
+const factMeta = {
+  status,
+  sources: z.array(reference('sources')).default([]),
+};
+
+const sources = defineCollection({
+  loader: file('src/data/sources.json'),
+  schema: z.object({
+    title: z.string(),
+    url: z.url().optional(),
+    kind: z.enum(['official', 'database', 'guide', 'wiki', 'in-game']),
+  }),
+});
+
+const skill = z.object({
+  id: z.string(),
+  type: z.enum(['active', 'passive', 'stigma']),
+  /** Уровень персонажа, на котором навык открывается. Для стигм — 22. */
+  unlockLevel: z.number().int().min(1).max(60),
+  /** Перезарядка в секундах; null — без перезарядки. */
+  cooldown: z.number().nullable(),
+  name: text,
+  effect: text,
+  ...factMeta,
+});
+
+const classes = defineCollection({
+  loader: glob({ pattern: '*.json', base: './src/data/classes' }),
+  schema: z.object({
+    name: text,
+    role: z.enum(['melee-dps', 'ranged-dps', 'magic-dps', 'tank', 'healer', 'support']),
+    weapon: text,
+    difficulty: z.enum(['easy', 'medium', 'hard']),
+    summary: text,
+    order: z.number().int(),
+    skills: z.array(skill),
+  }),
+});
+
+/** Общие для всех классов открытия по уровням: доски Daevanion, слоты стигм и т. п. */
+const milestones = defineCollection({
+  loader: file('src/data/milestones.json'),
+  schema: z.object({
+    level: z.number().int(),
+    title: text,
+    details: text.optional(),
+    ...factMeta,
+  }),
+});
+
+/** Маршрут прокачки фракции: какие зоны и главы сюжета на каких уровнях. */
+const routes = defineCollection({
+  loader: glob({ pattern: '*.json', base: './src/data/routes' }),
+  schema: z.object({
+    faction: z.enum(['asmodian', 'elyos']),
+    name: text,
+    steps: z.array(
+      z.object({
+        fromLevel: z.number().int(),
+        toLevel: z.number().int(),
+        zone: text,
+        notes: text.optional(),
+        ...factMeta,
+      }),
+    ),
+  }),
+});
+
+/** Пошаговый план прокачки класса: советы на конкретных уровнях. */
+const levelingPlans = defineCollection({
+  loader: glob({ pattern: '*.json', base: './src/data/leveling' }),
+  schema: z.object({
+    class: reference('classes'),
+    route: reference('routes'),
+    steps: z.array(
+      z.object({
+        level: z.number().int(),
+        todo: z.array(text),
+        ...factMeta,
+      }),
+    ),
+  }),
+});
+
+const guides = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/guides' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    lang: z.enum(['ru', 'en']),
+    /** Общий ключ для связи переводов одного гайда. */
+    translationKey: z.string(),
+    class: reference('classes').optional(),
+    order: z.number().int().default(100),
+    draft: z.boolean().default(false),
+    updated: z.coerce.date(),
+    /** Сборка клиента, на которой проверялись данные (см. Manifest в папке игры). */
+    verifiedPatch: z.string().nullable().default(null),
+  }),
+});
+
+export const collections = { sources, classes, milestones, routes, levelingPlans, guides };

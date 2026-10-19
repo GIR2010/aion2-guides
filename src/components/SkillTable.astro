@@ -1,0 +1,57 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { pick, t, type Locale } from '../i18n/ui';
+import StatusBadge from './StatusBadge.astro';
+
+type Skill = CollectionEntry<'classes'>['data']['skills'][number];
+
+interface Props {
+  skills: Skill[];
+  locale: Locale;
+  /** Скрыть колонку уровня (для стигм — у всех 22). */
+  hideLevel?: boolean;
+}
+
+const { skills, locale, hideLevel = false } = Astro.props;
+const sorted = [...skills].sort((a, b) => a.unlockLevel - b.unlockLevel);
+---
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        {!hideLevel && <th>{t(locale, 'skill.level')}</th>}
+        <th>{t(locale, 'skill.name')}</th>
+        <th>{t(locale, 'skill.cooldown')}</th>
+        <th>{t(locale, 'skill.effect')}</th>
+        <th>{t(locale, 'skill.status')}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        sorted.map((s) => (
+          <tr id={s.id}>
+            {!hideLevel && <td>{s.unlockLevel}</td>}
+            <td>
+              <strong>{pick(s.name, locale)}</strong>
+              {locale === 'ru' && s.name.ru === null && (
+                <div class="muted small">{t(locale, 'skill.ruPending')}</div>
+              )}
+            </td>
+            <td>{s.cooldown === null ? '—' : `${s.cooldown} ${locale === 'ru' ? 'с' : 's'}`}</td>
+            <td>{pick(s.effect, locale)}</td>
+            <td>
+              <StatusBadge status={s.status} locale={locale} />
+            </td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .small {
+    font-size: 0.8rem;
+  }
+</style>

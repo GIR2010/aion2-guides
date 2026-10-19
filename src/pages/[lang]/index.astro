@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { locales, localeUrl, pick, t, type Locale } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang } }));
+}
+
+const locale = Astro.params.lang as Locale;
+const classes = (await getCollection('classes')).sort((a, b) => a.data.order - b.data.order);
+const guides = (await getCollection('guides', (g) => g.data.lang === locale)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+const intro =
+  locale === 'ru'
+    ? 'Пошаговые гайды по прокачке, навыкам, стигмам и экипировке. Каждый факт помечен: проверен в игре или взят из источников.'
+    : 'Step-by-step guides to leveling, skills, stigma and gear. Every fact is marked as verified in game or sourced.';
+---
+
+<Base locale={locale}>
+  <h1>{t(locale, 'site.title')}</h1>
+  <p>{intro}</p>
+
+  <h2>{t(locale, 'class.guides')}</h2>
+  <ul>
+    {
+      guides.map((g) => (
+        <li>
+          <a href={localeUrl(locale, `guides/${g.id.split('/').slice(1).join('/')}`)}>{g.data.title}</a>
+          <span class="muted"> — {g.data.description}</span>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2>{t(locale, 'nav.classes')}</h2>
+  <ul>
+    {
+      classes.map((c) => (
+        <li>
+          <a href={localeUrl(locale, `classes/${c.id}`)}>{pick(c.data.name, locale)}</a>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

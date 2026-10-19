@@ -1,0 +1,24 @@
+---
+import { localeUrl } from '../i18n/ui';
+
+const ru = localeUrl('ru');
+const en = localeUrl('en');
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aion 2 — гайд</title>
+    <meta http-equiv="refresh" content={`0; url=${ru}`} />
+    <script is:inline define:vars={{ ru, en }}>
+      // Русский по умолчанию; английский — если язык браузера не русский.
+      const lang = (navigator.language || 'ru').toLowerCase();
+      location.replace(lang.startsWith('ru') ? ru : en);
+    </script>
+  </head>
+  <body>
+    <a href={ru}>Русский</a> · <a href={en}>English</a>
+  </body>
+</html>

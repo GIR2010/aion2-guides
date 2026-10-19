@@ -1,0 +1,36 @@
+---
+import { t, type Locale } from '../i18n/ui';
+
+interface Props {
+  status: 'verified' | 'multi-source' | 'single-source' | 'unknown';
+  locale: Locale;
+}
+
+const { status, locale } = Astro.props;
+---
+
+<span class={`badge ${status}`} title={t(locale, `status.${status}`)}>{t(locale, `status.${status}`)}</span>
+
+<style>
+  .badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    line-height: 1;
+    padding: 4px 8px;
+    border-radius: 999px;
+    border: 1px solid currentColor;
+    white-space: nowrap;
+  }
+  .verified {
+    color: var(--ok);
+  }
+  .multi-source {
+    color: var(--accent);
+  }
+  .single-source {
+    color: var(--warn);
+  }
+  .unknown {
+    color: var(--bad);
+  }
+</style>

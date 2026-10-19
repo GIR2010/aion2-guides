@@ -1,0 +1,38 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import { t, type Locale } from '../../../i18n/ui';
+
+export async function getStaticPaths() {
+  // id гайда — путь файла без расширения: "ru/assassin-leveling" → /ru/guides/assassin-leveling/
+  // Черновики публикуются с пометкой, чтобы их можно было проверять на сайте.
+  const guides = await getCollection('guides');
+  return guides.map((guide) => {
+    const [lang, ...rest] = guide.id.split('/');
+    return { params: { lang, slug: rest.join('/') }, props: { guide } };
+  });
+}
+
+const { guide } = Astro.props;
+const locale = Astro.params.lang as Locale;
+const { Content } = await render(guide);
+const updated = guide.data.updated.toLocaleDateString(locale === 'ru' ? 'ru-RU' : 'en-US');
+---
+
+<Base locale={locale} title={guide.data.title} description={guide.data.description}>
+  <article>
+    <h1>{guide.data.title}</h1>
+    <p class="muted meta">
+      {locale === 'ru' ? 'Обновлено' : 'Updated'}: {updated}
+      {guide.data.verifiedPatch && <> · {locale === 'ru' ? 'Проверено на сборке' : 'Verified on build'} {guide.data.verifiedPatch}</>}
+    </p>
+    {guide.data.draft && <p class="note">{t(locale, 'draft.note')}</p>}
+    <Content locale={locale} />
+  </article>
+</Base>
+
+<style>
+  .meta {
+    font-size: 0.9rem;
+  }
+</style>

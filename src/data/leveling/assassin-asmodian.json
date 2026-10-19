@@ -1,0 +1,81 @@
+{
+  "class": "assassin",
+  "route": "asmodian",
+  "steps": [
+    { "level": 1, "todo": [
+      { "ru": "Идите только по жёлтым (сюжетным) квестам — они дают почти весь опыт до 45.", "en": "Follow only yellow (story) quests — they give almost all XP to 45." },
+      { "ru": "Начинайте бой с Shadowstrike (рывок за спину + оглушение), дальше чередуйте Savage Roar и Quick Slice.", "en": "Open with Shadowstrike (blink behind + stun), then alternate Savage Roar and Quick Slice." },
+      { "ru": "Quick Slice бьёт до 4 целей — собирайте мобов по 2–3 штуки.", "en": "Quick Slice hits up to 4 targets — pull 2–3 mobs at a time." }
+    ], "status": "single-source", "sources": ["metabot-assassin", "metabot-leveling"] },
+    { "level": 3, "todo": [
+      { "ru": "Ambush ставьте сразу после Shadowstrike: вы уже за спиной, а со спины он бьёт на 30% сильнее.", "en": "Use Ambush right after Shadowstrike: you are already behind, and it deals +30% from behind." }
+    ], "status": "multi-source", "sources": ["metabot-assassin", "gamesgg-assassin"] },
+    { "level": 4, "todo": [
+      { "ru": "Heart Gore срабатывает после крита и возвращает MP — жмите его при каждой возможности.", "en": "Heart Gore triggers after a crit and restores MP — press it whenever it lights up." },
+      { "ru": "Первые очки навыков: Quick Slice (основной урон по пачкам), затем Heart Gore. Точная стоимость уровней уточняется.", "en": "First Skill Points: Quick Slice (main pack damage), then Heart Gore. Exact costs are being verified." }
+    ], "status": "unknown", "sources": ["gamesgg-assassin"] },
+    { "level": 6, "todo": [
+      { "ru": "Пассивка Exploit Weakness (+крит) — больше критов = чаще Heart Gore.", "en": "Exploit Weakness passive (+crit) — more crits means more Heart Gore." }
+    ], "status": "single-source", "sources": ["metabot-assassin"] },
+    { "level": 8, "todo": [
+      { "ru": "Flash Slice ослепляет на 3 с — держите его против элитных мобов как защиту.", "en": "Flash Slice blinds for 3s — keep it as a defensive tool against elites." }
+    ], "status": "single-source", "sources": ["metabot-assassin"] },
+    { "level": 10, "todo": [
+      { "ru": "Переход в Альтгард. Infiltrate — второй рывок за спину: Shadowstrike → бой → Infiltrate на следующую цель.", "en": "Move to Altgard. Infiltrate is a second blink-behind: Shadowstrike → fight → Infiltrate to the next target." }
+    ], "status": "single-source", "sources": ["metabot-assassin", "metabot-leveling"] },
+    { "level": 11, "todo": [
+      { "ru": "Rear Smite (+урон со спины) — пассивка №1 для ассасина, вкладывайтесь в первую очередь.", "en": "Rear Smite (+back attack damage) — the #1 passive, invest first." }
+    ], "status": "single-source", "sources": ["gamesgg-assassin"] },
+    { "level": 12, "todo": [
+      { "ru": "Открывается доска Nezekan: сначала узлы Assault Stance и Exploit Weakness.", "en": "Nezekan board opens: take Assault Stance and Exploit Weakness nodes first." },
+      { "ru": "Делайте синие квесты по пути — они дают очки Daevanion.", "en": "Do blue quests on the way — they give Daevanion Points." }
+    ], "status": "single-source", "sources": ["metabot-assassin", "metabot-leveling"] },
+    { "level": 13, "todo": [
+      { "ru": "Assault Stance (+урон крита) — пассивка №2.", "en": "Assault Stance (+crit damage) — passive #2." }
+    ], "status": "single-source", "sources": ["gamesgg-assassin"] },
+    { "level": 14, "todo": [
+      { "ru": "Insignia Explosion — ключевой навык: набивайте знаки Savage Roar, затем взрывайте. Вкладывайте очки после Quick Slice и Heart Gore.", "en": "Insignia Explosion is a core skill: stack Insignias with Savage Roar, then detonate. Invest after Quick Slice and Heart Gore." },
+      { "ru": "Базовый цикл: Shadowstrike → Ambush → Savage Roar ×N → Insignia Explosion → Heart Gore после крита → Quick Slice.", "en": "Core loop: Shadowstrike → Ambush → Savage Roar ×N → Insignia Explosion → Heart Gore on crit → Quick Slice." }
+    ], "status": "multi-source", "sources": ["metabot-assassin", "gamesgg-assassin"] },
+    { "level": 16, "todo": [
+      { "ru": "Defiance снимает контроль — берегите на элиток и боссов квестов.", "en": "Defiance breaks crowd control — save it for elites and quest bosses." }
+    ], "status": "single-source", "sources": ["metabot-assassin"] },
+    { "level": 17, "todo": [
+      { "ru": "Ambush Stance и Apply Poison (9) в PvE не качайте — очки лучше в основные навыки.", "en": "Skip Ambush Stance and Apply Poison (9) in PvE — spend points on core skills." }
+    ], "status": "single-source", "sources": ["gamesgg-assassin"] },
+    { "level": 20, "todo": [
+      { "ru": "Доска Zikel: приоритет — узлы Defense Break.", "en": "Zikel board: prioritize Defense Break nodes." }
+    ], "status": "single-source", "sources": ["metabot-assassin"] },
+    { "level": 22, "todo": [
+      { "ru": "Пройдите 3-й квест восхождения — откроются стигмы. В 1-й слот: Illusive Clone (снимает перезарядку Heart Gore, +20% урона).", "en": "Complete the 3rd Ascension quest to unlock Stigma. Slot 1: Illusive Clone (resets Heart Gore cooldown, +20% damage)." }
+    ], "status": "multi-source", "sources": ["metabot-stigma", "metabot-assassin", "gamesgg-assassin"] },
+    { "level": 23, "todo": [
+      { "ru": "Пошли осколки стигм (1 за уровень). Первые 5 — в Illusive Clone: на 5 уровне стигмы открывается специализация.", "en": "Stigma Shards start (1 per level). Put the first 5 into Illusive Clone: specialization unlocks at stigma level 5." }
+    ], "status": "single-source", "sources": ["metabot-stigma"] },
+    { "level": 25, "todo": [
+      { "ru": "Determination — добивание целей ниже 30% HP, пассивка №5 по приоритету.", "en": "Determination — execute damage below 30% HP, passive #5 in priority." }
+    ], "status": "single-source", "sources": ["gamesgg-assassin"] },
+    { "level": 27, "todo": [
+      { "ru": "2-й слот стигмы: Savage Fang — урон + сразу 5 знаков под Insignia Explosion.", "en": "Stigma slot 2: Savage Fang — damage + 5 Insignias for Insignia Explosion." }
+    ], "status": "single-source", "sources": ["metabot-assassin"] },
+    { "level": 29, "todo": [
+      { "ru": "Начинается самый медленный отрезок (29–39): закрывайте запечатанные данжи — каждый даёт очки навыков и Daevanion.", "en": "The slowest stretch begins (29–39): clear Sealed Dungeons — each gives Skill and Daevanion Points." }
+    ], "status": "single-source", "sources": ["metabot-leveling"] },
+    { "level": 30, "todo": [
+      { "ru": "Доска Vaizel — вспомогательные узлы.", "en": "Vaizel board — support nodes." }
+    ], "status": "single-source", "sources": ["metabot-assassin"] },
+    { "level": 32, "todo": [
+      { "ru": "3-й слот стигмы: Swift Contract (+20% скорости боя).", "en": "Stigma slot 3: Swift Contract (+20% Combat Speed)." }
+    ], "status": "multi-source", "sources": ["metabot-assassin", "gamesgg-assassin"] },
+    { "level": 37, "todo": [
+      { "ru": "4-й слот стигмы: Triniel's Dagger — самый сильный одиночный удар.", "en": "Stigma slot 4: Triniel's Dagger — the hardest single hit." }
+    ], "status": "single-source", "sources": ["metabot-assassin"] },
+    { "level": 40, "todo": [
+      { "ru": "Доска Triniel. Осколков теперь 2 за уровень — докачивайте Illusive Clone и Swift Contract.", "en": "Triniel board. Now 2 Shards per level — keep raising Illusive Clone and Swift Contract." },
+      { "ru": "40–44 — около 70% всего опыта: не пропускайте ни одного сюжетного квеста.", "en": "40–44 is ~70% of total XP: don't skip any story quest." }
+    ], "status": "single-source", "sources": ["metabot-assassin", "metabot-stigma", "fextralife-levels"] },
+    { "level": 45, "todo": [
+      { "ru": "Кап. Дальше — гайд по развитию ассасина на 45: доска Azphel, экипировка, заточка.", "en": "Cap reached. Next: the level 45 Assassin guide — Azphel board, gear, enchanting." }
+    ], "status": "multi-source", "sources": ["playnews-cap45", "metabot-leveling"] }
+  ]
+}

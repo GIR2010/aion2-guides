@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import { locales, localeUrl, pick, t, type Locale } from '../../../i18n/ui';
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang } }));
+}
+
+const locale = Astro.params.lang as Locale;
+const classes = (await getCollection('classes')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base locale={locale} title={t(locale, 'nav.classes')}>
+  <h1>{t(locale, 'nav.classes')}</h1>
+  <div class="grid">
+    {
+      classes.map((c) => (
+        <a class="card class-card" href={localeUrl(locale, `classes/${c.id}`)}>
+          <strong>{pick(c.data.name, locale)}</strong>
+          <span class="muted">{pick(c.data.weapon, locale)}</span>
+          <p>{pick(c.data.summary, locale)}</p>
+        </a>
+      ))
+    }
+  </div>
+</Base>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .class-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .class-card:hover {
+    border-color: var(--accent);
+  }
+  .class-card p {
+    margin: 8px 0 0;
+  }
+</style>

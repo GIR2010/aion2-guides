@@ -1,0 +1,82 @@
+---
+import '../styles/global.css';
+import { t, localeUrl, url, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  title?: string;
+  description?: string;
+}
+
+const { locale, title, description } = Astro.props;
+const siteTitle = t(locale, 'site.title');
+const fullTitle = title ? `${title} — ${siteTitle}` : siteTitle;
+const other: Locale = locale === 'ru' ? 'en' : 'ru';
+// Тот же путь на другом языке: /base/ru/classes/... → /base/en/classes/...
+const altPath = Astro.url.pathname.replace(`/${locale}/`, `/${other}/`);
+---
+
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href={url('/favicon.svg').replace(/\/$/, '')} />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description ?? t(locale, 'site.description')} />
+    <link rel="alternate" hreflang={other} href={altPath} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:locale" content={locale === 'ru' ? 'ru_RU' : 'en_US'} />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container bar">
+        <a class="brand" href={localeUrl(locale)}>{siteTitle}</a>
+        <nav>
+          <a href={localeUrl(locale, 'classes')}>{t(locale, 'nav.classes')}</a>
+          <a href={altPath} hreflang={other} lang={other}>{t(locale, 'nav.lang')}</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <slot />
+    </main>
+    <footer class="container site-footer muted">
+      {t(locale, 'footer.disclaimer')}
+    </footer>
+  </body>
+</html>
+
+<style>
+  .site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 56px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+  }
+  nav {
+    display: flex;
+    gap: 16px;
+  }
+  nav a {
+    text-decoration: none;
+  }
+  main {
+    padding-top: 24px;
+    padding-bottom: 48px;
+  }
+  .site-footer {
+    font-size: 0.85rem;
+    padding-bottom: 32px;
+  }
+</style>
