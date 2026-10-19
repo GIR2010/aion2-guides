@@ -1,0 +1,545 @@
+{
+  "clientVersion": "2.0.7",
+  "levels": [
+    {
+      "level": 1,
+      "expToNext": 1133,
+      "skillPoints": 0,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 0
+    },
+    {
+      "level": 2,
+      "expToNext": 1712,
+      "skillPoints": 0,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 0
+    },
+    {
+      "level": 3,
+      "expToNext": 2589,
+      "skillPoints": 0,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 0
+    },
+    {
+      "level": 4,
+      "expToNext": 3915,
+      "skillPoints": 1,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 0
+    },
+    {
+      "level": 5,
+      "expToNext": 5919,
+      "skillPoints": 3,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 0
+    },
+    {
+      "level": 6,
+      "expToNext": 8950,
+      "skillPoints": 5,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 0
+    },
+    {
+      "level": 7,
+      "expToNext": 13532,
+      "skillPoints": 7,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 0
+    },
+    {
+      "level": 8,
+      "expToNext": 20461,
+      "skillPoints": 10,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 0
+    },
+    {
+      "level": 9,
+      "expToNext": 30937,
+      "skillPoints": 13,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 0
+    },
+    {
+      "level": 10,
+      "expToNext": 46777,
+      "skillPoints": 16,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 0
+    },
+    {
+      "level": 11,
+      "expToNext": 59434,
+      "skillPoints": 20,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 0
+    },
+    {
+      "level": 12,
+      "expToNext": 75516,
+      "skillPoints": 24,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 4
+    },
+    {
+      "level": 13,
+      "expToNext": 95950,
+      "skillPoints": 28,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 8
+    },
+    {
+      "level": 14,
+      "expToNext": 121913,
+      "skillPoints": 32,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 12
+    },
+    {
+      "level": 15,
+      "expToNext": 154901,
+      "skillPoints": 36,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 16
+    },
+    {
+      "level": 16,
+      "expToNext": 196815,
+      "skillPoints": 41,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 20
+    },
+    {
+      "level": 17,
+      "expToNext": 250071,
+      "skillPoints": 46,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 24
+    },
+    {
+      "level": 18,
+      "expToNext": 317737,
+      "skillPoints": 51,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 28
+    },
+    {
+      "level": 19,
+      "expToNext": 403713,
+      "skillPoints": 56,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 32
+    },
+    {
+      "level": 20,
+      "expToNext": 512953,
+      "skillPoints": 61,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 36
+    },
+    {
+      "level": 21,
+      "expToNext": 651753,
+      "skillPoints": 66,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 0,
+      "daevanionPoints": 40
+    },
+    {
+      "level": 22,
+      "expToNext": 828109,
+      "skillPoints": 71,
+      "stigmaShards": 0,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 1,
+      "daevanionPoints": 44
+    },
+    {
+      "level": 23,
+      "expToNext": 1052186,
+      "skillPoints": 76,
+      "stigmaShards": 1,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 1,
+      "daevanionPoints": 48
+    },
+    {
+      "level": 24,
+      "expToNext": 1336895,
+      "skillPoints": 81,
+      "stigmaShards": 2,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 1,
+      "daevanionPoints": 52
+    },
+    {
+      "level": 25,
+      "expToNext": 1698643,
+      "skillPoints": 86,
+      "stigmaShards": 3,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 1,
+      "daevanionPoints": 56
+    },
+    {
+      "level": 26,
+      "expToNext": 2158276,
+      "skillPoints": 91,
+      "stigmaShards": 4,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 1,
+      "daevanionPoints": 60
+    },
+    {
+      "level": 27,
+      "expToNext": 2742280,
+      "skillPoints": 96,
+      "stigmaShards": 5,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 2,
+      "daevanionPoints": 64
+    },
+    {
+      "level": 28,
+      "expToNext": 3484308,
+      "skillPoints": 101,
+      "stigmaShards": 6,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 2,
+      "daevanionPoints": 68
+    },
+    {
+      "level": 29,
+      "expToNext": 4427121,
+      "skillPoints": 106,
+      "stigmaShards": 7,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 2,
+      "daevanionPoints": 72
+    },
+    {
+      "level": 30,
+      "expToNext": 5625048,
+      "skillPoints": 111,
+      "stigmaShards": 8,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 2,
+      "daevanionPoints": 76
+    },
+    {
+      "level": 31,
+      "expToNext": 7147120,
+      "skillPoints": 117,
+      "stigmaShards": 9,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 2,
+      "daevanionPoints": 80
+    },
+    {
+      "level": 32,
+      "expToNext": 9081047,
+      "skillPoints": 123,
+      "stigmaShards": 10,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 3,
+      "daevanionPoints": 84
+    },
+    {
+      "level": 33,
+      "expToNext": 11538271,
+      "skillPoints": 129,
+      "stigmaShards": 11,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 3,
+      "daevanionPoints": 88
+    },
+    {
+      "level": 34,
+      "expToNext": 14660392,
+      "skillPoints": 135,
+      "stigmaShards": 12,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 3,
+      "daevanionPoints": 92
+    },
+    {
+      "level": 35,
+      "expToNext": 18627321,
+      "skillPoints": 141,
+      "stigmaShards": 13,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 3,
+      "daevanionPoints": 96
+    },
+    {
+      "level": 36,
+      "expToNext": 23667655,
+      "skillPoints": 147,
+      "stigmaShards": 14,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 3,
+      "daevanionPoints": 100
+    },
+    {
+      "level": 37,
+      "expToNext": 30071844,
+      "skillPoints": 153,
+      "stigmaShards": 15,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 4,
+      "daevanionPoints": 104
+    },
+    {
+      "level": 38,
+      "expToNext": 38208931,
+      "skillPoints": 159,
+      "stigmaShards": 16,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 4,
+      "daevanionPoints": 108
+    },
+    {
+      "level": 39,
+      "expToNext": 48547819,
+      "skillPoints": 165,
+      "stigmaShards": 17,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 4,
+      "daevanionPoints": 112
+    },
+    {
+      "level": 40,
+      "expToNext": 61684287,
+      "skillPoints": 171,
+      "stigmaShards": 19,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 4,
+      "daevanionPoints": 116
+    },
+    {
+      "level": 41,
+      "expToNext": 78375330,
+      "skillPoints": 177,
+      "stigmaShards": 21,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 4,
+      "daevanionPoints": 120
+    },
+    {
+      "level": 42,
+      "expToNext": 99582772,
+      "skillPoints": 183,
+      "stigmaShards": 23,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 4,
+      "daevanionPoints": 124
+    },
+    {
+      "level": 43,
+      "expToNext": 126528698,
+      "skillPoints": 189,
+      "stigmaShards": 25,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 4,
+      "daevanionPoints": 128
+    },
+    {
+      "level": 44,
+      "expToNext": 160765875,
+      "skillPoints": 196,
+      "stigmaShards": 27,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 4,
+      "daevanionPoints": 132
+    },
+    {
+      "level": 45,
+      "expToNext": 204267230,
+      "skillPoints": 203,
+      "stigmaShards": 29,
+      "superiorStigmaShards": 0,
+      "stigmaSlots": 4,
+      "daevanionPoints": 136
+    },
+    {
+      "level": 46,
+      "expToNext": 259539539,
+      "skillPoints": 203,
+      "stigmaShards": 30,
+      "superiorStigmaShards": 1,
+      "stigmaSlots": 4,
+      "daevanionPoints": 140
+    },
+    {
+      "level": 47,
+      "expToNext": 329767885,
+      "skillPoints": 203,
+      "stigmaShards": 31,
+      "superiorStigmaShards": 2,
+      "stigmaSlots": 4,
+      "daevanionPoints": 144
+    },
+    {
+      "level": 48,
+      "expToNext": 418999195,
+      "skillPoints": 203,
+      "stigmaShards": 32,
+      "superiorStigmaShards": 3,
+      "stigmaSlots": 4,
+      "daevanionPoints": 148
+    },
+    {
+      "level": 49,
+      "expToNext": 532375447,
+      "skillPoints": 203,
+      "stigmaShards": 33,
+      "superiorStigmaShards": 4,
+      "stigmaSlots": 4,
+      "daevanionPoints": 152
+    },
+    {
+      "level": 50,
+      "expToNext": 676429980,
+      "skillPoints": 203,
+      "stigmaShards": 34,
+      "superiorStigmaShards": 5,
+      "stigmaSlots": 4,
+      "daevanionPoints": 156
+    },
+    {
+      "level": 51,
+      "expToNext": 859463975,
+      "skillPoints": 203,
+      "stigmaShards": 35,
+      "superiorStigmaShards": 6,
+      "stigmaSlots": 4,
+      "daevanionPoints": 160
+    },
+    {
+      "level": 52,
+      "expToNext": 1092024815,
+      "skillPoints": 203,
+      "stigmaShards": 36,
+      "superiorStigmaShards": 7,
+      "stigmaSlots": 4,
+      "daevanionPoints": 164
+    },
+    {
+      "level": 53,
+      "expToNext": 1387513882,
+      "skillPoints": 203,
+      "stigmaShards": 37,
+      "superiorStigmaShards": 8,
+      "stigmaSlots": 4,
+      "daevanionPoints": 168
+    },
+    {
+      "level": 54,
+      "expToNext": 1762958815,
+      "skillPoints": 203,
+      "stigmaShards": 38,
+      "superiorStigmaShards": 9,
+      "stigmaSlots": 4,
+      "daevanionPoints": 172
+    },
+    {
+      "level": 55,
+      "expToNext": 2239994730,
+      "skillPoints": 203,
+      "stigmaShards": 39,
+      "superiorStigmaShards": 10,
+      "stigmaSlots": 4,
+      "daevanionPoints": 176
+    },
+    {
+      "level": 56,
+      "expToNext": 2846110951,
+      "skillPoints": 203,
+      "stigmaShards": 40,
+      "superiorStigmaShards": 11,
+      "stigmaSlots": 4,
+      "daevanionPoints": 180
+    },
+    {
+      "level": 57,
+      "expToNext": 3616235091,
+      "skillPoints": 203,
+      "stigmaShards": 41,
+      "superiorStigmaShards": 12,
+      "stigmaSlots": 4,
+      "daevanionPoints": 184
+    },
+    {
+      "level": 58,
+      "expToNext": 4594745762,
+      "skillPoints": 203,
+      "stigmaShards": 42,
+      "superiorStigmaShards": 13,
+      "stigmaSlots": 4,
+      "daevanionPoints": 188
+    },
+    {
+      "level": 59,
+      "expToNext": 5838029910,
+      "skillPoints": 203,
+      "stigmaShards": 43,
+      "superiorStigmaShards": 14,
+      "stigmaSlots": 4,
+      "daevanionPoints": 192
+    },
+    {
+      "level": 60,
+      "expToNext": 7417732120,
+      "skillPoints": 203,
+      "stigmaShards": 44,
+      "superiorStigmaShards": 15,
+      "stigmaSlots": 4,
+      "daevanionPoints": 196
+    }
+  ]
+}

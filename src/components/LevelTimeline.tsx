@@ -3,13 +3,15 @@ import { useEffect, useState } from 'react';
 export type LevelInfo = {
   level: number;
   zone: string | null;
+  /** Опыт до следующего уровня (таблица клиента). */
+  expToNext: number | null;
   newSkills: { id: string; name: string; type: 'active' | 'passive' | 'stigma' }[];
-  /** Навыки из списка приоритета, чей максимальный уровень вырос на этом уровне персонажа. */
-  skillUps: { id: string; name: string; rank: number; toLevel: number; cost: number; costVerified: boolean }[];
+  /** Умения из списка приоритета, чей максимальный уровень вырос на этом уровне персонажа. */
+  skillUps: { id: string; name: string; rank: number; fromLevel: number; toLevel: number; cost: number }[];
   /** Рекомендованные особенности, которые открываются на этом уровне. */
   specs: { skill: string; spec: string; why: string }[];
-  /** Сколько очков навыков нужно, чтобы держать все приоритетные навыки на максимуме. */
-  budget: number | null;
+  /** Очки умений: получено за уровни (таблица клиента) и нужно, чтобы держать приоритетные умения на максимуме. */
+  points: { earned: number; needed: number } | null;
   unlocks: { title: string; details: string | null }[];
   todo: string[];
 };
@@ -21,12 +23,14 @@ type Labels = {
   skillUps: string;
   skillUpsHint: string;
   points: string;
-  unverified: string;
   specs: string;
-  budget: string;
+  pointsEarned: string;
+  pointsNeeded: string;
+  pointsHint: string;
   unlocks: string;
   todo: string;
   zone: string;
+  exp: string;
   nothing: string;
   skillTypes: Record<'active' | 'passive' | 'stigma', string>;
 };
@@ -104,6 +108,12 @@ export default function LevelTimeline({ levels, labels, storageKey }: Props) {
       {info?.zone && (
         <p>
           <span className="muted">{labels.zone}:</span> <strong>{info.zone}</strong>
+          {info.expToNext != null && (
+            <span className="muted">
+              {' · '}
+              {labels.exp}: {info.expToNext.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
+            </span>
+          )}
         </p>
       )}
 
@@ -131,8 +141,7 @@ export default function LevelTimeline({ levels, labels, storageKey }: Props) {
               <li key={u.id}>
                 <span className="rank">#{u.rank}</span> <a href={`#${u.id}`}>{u.name}</a> → <strong>{u.toLevel}</strong>{' '}
                 <span className="muted">
-                  ({u.cost} {labels.points}
-                  {!u.costVerified && `, ${labels.unverified}`})
+                  ({u.cost} {labels.points})
                 </span>
               </li>
             ))}
@@ -178,10 +187,14 @@ export default function LevelTimeline({ levels, labels, storageKey }: Props) {
         </div>
       )}
 
-      {info?.budget != null && (
-        <p className="muted budget">
-          {labels.budget}: <strong>{info.budget}</strong>
-        </p>
+      {info?.points && (
+        <div className="muted budget">
+          <div>
+            {labels.pointsEarned}: <strong>{info.points.earned}</strong> · {labels.pointsNeeded}:{' '}
+            <strong>{info.points.needed}</strong>
+          </div>
+          <div className="hint">{labels.pointsHint}</div>
+        </div>
       )}
 
       <style>{`

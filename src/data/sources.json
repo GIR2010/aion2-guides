@@ -1,11 +1,60 @@
 [
-  { "id": "metabot-assassin", "title": "MetaBot — Assassin", "url": "https://metabot.gg/en/aion-2/classes/assassin", "kind": "database" },
-  { "id": "metabot-leveling", "title": "MetaBot — Leveling Guide", "url": "https://metabot.gg/en/aion-2/guides/leveling-guide", "kind": "guide" },
-  { "id": "metabot-stigma", "title": "MetaBot — Stigma Guide", "url": "https://metabot.gg/en/aion-2/guides/stigma-guide", "kind": "guide" },
-  { "id": "gamesgg-assassin", "title": "games.gg — Assassin Build Guide", "url": "https://games.gg/aion-2/guides/aion-2-assassin-build-guide/", "kind": "guide" },
-  { "id": "fextralife-levels", "title": "Fextralife — Level Progression", "url": "https://aion2.wiki.fextralife.com/Level_Progression", "kind": "wiki" },
-  { "id": "gameplaytips-skills", "title": "gameplay.tips — Skills Guide", "url": "https://gameplay.tips/guides/aion-2-skills-guide-active-passive-and-stigma.html", "kind": "guide" },
-  { "id": "keengamer-leveling", "title": "KeenGamer — Leveling Progression", "url": "https://www.keengamer.com/articles/guides/aion-2-leveling-progression-guide-level-1-to-endgame/", "kind": "guide" },
-  { "id": "playnews-cap45", "title": "PlayNews — Level cap 45 confirmed", "url": "https://www.playnews.gg/en/news/aion-2-dungeon-livestream-confirms-level-cap-of-45-and-no-heroic-items-in-season-1", "kind": "official" },
-  { "id": "in-game", "title": "Игра: скриншоты (19.10.2026) и тексты клиента 2.0.7", "kind": "in-game" }
+  {
+    "id": "metabot-assassin",
+    "title": "MetaBot — Assassin",
+    "url": "https://metabot.gg/en/aion-2/classes/assassin",
+    "kind": "database"
+  },
+  {
+    "id": "metabot-leveling",
+    "title": "MetaBot — Leveling Guide",
+    "url": "https://metabot.gg/en/aion-2/guides/leveling-guide",
+    "kind": "guide"
+  },
+  {
+    "id": "metabot-stigma",
+    "title": "MetaBot — Stigma Guide",
+    "url": "https://metabot.gg/en/aion-2/guides/stigma-guide",
+    "kind": "guide"
+  },
+  {
+    "id": "gamesgg-assassin",
+    "title": "games.gg — Assassin Build Guide",
+    "url": "https://games.gg/aion-2/guides/aion-2-assassin-build-guide/",
+    "kind": "guide"
+  },
+  {
+    "id": "fextralife-levels",
+    "title": "Fextralife — Level Progression",
+    "url": "https://aion2.wiki.fextralife.com/Level_Progression",
+    "kind": "wiki"
+  },
+  {
+    "id": "gameplaytips-skills",
+    "title": "gameplay.tips — Skills Guide",
+    "url": "https://gameplay.tips/guides/aion-2-skills-guide-active-passive-and-stigma.html",
+    "kind": "guide"
+  },
+  {
+    "id": "keengamer-leveling",
+    "title": "KeenGamer — Leveling Progression",
+    "url": "https://www.keengamer.com/articles/guides/aion-2-leveling-progression-guide-level-1-to-endgame/",
+    "kind": "guide"
+  },
+  {
+    "id": "playnews-cap45",
+    "title": "PlayNews — Level cap 45 confirmed",
+    "url": "https://www.playnews.gg/en/news/aion-2-dungeon-livestream-confirms-level-cap-of-45-and-no-heroic-items-in-season-1",
+    "kind": "official"
+  },
+  {
+    "id": "in-game",
+    "title": "Игра: скриншоты (19.10.2026) и тексты клиента 2.0.7",
+    "kind": "in-game"
+  },
+  {
+    "id": "client-tables",
+    "title": "Таблицы клиента 2.0.7 (Exp, SkillAcquireData)",
+    "kind": "in-game"
+  }
 ]

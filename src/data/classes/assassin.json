@@ -71,7 +71,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        1,
+        1,
+        4,
+        7,
+        10,
+        13,
+        16,
+        19,
+        22,
+        25
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -129,7 +154,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        1,
+        1,
+        4,
+        7,
+        10,
+        13,
+        16,
+        19,
+        22,
+        25
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -187,7 +237,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        1,
+        1,
+        4,
+        7,
+        10,
+        13,
+        16,
+        19,
+        22,
+        25
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -245,7 +320,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        3,
+        3,
+        6,
+        9,
+        12,
+        15,
+        18,
+        21,
+        24,
+        27
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -303,7 +403,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        4,
+        4,
+        7,
+        10,
+        13,
+        16,
+        19,
+        22,
+        25,
+        28
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -361,7 +486,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        5,
+        5,
+        8,
+        11,
+        14,
+        17,
+        20,
+        23,
+        26,
+        29
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -419,7 +569,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        7,
+        7,
+        10,
+        13,
+        16,
+        19,
+        22,
+        25,
+        28,
+        31
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -477,7 +652,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        8,
+        8,
+        11,
+        14,
+        17,
+        20,
+        23,
+        26,
+        29,
+        32
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -535,7 +735,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        10,
+        10,
+        13,
+        16,
+        19,
+        22,
+        25,
+        28,
+        31,
+        34
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -593,7 +818,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        12,
+        12,
+        15,
+        18,
+        21,
+        24,
+        27,
+        30,
+        33,
+        36
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -655,7 +905,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        14,
+        14,
+        17,
+        20,
+        23,
+        26,
+        29,
+        32,
+        35,
+        38
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -713,7 +988,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        16,
+        16,
+        19,
+        22,
+        25,
+        28,
+        31,
+        34,
+        37,
+        40
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -734,7 +1034,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        1,
+        1,
+        4,
+        7,
+        10,
+        13,
+        16,
+        19,
+        22,
+        25
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -755,7 +1080,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        6,
+        6,
+        9,
+        12,
+        15,
+        18,
+        21,
+        24,
+        27,
+        30
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -776,7 +1126,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        9,
+        9,
+        12,
+        15,
+        18,
+        21,
+        24,
+        27,
+        30,
+        33
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -797,7 +1172,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        11,
+        11,
+        14,
+        17,
+        20,
+        23,
+        26,
+        29,
+        32,
+        35
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -818,7 +1218,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        13,
+        13,
+        16,
+        19,
+        22,
+        25,
+        28,
+        31,
+        34,
+        37
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -839,7 +1264,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        15,
+        15,
+        18,
+        21,
+        24,
+        27,
+        30,
+        33,
+        36,
+        39
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -860,7 +1310,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        17,
+        17,
+        20,
+        23,
+        26,
+        29,
+        32,
+        35,
+        38,
+        41
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -878,14 +1353,35 @@
         "ru": "Попадание по цели под шоковым эффектом (оглушение, сбивание и т. п.): ЗЩТ цели −20% и сопротивление негативным эффектам −15% на 10 с (раз в 20 с). Значения для ур. 5.",
         "en": "Hitting a target under an impact effect (stun, knockdown, etc.): −20% Defense and −15% debuff resistance for 10s (20s cooldown). Values at level 5."
       },
-      "note": {
-        "ru": "Уровень открытия под вопросом: на 22 уровне навык уже 4-го уровня, а по правилу прокачки это возможно, только если он открывается не позже 13-го уровня.",
-        "en": "Unlock level is questionable: at character level 22 the skill is already level 4, which the leveling rule allows only if it unlocks at 13 or earlier."
-      },
-      "status": "single-source",
+      "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -906,7 +1402,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        23,
+        23,
+        23,
+        23,
+        23,
+        23,
+        23,
+        23,
+        23,
+        23
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -927,7 +1448,32 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
+      ],
+      "levelReq": [
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25
+      ],
+      "levelCost": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -978,8 +1524,54 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
-      ]
+      ],
+      "levelReq": [
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "levelCost": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "learnAscension": "AscensionGrade_3"
     },
     {
       "id": "swift-contract",
@@ -1029,8 +1621,54 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
-      ]
+      ],
+      "levelReq": [
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "levelCost": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "learnAscension": "AscensionGrade_3"
     },
     {
       "id": "smoke-bomb",
@@ -1080,8 +1718,54 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
-      ]
+      ],
+      "levelReq": [
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "levelCost": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "learnAscension": "AscensionGrade_3"
     },
     {
       "id": "evasion-stance",
@@ -1131,8 +1815,54 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
-      ]
+      ],
+      "levelReq": [
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "levelCost": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "learnAscension": "AscensionGrade_3"
     },
     {
       "id": "spiral-slice",
@@ -1182,8 +1912,54 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
-      ]
+      ],
+      "levelReq": [
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "levelCost": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "learnAscension": "AscensionGrade_3"
     },
     {
       "id": "shadow-walk",
@@ -1233,8 +2009,54 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
-      ]
+      ],
+      "levelReq": [
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "levelCost": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "learnAscension": "AscensionGrade_3"
     },
     {
       "id": "throw-shadowblade",
@@ -1284,8 +2106,54 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
-      ]
+      ],
+      "levelReq": [
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "levelCost": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "learnAscension": "AscensionGrade_3"
     },
     {
       "id": "triniels-dagger",
@@ -1335,8 +2203,54 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
-      ]
+      ],
+      "levelReq": [
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "levelCost": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "learnAscension": "AscensionGrade_3"
     },
     {
       "id": "aerial-bind",
@@ -1386,8 +2300,54 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
-      ]
+      ],
+      "levelReq": [
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "levelCost": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "learnAscension": "AscensionGrade_3"
     },
     {
       "id": "illusive-clone",
@@ -1437,9 +2397,55 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin",
         "gamesgg-assassin"
-      ]
+      ],
+      "levelReq": [
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "levelCost": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "learnAscension": "AscensionGrade_3"
     },
     {
       "id": "evasion-contract",
@@ -1489,8 +2495,54 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
-      ]
+      ],
+      "levelReq": [
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "levelCost": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "learnAscension": "AscensionGrade_3"
     },
     {
       "id": "assault-ambush",
@@ -1540,8 +2592,54 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
-      ]
+      ],
+      "levelReq": [
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "levelCost": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "learnAscension": "AscensionGrade_3"
     },
     {
       "id": "shadowstep",
@@ -1591,8 +2689,54 @@
       "status": "verified",
       "sources": [
         "in-game",
+        "client-tables",
         "metabot-assassin"
-      ]
+      ],
+      "levelReq": [
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "levelCost": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "learnAscension": "AscensionGrade_3"
     }
   ]
 }

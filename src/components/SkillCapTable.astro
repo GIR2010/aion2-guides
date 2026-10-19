@@ -4,7 +4,7 @@ import { pick, type Locale } from '../i18n/ui';
 import { charLevelFor, levelUpCost, totalCost } from '../lib/skills';
 
 interface Props {
-  /** id плана прокачки: из него берётся порядок навыков. */
+  /** id плана прокачки: из него берётся порядок умений. */
   plan: string;
   locale: Locale;
 }
@@ -15,25 +15,28 @@ if (!plan) throw new Error(`Unknown leveling plan: ${planId}`);
 const cls = await getEntry(plan.data.class);
 if (!cls) throw new Error(`Unknown class in plan ${planId}`);
 
-const milestonesLevels = [4, 7, 8, 10];
-const rows = plan.data.skillPriority.map((id, i) => {
+const skills = plan.data.skillPriority.map((id) => {
   const skill = cls.data.skills.find((s) => s.id === id);
   if (!skill) throw new Error(`Unknown skill ${id}`);
-  return {
-    rank: i + 1,
-    name: pick(skill.name, locale),
-    unlock: skill.unlockLevel,
-    at: milestonesLevels.map((l) => charLevelFor(l, skill.unlockLevel)),
-  };
+  return skill;
 });
 
-const ru = locale === 'ru';
+const shownLevels = [4, 7, 8, 10];
+const rows = skills.map((skill, i) => ({
+  rank: i + 1,
+  name: pick(skill.name, locale),
+  unlock: skill.unlockLevel,
+  at: shownLevels.map((l) => charLevelFor(skill, l)),
+}));
+
+// Стоимость у всех активных и пассивных умений одинаковая — берём первое умение из приоритета.
+const sample = skills[0];
 const costRows = Array.from({ length: 9 }, (_, i) => ({
   from: i + 1,
-  cost: levelUpCost(i + 1),
-  total: totalCost(i + 2),
-  verified: i + 1 <= 8,
+  cost: levelUpCost(sample, i + 1),
+  total: totalCost(sample, i + 2),
 }));
+const ru = locale === 'ru';
 ---
 
 <h3>{ru ? 'Стоимость уровней умения' : 'Skill level costs'}</h3>
@@ -48,22 +51,15 @@ const costRows = Array.from({ length: 9 }, (_, i) => ({
     <tbody>
       <tr>
         <td>{ru ? 'Очков' : 'Points'}</td>
-        {costRows.map((r) => <td class={r.verified ? '' : 'unverified'}>{r.cost}{!r.verified && '?'}</td>)}
+        {costRows.map((r) => <td>{r.cost}</td>)}
       </tr>
       <tr>
         <td>{ru ? 'Всего с 1 ур.' : 'Total from 1'}</td>
-        {costRows.map((r) => <td class={r.verified ? '' : 'unverified'}>{r.total}{!r.verified && '?'}</td>)}
+        {costRows.map((r) => <td>{r.total}</td>)}
       </tr>
     </tbody>
   </table>
 </div>
-<p class="muted small">
-  {
-    ru
-      ? '«?» — переход 9→10 на скриншотах не встречался, значение предположительное.'
-      : '“?” — the 9→10 step was not on the screenshots, the value is assumed.'
-  }
-</p>
 
 <h3>{ru ? 'С какого уровня персонажа доступен уровень умения' : 'Character level required for a skill level'}</h3>
 <div class="table-wrap">
@@ -73,7 +69,7 @@ const costRows = Array.from({ length: 9 }, (_, i) => ({
         <th>#</th>
         <th>{ru ? 'Умение' : 'Skill'}</th>
         <th>{ru ? 'Открытие' : 'Unlock'}</th>
-        {milestonesLevels.map((l) => <th>{ru ? `Ур. ${l}` : `Lv. ${l}`}{l === 8 && '*'}</th>)}
+        {shownLevels.map((l) => <th>{ru ? `Ур. ${l}` : `Lv. ${l}`}{l === 8 && '*'}</th>)}
       </tr>
     </thead>
     <tbody>
@@ -84,7 +80,7 @@ const costRows = Array.from({ length: 9 }, (_, i) => ({
             <td>{r.name}</td>
             <td>{r.unlock}</td>
             {r.at.map((lvl) => (
-              <td class={lvl > 45 ? 'unverified' : ''}>{lvl > 45 ? (ru ? 'после 45' : 'after 45') : lvl}</td>
+              <td class={lvl > 45 ? 'later' : ''}>{lvl > 45 ? (ru ? 'после 45' : 'after 45') : lvl}</td>
             ))}
           </tr>
         ))
@@ -95,8 +91,8 @@ const costRows = Array.from({ length: 9 }, (_, i) => ({
 <p class="muted small">
   {
     ru
-      ? '* На 8 уровне умения открывается первая особенность. Бонусы «+N к умению» с экипировки тоже считаются — с ними особенность откроется раньше.'
-      : '* The first specialization unlocks at skill level 8. “+N skill” bonuses from gear count too, so with them it unlocks earlier.'
+      ? '* На 8 уровне умения открывается первая особенность. Бонусы «+N к умению» с экипировки тоже считаются — с ними особенность откроется раньше. Данные — из таблиц клиента 2.0.7.'
+      : '* The first specialization unlocks at skill level 8. “+N skill” bonuses from gear count too, so with them it unlocks earlier. Data from client 2.0.7 tables.'
   }
 </p>
 
@@ -112,7 +108,7 @@ const costRows = Array.from({ length: 9 }, (_, i) => ({
   .compact th:first-child {
     text-align: left;
   }
-  .unverified {
+  .later {
     color: var(--warn);
   }
   .small {

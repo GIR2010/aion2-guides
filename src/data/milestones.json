@@ -7,11 +7,12 @@
       "en": "Skill window and first Skill Points"
     },
     "details": {
-      "ru": "Уровни умения 1→4 стоят 1 очко, 4→7 — 2, 7→10 — 4. Уровень умения L доступен с ур. персонажа «открытие + 3·(L−2)».",
-      "en": "Skill levels 1→4 cost 1 point, 4→7 cost 2, 7→10 cost 4. Skill level L unlocks at character level “unlock + 3·(L−2)”."
+      "ru": "Уровни умения 1→4 стоят 1 очко, 4→7 — 2, 7→10 — 4. За уровни персонажа к 45 набирается 203 очка, остальное — камни мудрости.",
+      "en": "Skill levels 1→4 cost 1 point, 4→7 cost 2, 7→10 cost 4. Character levels give 203 points by 45; Wisdom Stones give the rest."
     },
     "status": "verified",
     "sources": [
+      "client-tables",
       "in-game",
       "fextralife-levels"
     ]
@@ -24,11 +25,12 @@
       "en": "Daevanion board: Nezekan"
     },
     "details": {
-      "ru": "С этого уровня каждое повышение даёт очки Даэваниона.",
-      "en": "Daevanion Points are granted per level from here on."
+      "ru": "С этого уровня каждое повышение даёт 4 очка Даэваниона (136 к 45 уровню).",
+      "en": "Each level from here gives 4 Daevanion Points (136 by level 45)."
     },
-    "status": "multi-source",
+    "status": "verified",
     "sources": [
+      "client-tables",
       "metabot-assassin",
       "metabot-leveling",
       "fextralife-levels"
@@ -60,6 +62,7 @@
     },
     "status": "verified",
     "sources": [
+      "client-tables",
       "in-game",
       "metabot-stigma",
       "fextralife-levels"
@@ -72,8 +75,9 @@
       "ru": "2-й слот стигмы",
       "en": "Stigma slot 2"
     },
-    "status": "multi-source",
+    "status": "verified",
     "sources": [
+      "client-tables",
       "metabot-stigma",
       "fextralife-levels"
     ]
@@ -98,8 +102,9 @@
       "ru": "3-й слот стигмы",
       "en": "Stigma slot 3"
     },
-    "status": "multi-source",
+    "status": "verified",
     "sources": [
+      "client-tables",
       "metabot-stigma",
       "fextralife-levels"
     ]
@@ -111,8 +116,9 @@
       "ru": "4-й слот стигмы (максимум)",
       "en": "Stigma slot 4 (max)"
     },
-    "status": "multi-source",
+    "status": "verified",
     "sources": [
+      "client-tables",
       "metabot-stigma",
       "fextralife-levels"
     ]
@@ -128,8 +134,9 @@
       "ru": "С 40 уровня — 2 обломка стигмы за уровень.",
       "en": "From level 40 you get 2 Stigma Shards per level."
     },
-    "status": "multi-source",
+    "status": "verified",
     "sources": [
+      "client-tables",
       "metabot-assassin",
       "metabot-leveling",
       "metabot-stigma"

@@ -1,41 +1,47 @@
 /**
- * Правила прокачки навыков очками навыков (до 10 уровня).
+ * Правила прокачки умений. Данные — из таблицы клиента SkillAcquireData
+ * (поля levelReq / levelCost, см. scripts/extract-tables.mjs).
  *
- * Выведены из скриншотов окна «Умения» (персонаж 22 ур., 19.10.2026):
- * - стоимость повышения: ур. 1→4 — 1 очко, 4→7 — 2 очка, 7→9 — 4 очка
- *   (9→10 на скриншотах не было — считаем 4 по той же лестнице, НЕ ПРОВЕРЕНО);
- * - ограничение: ур. навыка L доступен с ур. персонажа `открытие + 3·(L − 2)`.
- *   Совпало на всех 6 навыках, где игра показала «Можно изучить на ур. перс. N».
+ * Для большинства активных и пассивных умений уровень L доступен с уровня персонажа
+ * «открытие + 3·(L − 2)», но это не общее правило: у Бреши в защите, Контракта оживления
+ * и Готовности все уровни доступны сразу при открытии. Поэтому считаем только по таблице.
  */
 
+export type SkillLevels = {
+  unlockLevel: number;
+  levelReq: number[];
+  levelCost: number[];
+};
+
+/** Очками умений умение поднимается до 10; выше — бонусы экипировки и досок. */
 export const MAX_POINT_LEVEL = 10;
 
-/** Стоимость повышения навыка с уровня `from` до `from + 1`. */
-export function levelUpCost(from: number): number {
-  if (from < 4) return 1;
-  if (from < 7) return 2;
-  return 4;
+/** Цена перехода с уровня `from` на `from + 1`. */
+export function levelUpCost(skill: SkillLevels, from: number): number {
+  const cost = skill.levelCost[from];
+  if (cost === undefined) throw new Error(`Нет цены для уровня ${from + 1}`);
+  return cost;
 }
 
-/** Есть ли для перехода `from → from + 1` подтверждение скриншотом. */
-export function isCostVerified(from: number): boolean {
-  return from <= 8;
-}
-
-/** Сколько очков стоит прокачать навык с 1 уровня до `level`. */
-export function totalCost(level: number): number {
+/** Сколько стоит поднять умение с 1 уровня до `level` (без цены изучения). */
+export function totalCost(skill: SkillLevels, level: number): number {
   let sum = 0;
-  for (let l = 1; l < level; l++) sum += levelUpCost(l);
+  for (let l = 1; l < level; l++) sum += levelUpCost(skill, l);
   return sum;
 }
 
-/** Максимальный уровень навыка (за очки), доступный на уровне персонажа. */
-export function maxSkillLevel(charLevel: number, unlockLevel: number): number {
-  if (charLevel < unlockLevel) return 0;
-  return Math.min(MAX_POINT_LEVEL, Math.floor((charLevel - unlockLevel) / 3) + 2);
+/** Максимальный уровень умения, доступный на уровне персонажа (0 — ещё не открыто). */
+export function maxSkillLevel(skill: SkillLevels, charLevel: number, cap = MAX_POINT_LEVEL): number {
+  let max = 0;
+  for (let i = 0; i < Math.min(cap, skill.levelReq.length); i++) {
+    if (skill.levelReq[i] <= charLevel) max = i + 1;
+  }
+  return max;
 }
 
-/** С какого уровня персонажа доступен уровень навыка `skillLevel`. */
-export function charLevelFor(skillLevel: number, unlockLevel: number): number {
-  return skillLevel <= 2 ? unlockLevel : unlockLevel + 3 * (skillLevel - 2);
+/** С какого уровня персонажа доступен уровень умения `skillLevel`. */
+export function charLevelFor(skill: SkillLevels, skillLevel: number): number {
+  const req = skill.levelReq[skillLevel - 1];
+  if (req === undefined) throw new Error(`Нет требования для уровня ${skillLevel}`);
+  return req;
 }

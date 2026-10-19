@@ -49,6 +49,16 @@ const skill = z.object({
   specs: z.array(z.object({ level: z.number().int(), text })).default([]),
   /** Пометка о расхождениях или непроверенных деталях. */
   note: text.optional(),
+  /**
+   * Из таблицы клиента SkillAcquireData (scripts/extract-tables.mjs):
+   * levelReq[i] — уровень персонажа, с которого доступен уровень умения i+1;
+   * levelCost[i] — цена перехода на уровень i+1 (очки умений; для стигм — обломки стигмы,
+   * levelCost[0] — изучение).
+   */
+  levelReq: z.array(z.number().int()).default([]),
+  levelCost: z.array(z.number().int()).default([]),
+  /** Ступень пробуждения, нужная для изучения (у стигм — AscensionGrade_3). */
+  learnAscension: z.string().optional(),
   ...factMeta,
 });
 
