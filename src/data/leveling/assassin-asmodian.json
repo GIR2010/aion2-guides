@@ -17,101 +17,446 @@
     "storm-rampage"
   ],
   "specPicks": [
-    { "skill": "quick-slice", "spec": 2, "why": { "ru": "Больше урона по пачкам. Если часто умираете — «Поглощение 0.7% ОЗ».", "en": "More pack damage. If you die a lot, take “Absorbs 0.7% HP” instead." } },
-    { "skill": "savage-roar", "spec": 1, "why": { "ru": "Быстрее анимации — быстрее набиваются эмблемы.", "en": "Faster animations mean Insignias stack faster." } },
-    { "skill": "shadowstrike", "spec": 1, "why": { "ru": "+20% крит. урона на 10 с сразу после опенера.", "en": "+20% crit damage for 10s right after the opener." } },
-    { "skill": "ambush", "spec": 0, "why": { "ru": "2 эмблемы при любом попадании, а не только со спины.", "en": "2 Insignias on any hit, not only from behind." } },
-    { "skill": "heart-gore", "spec": 1, "why": { "ru": "Каждое срабатывание добавляет эмблему под Взрыв эмблемы.", "en": "Every proc adds an Insignia for Insignia Explosion." } },
-    { "skill": "insignia-explosion", "spec": 1, "why": { "ru": "+50% к шансу мультиудара по всем 4 целям.", "en": "+50% multi-hit chance on all 4 targets." } }
+    {
+      "skill": "quick-slice",
+      "spec": 2,
+      "why": {
+        "ru": "Больше урона по пачкам. Если часто умираете — «Поглощение 0.7% ОЗ».",
+        "en": "More pack damage. If you die a lot, take “Absorbs 0.7% HP” instead."
+      }
+    },
+    {
+      "skill": "savage-roar",
+      "spec": 1,
+      "why": {
+        "ru": "Быстрее анимации — быстрее набиваются эмблемы.",
+        "en": "Faster animations mean Insignias stack faster."
+      }
+    },
+    {
+      "skill": "shadowstrike",
+      "spec": 1,
+      "why": {
+        "ru": "+20% крит. урона на 10 с сразу после опенера.",
+        "en": "+20% crit damage for 10s right after the opener."
+      }
+    },
+    {
+      "skill": "ambush",
+      "spec": 0,
+      "why": {
+        "ru": "2 эмблемы при каждой атаке со спины — готовые заряды под Взрыв эмблемы.",
+        "en": "2 Insignias on every back attack — ready charges for Insignia Explosion."
+      }
+    },
+    {
+      "skill": "heart-gore",
+      "spec": 1,
+      "why": {
+        "ru": "Каждое срабатывание добавляет эмблему под Взрыв эмблемы.",
+        "en": "Every proc adds an Insignia for Insignia Explosion."
+      }
+    },
+    {
+      "skill": "insignia-explosion",
+      "spec": 1,
+      "why": {
+        "ru": "+50% к шансу мультиудара по всем 4 целям.",
+        "en": "+50% multi-hit chance on all 4 targets."
+      }
+    }
   ],
   "steps": [
-    { "level": 1, "todo": [
-      { "ru": "Идите только по жёлтым (сюжетным) квестам — они дают почти весь опыт до 45.", "en": "Follow only yellow (story) quests — they give almost all XP to 45." },
-      { "ru": "Начинайте бой с Удара из сумрака (рывок за спину + оглушение на 3 с), дальше чередуйте Рев зверя и Быстрый разрез.", "en": "Open with Shadowstrike (blink behind + 3s stun), then alternate Savage Roar and Quick Slice." },
-      { "ru": "Быстрый разрез и Рев зверя бьют до 4 целей — собирайте мобов по 3–4.", "en": "Quick Slice and Savage Roar hit up to 4 targets — pull 3–4 mobs at a time." }
-    ], "status": "verified", "sources": ["in-game", "metabot-leveling"] },
-    { "level": 3, "todo": [
-      { "ru": "Внезапное нападение ставьте сразу после Удара из сумрака: вы уже за спиной, урон +30% и 2 эмблемы.", "en": "Use Ambush right after Shadowstrike: you are already behind, so +30% damage and 2 Insignias." }
-    ], "status": "verified", "sources": ["in-game"] },
-    { "level": 4, "todo": [
-      { "ru": "Пронзание сердца загорается после крита: бьёт до 4 целей и возвращает 100 ОМ — жмите при каждой возможности.", "en": "Heart Gore lights up after a crit: hits up to 4 targets and restores 100 MP — press it every time." },
-      { "ru": "Пошли очки навыков. Уровни 1→4 стоят по 1 очку, 4→7 — по 2, 7→10 — по 4. Сначала поднимайте основные навыки по списку приоритета.", "en": "Skill Points start. Levels 1→4 cost 1 point each, 4→7 cost 2, 7→10 cost 4. Raise core skills first, following the priority list." }
-    ], "status": "verified", "sources": ["in-game"] },
-    { "level": 6, "todo": [
-      { "ru": "Выжидание момента: +крит и шанс призвать двойников, которые тоже ставят эмблемы.", "en": "Exploit Weakness: +crit and a chance to summon clones that also engrave Insignias." }
-    ], "status": "verified", "sources": ["in-game"] },
-    { "level": 7, "todo": [
-      { "ru": "Удар торнадо срабатывает только после уклонения — поставьте на удобную клавишу, но не тратьте на него очки.", "en": "Whirlwind Slice only works after a dodge — bind it, but don't spend points on it." }
-    ], "status": "verified", "sources": ["in-game"] },
-    { "level": 8, "todo": [
-      { "ru": "Ослепляющий разрез: до 4 целей, по NPC слепота гарантирована — защита от элиток. Хватит 1 уровня.", "en": "Flash Slice: up to 4 targets, Blind is guaranteed vs NPCs — your defense against elites. Level 1 is enough." }
-    ], "status": "verified", "sources": ["in-game"] },
-    { "level": 9, "todo": [
-      { "ru": "Нанесение яда — для PvP (снижает лечение). В PvE очки не тратьте.", "en": "Apply Poison is for PvP (reduces healing). Don't spend points in PvE." }
-    ], "status": "verified", "sources": ["in-game"] },
-    { "level": 10, "todo": [
-      { "ru": "Переход в Альтгард. Вторжение работает только после срочного уклонения или в полёте — это способ вернуться за спину цели.", "en": "Move to Altgard. Infiltrate only works after an emergency dodge or in flight — a way to get back behind the target." }
-    ], "status": "single-source", "sources": ["in-game", "metabot-leveling"] },
-    { "level": 11, "todo": [
-      { "ru": "Удар с тыла: +урон со спины и +урон в PvE. Берите и поднимайте вслед за основными активными.", "en": "Rear Smite: +back attack and +PvE damage. Take it and raise it right after your core actives." }
-    ], "status": "verified", "sources": ["in-game"] },
-    { "level": 12, "todo": [
-      { "ru": "Бросок тени: рывок к оглушённой цели и сбивание с ног на 3 с. Связка: Удар из сумрака (оглушение) → Бросок тени.", "en": "Shadow Fall: dash to a stunned target and knock it down for 3s. Combo: Shadowstrike (stun) → Shadow Fall." },
-      { "ru": "Открывается доска Daevanion Nezekan. Делайте синие квесты — они дают очки Daevanion.", "en": "The Nezekan Daevanion board opens. Do blue quests — they give Daevanion Points." }
-    ], "status": "single-source", "sources": ["in-game", "metabot-assassin", "metabot-leveling"] },
-    { "level": 13, "todo": [
-      { "ru": "Стойка нападения: +10% крит. урона на 5 ур.", "en": "Assault Stance: +10% crit damage at level 5." }
-    ], "status": "verified", "sources": ["in-game"] },
-    { "level": 14, "todo": [
-      { "ru": "Взрыв эмблемы — главный навык. Бьёт до 4 целей, урон и шанс оглушения растут с числом эмблем (до 5). По NPC шанс оглушения удваивается: 5 эмблем = 100%.", "en": "Insignia Explosion is your key skill. Hits up to 4 targets; damage and stun chance grow with Insignias (up to 5). Stun chance is doubled vs NPCs: 5 Insignias = 100%." },
-      { "ru": "Цикл: Рев зверя / Внезапное нападение / Пронзание сердца набивают эмблемы → Взрыв эмблемы.", "en": "Loop: Savage Roar / Ambush / Heart Gore stack Insignias → Insignia Explosion." }
-    ], "status": "verified", "sources": ["in-game"] },
-    { "level": 15, "todo": [
-      { "ru": "Попадание шоком: повышает шанс оглушений. 1 уровня достаточно.", "en": "Impact Hit: improves stun landing. Level 1 is enough." }
-    ], "status": "verified", "sources": ["in-game"] },
-    { "level": 16, "todo": [
-      { "ru": "Снятие шока снимает оглушение, сбивание и т. п. и даёт 5 с иммунитета. Берегите на элиток и боссов квестов, очки не тратьте.", "en": "Defiance removes stun, knockdown, etc. and grants 5s of immunity. Save it for elites and quest bosses; no points needed." }
-    ], "status": "verified", "sources": ["in-game"] },
-    { "level": 17, "todo": [
-      { "ru": "Внезапная атака даёт доп. урон после рывков. Дешёвые уровни (по 1 очку до 4) можно взять, дальше — не нужно.", "en": "Ambush Stance adds damage after dashes. Cheap levels (1 point each up to 4) are fine, beyond that skip it." }
-    ], "status": "verified", "sources": ["in-game"] },
-    { "level": 20, "todo": [
-      { "ru": "Открывается доска Daevanion Zikel.", "en": "The Zikel Daevanion board opens." }
-    ], "status": "single-source", "sources": ["metabot-assassin"] },
-    { "level": 21, "todo": [
-      { "ru": "Брешь в защите: каждое попадание по оглушённой или сбитой цели −20% к её защите на 10 с. У ассасина много оглушений — пассивка работает постоянно.", "en": "Defense Break: hitting a stunned or knocked-down target lowers its Defense by 20% for 10s. Assassins stun constantly, so it's almost always up." }
-    ], "status": "verified", "sources": ["in-game"] },
-    { "level": 22, "todo": [
-      { "ru": "Пройдите 3-й квест восхождения — откроются стигмы. 1-й слот: Клык хищника — бьёт до 4 целей и сразу даёт 5 эмблем. Связка Клык хищника → Взрыв эмблемы = массовое оглушение пачки.", "en": "Complete the 3rd Ascension quest to unlock Stigma. Slot 1: Savage Fang — hits up to 4 targets and gives 5 Insignias at once. Savage Fang → Insignia Explosion = a pack-wide stun." }
-    ], "status": "verified", "sources": ["in-game", "metabot-stigma"] },
-    { "level": 23, "todo": [
-      { "ru": "Контракт оживления: +сопротивление контролю и спасение при ОЗ ≤ 10% (восстанавливает 35% ОЗ раз в минуту). Изучите сразу.", "en": "Revitalization Contract: +CC resistance and a safety net at ≤10% HP (restores 35% HP once per minute). Learn it right away." },
-      { "ru": "Пошли осколки стигм. Изучение стигмы — 1 осколок. Первые — в Клык хищника до 5 (на 5 уровне открывается особенность).", "en": "Stigma Shards start. Learning a stigma costs 1 Shard. Put the first ones into Savage Fang up to 5 (its first specialization unlocks at 5)." }
-    ], "status": "single-source", "sources": ["in-game", "metabot-stigma"] },
-    { "level": 25, "todo": [
-      { "ru": "Готовность: доп. урон по целям с ОЗ ≤ 30% — ускоряет добивание.", "en": "Determination: extra damage on targets at ≤30% HP — faster finishing." }
-    ], "status": "verified", "sources": ["in-game"] },
-    { "level": 27, "todo": [
-      { "ru": "2-й слот стигмы: Иллюзорный двойник — 10 с без перезарядки Пронзания сердца. Включайте в начале боя с боссом или большой пачкой.", "en": "Stigma slot 2: Illusive Clone — 10s with no Heart Gore cooldown. Pop it at the start of a boss or big-pack fight." }
-    ], "status": "verified", "sources": ["in-game", "metabot-stigma"] },
-    { "level": 29, "todo": [
-      { "ru": "Начинается самый медленный отрезок (29–39): закрывайте запечатанные данжи — каждый даёт очки навыков и Daevanion.", "en": "The slowest stretch begins (29–39): clear Sealed Dungeons — each gives Skill and Daevanion Points." }
-    ], "status": "single-source", "sources": ["metabot-leveling"] },
-    { "level": 30, "todo": [
-      { "ru": "Открывается доска Daevanion Vaizel.", "en": "The Vaizel Daevanion board opens." }
-    ], "status": "single-source", "sources": ["metabot-assassin"] },
-    { "level": 32, "todo": [
-      { "ru": "3-й слот стигмы: Обет ускорения — СКР боя +20% на 10 с.", "en": "Stigma slot 3: Swift Contract — combat speed +20% for 10s." }
-    ], "status": "verified", "sources": ["in-game", "metabot-stigma"] },
-    { "level": 37, "todo": [
-      { "ru": "4-й слот стигмы: на прокачке — Вероломная атака (до 4 целей, слепота по NPC гарантирована). Для боссов и на капе — Кинжал Триниэля (самый сильный одиночный удар, со спины +30%).", "en": "Stigma slot 4: while leveling — Assault Ambush (up to 4 targets, guaranteed Blind vs NPCs). For bosses and at cap — Triniel's Dagger (hardest single hit, +30% from behind)." }
-    ], "status": "verified", "sources": ["in-game", "metabot-stigma"] },
-    { "level": 40, "todo": [
-      { "ru": "Открывается доска Triniel. Осколков теперь 2 за уровень — доводите Иллюзорного двойника и Обет ускорения до 5.", "en": "The Triniel board opens. Now 2 Shards per level — bring Illusive Clone and Swift Contract to 5." },
-      { "ru": "На уровни 40–44 уходит около 70% всего опыта: не пропускайте ни одного сюжетного квеста.", "en": "Levels 40–44 take ~70% of total XP: don't skip a single story quest." }
-    ], "status": "single-source", "sources": ["metabot-assassin", "metabot-stigma", "fextralife-levels"] },
-    { "level": 45, "todo": [
-      { "ru": "Кап. Дальше — гайд по развитию ассасина на 45: доска Azphel, экипировка, заточка, стигмы до 10+.", "en": "Cap reached. Next: the level 45 Assassin guide — Azphel board, gear, enchanting, stigma to 10+." }
-    ], "status": "multi-source", "sources": ["playnews-cap45", "metabot-leveling"] }
+    {
+      "level": 1,
+      "todo": [
+        {
+          "ru": "Идите только по жёлтым заданиям Эпизода (сюжет) — они дают почти весь опыт до 45.",
+          "en": "Follow only yellow (story) quests — they give almost all XP to 45."
+        },
+        {
+          "ru": "Начинайте бой с Удара из сумрака (рывок за спину + оглушение на 3 с), дальше чередуйте Рев зверя и Быстрый разрез.",
+          "en": "Open with Shadowstrike (blink behind + 3s stun), then alternate Savage Roar and Quick Slice."
+        },
+        {
+          "ru": "Быстрый разрез и Рев зверя бьют до 4 целей — собирайте мобов по 3–4.",
+          "en": "Quick Slice and Savage Roar hit up to 4 targets — pull 3–4 mobs at a time."
+        }
+      ],
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-leveling"
+      ]
+    },
+    {
+      "level": 3,
+      "todo": [
+        {
+          "ru": "Внезапное нападение ставьте сразу после Удара из сумрака: вы уже за спиной, урон +30%, а с особенностью — ещё и 2 эмблемы.",
+          "en": "Use Ambush right after Shadowstrike: you are already behind, so +30% damage, plus 2 Insignias with its specialization."
+        }
+      ],
+      "status": "verified",
+      "sources": [
+        "in-game"
+      ]
+    },
+    {
+      "level": 4,
+      "todo": [
+        {
+          "ru": "Пронзание сердца загорается после крита: бьёт до 4 целей и возвращает 100 ОМ — жмите при каждой возможности.",
+          "en": "Heart Gore lights up after a crit: hits up to 4 targets and restores 100 MP — press it every time."
+        },
+        {
+          "ru": "Пошли очки умений. Уровни 1→4 стоят по 1 очку, 4→7 — по 2, 7→10 — по 4. Сначала поднимайте основные умения по списку приоритета.",
+          "en": "Skill Points start. Levels 1→4 cost 1 point each, 4→7 cost 2, 7→10 cost 4. Raise core skills first, following the priority list."
+        }
+      ],
+      "status": "verified",
+      "sources": [
+        "in-game"
+      ]
+    },
+    {
+      "level": 6,
+      "todo": [
+        {
+          "ru": "Выжидание момента: +крит и шанс призвать двойников, которые тоже ставят эмблемы.",
+          "en": "Exploit Weakness: +crit and a chance to summon clones that also engrave Insignias."
+        }
+      ],
+      "status": "verified",
+      "sources": [
+        "in-game"
+      ]
+    },
+    {
+      "level": 7,
+      "todo": [
+        {
+          "ru": "Удар торнадо срабатывает только после уклонения — поставьте на удобную клавишу, но не тратьте на него очки.",
+          "en": "Whirlwind Slice only works after a dodge — bind it, but don't spend points on it."
+        }
+      ],
+      "status": "verified",
+      "sources": [
+        "in-game"
+      ]
+    },
+    {
+      "level": 8,
+      "todo": [
+        {
+          "ru": "Ослепляющий разрез: до 4 целей, по NPC слепота гарантирована — защита от элиток. Хватит 1 уровня.",
+          "en": "Flash Slice: up to 4 targets, Blind is guaranteed vs NPCs — your defense against elites. Level 1 is enough."
+        }
+      ],
+      "status": "verified",
+      "sources": [
+        "in-game"
+      ]
+    },
+    {
+      "level": 9,
+      "todo": [
+        {
+          "ru": "Нанесение яда — для PvP (снижает лечение). В PvE очки не тратьте.",
+          "en": "Apply Poison is for PvP (reduces healing). Don't spend points in PvE."
+        }
+      ],
+      "status": "verified",
+      "sources": [
+        "in-game"
+      ]
+    },
+    {
+      "level": 10,
+      "todo": [
+        {
+          "ru": "Переход в Альтгард. Вторжение работает только после срочного уклонения или в полёте — это способ вернуться за спину цели.",
+          "en": "Move to Altgard. Infiltrate only works after an emergency dodge or in flight — a way to get back behind the target."
+        }
+      ],
+      "status": "single-source",
+      "sources": [
+        "in-game",
+        "metabot-leveling"
+      ]
+    },
+    {
+      "level": 11,
+      "todo": [
+        {
+          "ru": "Удар с тыла: +урон со спины и +урон в PvE. Берите и поднимайте вслед за основными активными.",
+          "en": "Rear Smite: +back attack and +PvE damage. Take it and raise it right after your core actives."
+        }
+      ],
+      "status": "verified",
+      "sources": [
+        "in-game"
+      ]
+    },
+    {
+      "level": 12,
+      "todo": [
+        {
+          "ru": "Бросок тени: рывок к оглушённой цели и сбивание с ног на 3 с. Связка: Удар из сумрака (оглушение) → Бросок тени.",
+          "en": "Shadow Fall: dash to a stunned target and knock it down for 3s. Combo: Shadowstrike (stun) → Shadow Fall."
+        },
+        {
+          "ru": "Открывается доска Даэваниона Неджакан. Делайте синие задания — они дают очки Даэваниона.",
+          "en": "The Nezekan Daevanion board opens. Do blue quests — they give Daevanion Points."
+        }
+      ],
+      "status": "single-source",
+      "sources": [
+        "in-game",
+        "metabot-assassin",
+        "metabot-leveling"
+      ]
+    },
+    {
+      "level": 13,
+      "todo": [
+        {
+          "ru": "Стойка нападения: +10% крит. урона на 5 ур.",
+          "en": "Assault Stance: +10% crit damage at level 5."
+        }
+      ],
+      "status": "verified",
+      "sources": [
+        "in-game"
+      ]
+    },
+    {
+      "level": 14,
+      "todo": [
+        {
+          "ru": "Взрыв эмблемы — главное умение. Бьёт до 4 целей, урон и шанс оглушения растут с числом эмблем (до 5). По NPC шанс оглушения удваивается: 5 эмблем = 100%.",
+          "en": "Insignia Explosion is your key skill. Hits up to 4 targets; damage and stun chance grow with Insignias (up to 5). Stun chance is doubled vs NPCs: 5 Insignias = 100%."
+        },
+        {
+          "ru": "Цикл: Рев зверя / Внезапное нападение / Пронзание сердца набивают эмблемы → Взрыв эмблемы.",
+          "en": "Loop: Savage Roar / Ambush / Heart Gore stack Insignias → Insignia Explosion."
+        }
+      ],
+      "status": "verified",
+      "sources": [
+        "in-game"
+      ]
+    },
+    {
+      "level": 15,
+      "todo": [
+        {
+          "ru": "Попадание шоком: повышает шанс оглушений. 1 уровня достаточно.",
+          "en": "Impact Hit: improves stun landing. Level 1 is enough."
+        }
+      ],
+      "status": "verified",
+      "sources": [
+        "in-game"
+      ]
+    },
+    {
+      "level": 16,
+      "todo": [
+        {
+          "ru": "Снятие шока снимает оглушение, сбивание и т. п. и даёт 5 с иммунитета. Берегите на элиток и боссов заданий, очки не тратьте.",
+          "en": "Defiance removes stun, knockdown, etc. and grants 5s of immunity. Save it for elites and quest bosses; no points needed."
+        }
+      ],
+      "status": "verified",
+      "sources": [
+        "in-game"
+      ]
+    },
+    {
+      "level": 17,
+      "todo": [
+        {
+          "ru": "Внезапная атака даёт доп. урон после рывков. Дешёвые уровни (по 1 очку до 4) можно взять, дальше — не нужно.",
+          "en": "Ambush Stance adds damage after dashes. Cheap levels (1 point each up to 4) are fine, beyond that skip it."
+        }
+      ],
+      "status": "verified",
+      "sources": [
+        "in-game"
+      ]
+    },
+    {
+      "level": 20,
+      "todo": [
+        {
+          "ru": "Открывается доска Даэваниона Джикел.",
+          "en": "The Zikel Daevanion board opens."
+        }
+      ],
+      "status": "single-source",
+      "sources": [
+        "metabot-assassin"
+      ]
+    },
+    {
+      "level": 21,
+      "todo": [
+        {
+          "ru": "Брешь в защите: каждое попадание по оглушённой или сбитой цели −20% к её защите на 10 с. У ассасина много оглушений — пассивка работает постоянно.",
+          "en": "Defense Break: hitting a stunned or knocked-down target lowers its Defense by 20% for 10s. Assassins stun constantly, so it's almost always up."
+        }
+      ],
+      "status": "verified",
+      "sources": [
+        "in-game"
+      ]
+    },
+    {
+      "level": 22,
+      "todo": [
+        {
+          "ru": "Пройдите задание пробуждения «Внемлющий голосу» — откроются стигмы. 1-й слот: Клык хищника — бьёт до 4 целей и сразу даёт 5 эмблем. Связка Клык хищника → Взрыв эмблемы = массовое оглушение пачки.",
+          "en": "Complete the 3rd Ascension quest to unlock Stigma. Slot 1: Savage Fang — hits up to 4 targets and gives 5 Insignias at once. Savage Fang → Insignia Explosion = a pack-wide stun."
+        }
+      ],
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-stigma"
+      ]
+    },
+    {
+      "level": 23,
+      "todo": [
+        {
+          "ru": "Контракт оживления: +сопротивление контролю и спасение при ОЗ ≤ 10% (восстанавливает 35% ОЗ раз в минуту). Изучите сразу.",
+          "en": "Revitalization Contract: +CC resistance and a safety net at ≤10% HP (restores 35% HP once per minute). Learn it right away."
+        },
+        {
+          "ru": "Пошли обломки стигмы. Изучение стигмы — 1 обломок. Первые — в Клык хищника до 5 (на 5 уровне открывается особенность).",
+          "en": "Stigma Shards start. Learning a stigma costs 1 Shard. Put the first ones into Savage Fang up to 5 (its first specialization unlocks at 5)."
+        }
+      ],
+      "status": "single-source",
+      "sources": [
+        "in-game",
+        "metabot-stigma"
+      ]
+    },
+    {
+      "level": 25,
+      "todo": [
+        {
+          "ru": "Готовность: доп. урон по целям с ОЗ ≤ 30% — ускоряет добивание.",
+          "en": "Determination: extra damage on targets at ≤30% HP — faster finishing."
+        }
+      ],
+      "status": "verified",
+      "sources": [
+        "in-game"
+      ]
+    },
+    {
+      "level": 27,
+      "todo": [
+        {
+          "ru": "2-й слот стигмы: Иллюзорный двойник — 10 с без перезарядки Пронзания сердца. Включайте в начале боя с боссом или большой пачкой.",
+          "en": "Stigma slot 2: Illusive Clone — 10s with no Heart Gore cooldown. Pop it at the start of a boss or big-pack fight."
+        }
+      ],
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-stigma"
+      ]
+    },
+    {
+      "level": 29,
+      "todo": [
+        {
+          "ru": "Начинается самый медленный отрезок (29–39): закрывайте запечатанные подземелья — каждое даёт очки умений и Даэваниона.",
+          "en": "The slowest stretch begins (29–39): clear Sealed Dungeons — each gives Skill and Daevanion Points."
+        }
+      ],
+      "status": "single-source",
+      "sources": [
+        "metabot-leveling"
+      ]
+    },
+    {
+      "level": 30,
+      "todo": [
+        {
+          "ru": "Открывается доска Даэваниона Байзел.",
+          "en": "The Vaizel Daevanion board opens."
+        }
+      ],
+      "status": "single-source",
+      "sources": [
+        "metabot-assassin"
+      ]
+    },
+    {
+      "level": 32,
+      "todo": [
+        {
+          "ru": "3-й слот стигмы: Обет ускорения — СКР боя +20% на 10 с.",
+          "en": "Stigma slot 3: Swift Contract — combat speed +20% for 10s."
+        }
+      ],
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-stigma"
+      ]
+    },
+    {
+      "level": 37,
+      "todo": [
+        {
+          "ru": "4-й слот стигмы: на прокачке — Вероломная атака (до 4 целей, слепота по NPC гарантирована). Для боссов и на капе — Кинжал Триниэля (самый сильный одиночный удар, со спины +30%).",
+          "en": "Stigma slot 4: while leveling — Assault Ambush (up to 4 targets, guaranteed Blind vs NPCs). For bosses and at cap — Triniel's Dagger (hardest single hit, +30% from behind)."
+        }
+      ],
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-stigma"
+      ]
+    },
+    {
+      "level": 40,
+      "todo": [
+        {
+          "ru": "Открывается доска Триниэль. Обломков теперь 2 за уровень — доводите Иллюзорного двойника и Обет ускорения до 5.",
+          "en": "The Triniel board opens. Now 2 Shards per level — bring Illusive Clone and Swift Contract to 5."
+        },
+        {
+          "ru": "На уровни 40–44 уходит около 70% всего опыта: не пропускайте ни одного задания Эпизода.",
+          "en": "Levels 40–44 take ~70% of total XP: don't skip a single story quest."
+        }
+      ],
+      "status": "single-source",
+      "sources": [
+        "metabot-assassin",
+        "metabot-stigma",
+        "fextralife-levels"
+      ]
+    },
+    {
+      "level": 45,
+      "todo": [
+        {
+          "ru": "Кап. Дальше — гайд по развитию ассасина на 45: доска Асфель, экипировка, заточка, стигмы до 10+.",
+          "en": "Cap reached. Next: the level 45 Assassin guide — Azphel board, gear, enchanting, stigma to 10+."
+        }
+      ],
+      "status": "multi-source",
+      "sources": [
+        "playnews-cap45",
+        "metabot-leveling"
+      ]
+    }
   ]
 }

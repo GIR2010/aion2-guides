@@ -36,7 +36,7 @@ const costRows = Array.from({ length: 9 }, (_, i) => ({
 }));
 ---
 
-<h3>{ru ? 'Стоимость уровней навыка' : 'Skill level costs'}</h3>
+<h3>{ru ? 'Стоимость уровней умения' : 'Skill level costs'}</h3>
 <div class="table-wrap">
   <table class="compact">
     <thead>
@@ -65,13 +65,13 @@ const costRows = Array.from({ length: 9 }, (_, i) => ({
   }
 </p>
 
-<h3>{ru ? 'С какого уровня персонажа доступен уровень навыка' : 'Character level required for a skill level'}</h3>
+<h3>{ru ? 'С какого уровня персонажа доступен уровень умения' : 'Character level required for a skill level'}</h3>
 <div class="table-wrap">
   <table class="compact skills">
     <thead>
       <tr>
         <th>#</th>
-        <th>{ru ? 'Навык' : 'Skill'}</th>
+        <th>{ru ? 'Умение' : 'Skill'}</th>
         <th>{ru ? 'Открытие' : 'Unlock'}</th>
         {milestonesLevels.map((l) => <th>{ru ? `Ур. ${l}` : `Lv. ${l}`}{l === 8 && '*'}</th>)}
       </tr>
@@ -95,7 +95,7 @@ const costRows = Array.from({ length: 9 }, (_, i) => ({
 <p class="muted small">
   {
     ru
-      ? '* На 8 уровне навыка открывается первая особенность. Бонусы «+N к навыку» с экипировки тоже считаются — с ними особенность откроется раньше.'
+      ? '* На 8 уровне умения открывается первая особенность. Бонусы «+N к умению» с экипировки тоже считаются — с ними особенность откроется раньше.'
       : '* The first specialization unlocks at skill level 8. “+N skill” bonuses from gear count too, so with them it unlocks earlier.'
   }
 </p>

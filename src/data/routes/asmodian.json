@@ -1,10 +1,74 @@
 {
   "faction": "asmodian",
-  "name": { "ru": "Асмодиане", "en": "Asmodians" },
+  "name": {
+    "ru": "Асмодиане",
+    "en": "Asmodians"
+  },
   "steps": [
-    { "fromLevel": 1, "toLevel": 9, "zone": { "ru": "Исхальген", "en": "Ishalgen" }, "notes": { "ru": "Стартовая зона. Только сюжет.", "en": "Starter zone. Story only." }, "status": "single-source", "sources": ["metabot-leveling"] },
-    { "fromLevel": 10, "toLevel": 29, "zone": { "ru": "Альтгард", "en": "Altgard" }, "notes": { "ru": "Ключевые квесты: «Finding Nemon» (10), «Imminent Threat» (20). Синие квесты — ради очков Daevanion.", "en": "Key quests: Finding Nemon (10), Imminent Threat (20). Blue quests for Daevanion Points." }, "status": "single-source", "sources": ["metabot-leveling"] },
-    { "fromLevel": 29, "toLevel": 39, "zone": { "ru": "Альтгард", "en": "Altgard" }, "notes": { "ru": "«Land of Rifts» (29). Самый медленный отрезок: сюжет даёт ~70% опыта — добирайте запечатанными данжами.", "en": "Land of Rifts (29). Slowest bracket: the story gives ~70% of XP — fill the gap with Sealed Dungeons." }, "status": "single-source", "sources": ["metabot-leveling"] },
-    { "fromLevel": 40, "toLevel": 45, "zone": { "ru": "Альтгард", "en": "Altgard" }, "notes": { "ru": "«The High Priest Awakens» (44), «Zikel's Core» (45). На 40–44 уходит ~70% всего опыта.", "en": "The High Priest Awakens (44), Zikel's Core (45). Levels 40–44 take ~70% of total XP." }, "status": "single-source", "sources": ["metabot-leveling", "fextralife-levels"] }
+    {
+      "fromLevel": 1,
+      "toLevel": 9,
+      "zone": {
+        "ru": "Исхальген",
+        "en": "Ishalgen"
+      },
+      "notes": {
+        "ru": "Стартовая зона. Только сюжет.",
+        "en": "Starter zone. Story only."
+      },
+      "status": "single-source",
+      "sources": [
+        "metabot-leveling"
+      ]
+    },
+    {
+      "fromLevel": 10,
+      "toLevel": 29,
+      "zone": {
+        "ru": "Альтгард",
+        "en": "Altgard"
+      },
+      "notes": {
+        "ru": "Ключевые задания Эпизода: «В поисках Немон» (10), «Надвигающаяся угроза» (20). Синие задания — ради очков Даэваниона.",
+        "en": "Key quests: Finding Nemon (10), Imminent Threat (20). Blue quests for Daevanion Points."
+      },
+      "status": "single-source",
+      "sources": [
+        "metabot-leveling"
+      ]
+    },
+    {
+      "fromLevel": 29,
+      "toLevel": 39,
+      "zone": {
+        "ru": "Альтгард",
+        "en": "Altgard"
+      },
+      "notes": {
+        "ru": "«Земля разломов» (29). Самый медленный отрезок: сюжет даёт ~70% опыта — добирайте запечатанными подземельями.",
+        "en": "Land of Rifts (29). Slowest bracket: the story gives ~70% of XP — fill the gap with Sealed Dungeons."
+      },
+      "status": "single-source",
+      "sources": [
+        "metabot-leveling"
+      ]
+    },
+    {
+      "fromLevel": 40,
+      "toLevel": 45,
+      "zone": {
+        "ru": "Альтгард",
+        "en": "Altgard"
+      },
+      "notes": {
+        "ru": "«Пробудившийся верховный клирик» (44), «Исток Джикела» (45). На 40–44 уходит ~70% всего опыта.",
+        "en": "The High Priest Awakens (44), Zikel's Core (45). Levels 40–44 take ~70% of total XP."
+      },
+      "status": "single-source",
+      "sources": [
+        "metabot-leveling",
+        "fextralife-levels"
+      ]
+    }
   ]
 }

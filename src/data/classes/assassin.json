@@ -1,7 +1,14 @@
 {
-  "name": { "ru": "Ассасин", "en": "Assassin" },
+  "name": {
+    "ru": "Убийца",
+    "en": "Assassin"
+  },
+  "gameClass": "ASSASSIN",
   "role": "melee-dps",
-  "weapon": { "ru": "Кинжалы", "en": "Daggers" },
+  "weapon": {
+    "ru": "Кинжалы",
+    "en": "Daggers"
+  },
   "difficulty": "hard",
   "order": 1,
   "summary": {
@@ -9,311 +16,1583 @@
     "en": "Burst from behind: engraves Insignias and detonates them, keeps enemies stunned. Many core hits strike up to 4 targets, so packs go down fast, but the class itself is fragile."
   },
   "skills": [
-    { "id": "quick-slice", "type": "active", "unlockLevel": 1, "cooldown": null, "mpCost": null,
-      "name": { "ru": "Быстрый разрез", "en": "Quick Slice" },
-      "effect": { "ru": "Урон врагам (макс. 4) в радиусе 4 м, восстанавливает 120 ОМ.", "en": "Damages up to 4 enemies within 4 m, restores 120 MP." },
+    {
+      "id": "quick-slice",
+      "gameId": 13010000,
+      "type": "active",
+      "unlockLevel": 1,
+      "cooldown": null,
+      "mpCost": null,
+      "name": {
+        "ru": "Быстрый разрез",
+        "en": "Quick Slice"
+      },
+      "effect": {
+        "ru": "Урон врагам (макс. 4) в радиусе 4 м, восстанавливает 100 ОМ.",
+        "en": "Damages up to 4 enemies within 4 m, restores 100 MP."
+      },
       "specs": [
-        { "level": 8, "text": { "ru": "Восстановление ОМ +20%", "en": "MP recovery +20%" } },
-        { "level": 8, "text": { "ru": "Поглощение 0.7% ОЗ", "en": "Absorbs 0.7% HP" } },
-        { "level": 8, "text": { "ru": "Шанс мультиудара +50% при попадании", "en": "Multi-hit chance +50% on hit" } },
-        { "level": 12, "text": { "ru": "Перезарядка [Взрыва эмблемы] −1 с", "en": "[Insignia Explosion] cooldown −1s" } },
-        { "level": 16, "text": { "ru": "Крит. удар, несмотря на блок и уклонение", "en": "Crits ignore Block and Evasion" } }
+        {
+          "level": 8,
+          "text": {
+            "ru": "Восстановление ОМ +20%",
+            "en": "+20% MP restored"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Поглощение 0.7% ОЗ",
+            "en": "Absorbs 0.7% HP"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Шанс мультиудара +50% при попадании",
+            "en": "+50% Multi-Hit on hit"
+          }
+        },
+        {
+          "level": 12,
+          "text": {
+            "ru": "Перезарядка [Взрыва эмблемы] −1 с",
+            "en": "[Insignia Explosion] cooldown −1s"
+          }
+        },
+        {
+          "level": 16,
+          "text": {
+            "ru": "Крит. удар, несмотря на блок и уклонение",
+            "en": "Ignores Block and Evasion and lands as a Critical Hit"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "savage-roar", "type": "active", "unlockLevel": 1, "cooldown": null, "mpCost": 120,
-      "name": { "ru": "Рев зверя", "en": "Savage Roar" },
-      "effect": { "ru": "Урон врагам (макс. 4) в радиусе 4 м, привязывает 1 эмблему на 10 с. СКР умений +20%.", "en": "Damages up to 4 enemies within 4 m, engraves 1 Insignia for 10s. Skill speed +20%." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "savage-roar",
+      "gameId": 13100000,
+      "type": "active",
+      "unlockLevel": 1,
+      "cooldown": null,
+      "mpCost": 120,
+      "name": {
+        "ru": "Рев зверя",
+        "en": "Savage Roar"
+      },
+      "effect": {
+        "ru": "Урон врагам (макс. 4) в радиусе 4 м и привязка 1 эмблемы на 10 с.",
+        "en": "Damages up to 4 enemies within 4 m and engraves 1 Insignia for 10s."
+      },
       "specs": [
-        { "level": 8, "text": { "ru": "Затрата ОМ −20%", "en": "MP cost −20%" } },
-        { "level": 8, "text": { "ru": "СКР умений +20%", "en": "Skill speed +20%" } },
-        { "level": 8, "text": { "ru": "Чем меньше целей попадания, тем больше эффект", "en": "Fewer targets hit — stronger effect" } },
-        { "level": 12, "text": { "ru": "Перезарядка [Удара из сумрака] −1 с", "en": "[Shadowstrike] cooldown −1s" } },
-        { "level": 16, "text": { "ru": "Притягивание целей поблизости", "en": "Pulls nearby targets" } }
+        {
+          "level": 8,
+          "text": {
+            "ru": "Затрата ОМ -20%",
+            "en": "-20% MP consumed"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "СКР умений +20%",
+            "en": "+20% Skill Speed"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Чем меньше целей попадания, тем больше увеличение урона (макс. до 12%)",
+            "en": "Deals up to 12% more damage when less targets are hit"
+          }
+        },
+        {
+          "level": 12,
+          "text": {
+            "ru": "Перезарядка [Удара из сумрака] −1 с",
+            "en": "[Shadowstrike] cooldown −1s"
+          }
+        },
+        {
+          "level": 16,
+          "text": {
+            "ru": "Притягивание целей поблизости при использовании [Хлестания хищника]",
+            "en": "Pulls nearby targets on using [Savage Smash]"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "shadowstrike", "type": "active", "unlockLevel": 1, "cooldown": 20, "mpCost": 150,
-      "name": { "ru": "Удар из сумрака", "en": "Shadowstrike" },
-      "effect": { "ru": "Рывок за цель в радиусе 20 м, урон, разворачивает и оглушает на 3 с.", "en": "Blinks behind a target within 20 m, damages it, turns it around and stuns for 3s." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "shadowstrike",
+      "gameId": 13070000,
+      "type": "active",
+      "unlockLevel": 1,
+      "cooldown": 20,
+      "mpCost": 150,
+      "name": {
+        "ru": "Удар из сумрака",
+        "en": "Shadowstrike"
+      },
+      "effect": {
+        "ru": "Рывок за цель в радиусе 20 м, урон, разворачивает и оглушает на 3 с.",
+        "en": "Blinks behind a target within 20 m, damages it, turns it around and stuns for 3s."
+      },
       "specs": [
-        { "level": 8, "text": { "ru": "Длительность Оглушения +1 с", "en": "Stun duration +1s" } },
-        { "level": 8, "text": { "ru": "Крит. урон +20% на 10 с", "en": "Crit damage +20% for 10s" } },
-        { "level": 8, "text": { "ru": "Шанс 50% наложить Запечатывание", "en": "50% chance to Seal" } },
-        { "level": 12, "text": { "ru": "Шанс 50% взять врага в плен на 5 с", "en": "50% chance to Capture for 5s" } },
-        { "level": 16, "text": { "ru": "Смена на массовое умение", "en": "Becomes an AoE skill" } }
+        {
+          "level": 8,
+          "text": {
+            "ru": "Длительность Оглушения +1 сек.",
+            "en": "+1s Stun duration"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Крит. урон +20% на 10 с",
+            "en": "Crit damage +20% for 10s"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Шанс 50% наложить Запечатывание",
+            "en": "50% chance to Seal"
+          }
+        },
+        {
+          "level": 12,
+          "text": {
+            "ru": "Шанс 50% взять врага в плен на 5 с",
+            "en": "50% chance to Capture for 5s"
+          }
+        },
+        {
+          "level": 16,
+          "text": {
+            "ru": "Смена на массовое умение",
+            "en": "Changes to AoE Skill"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "ambush", "type": "active", "unlockLevel": 3, "cooldown": 10, "mpCost": 100,
-      "name": { "ru": "Внезапное нападение", "en": "Ambush" },
-      "effect": { "ru": "Урон цели в радиусе 4 м. Со спины урон +30% и привязка 2 эмблем на 10 с.", "en": "Damages a target within 4 m. From behind: +30% damage and 2 Insignias for 10s." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "ambush",
+      "gameId": 13060000,
+      "type": "active",
+      "unlockLevel": 3,
+      "cooldown": 10,
+      "mpCost": 100,
+      "name": {
+        "ru": "Внезапное нападение",
+        "en": "Ambush"
+      },
+      "effect": {
+        "ru": "Урон цели в радиусе 4 м. При атаке с тыла урон +30%.",
+        "en": "Damages a target within 4 m. +30% damage as a back attack."
+      },
       "specs": [
-        { "level": 8, "text": { "ru": "Привязка 2 эмблем на 10 с при попадании", "en": "2 Insignias for 10s on hit" } },
-        { "level": 8, "text": { "ru": "Поглощение 3% ОЗ", "en": "Absorbs 3% HP" } },
-        { "level": 8, "text": { "ru": "Разрушение защитной оболочки при попадании", "en": "Breaks shields on hit" } },
-        { "level": 12, "text": { "ru": "Шанс 50% активировать [Удар торнадо]", "en": "50% chance to trigger [Whirlwind Slice]" } },
-        { "level": 16, "text": { "ru": "Непрерывное использование +2 раза", "en": "+2 consecutive uses" } }
+        {
+          "level": 8,
+          "text": {
+            "ru": "Привязка 2 эмблем на 10 с при попадании",
+            "en": "2 Insignias for 10s on hit"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Поглощение 3% ОЗ",
+            "en": "Absorbs 3% HP"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Разрушение защитной оболочки при попадании",
+            "en": "Breaks Protective Shields on hit"
+          }
+        },
+        {
+          "level": 12,
+          "text": {
+            "ru": "Шанс 50% активировать [Удар торнадо] при попадании",
+            "en": "50% chance to trigger [Whirlwind Slice] on hit"
+          }
+        },
+        {
+          "level": 16,
+          "text": {
+            "ru": "Непрерывное использование +2 р.",
+            "en": "+2 consecutive uses"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "heart-gore", "type": "active", "unlockLevel": 4, "cooldown": 5, "mpCost": null,
-      "name": { "ru": "Пронзание сердца", "en": "Heart Gore" },
-      "effect": { "ru": "Доступно после крит. попадания: урон врагам (макс. 4) в радиусе 4 м, +100 ОМ. Чем меньше целей, тем выше шанс крита (до 20%).", "en": "Available after a crit: damages up to 4 enemies within 4 m, +100 MP. Fewer targets — higher crit chance (up to 20%)." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "heart-gore",
+      "gameId": 13350000,
+      "type": "active",
+      "unlockLevel": 4,
+      "cooldown": 5,
+      "mpCost": null,
+      "name": {
+        "ru": "Пронзание сердца",
+        "en": "Heart Gore"
+      },
+      "effect": {
+        "ru": "Доступно после крит. попадания: урон врагам (макс. 4) в радиусе 4 м, +100 ОМ.",
+        "en": "Available after a crit: damages up to 4 enemies within 4 m, +100 MP."
+      },
       "specs": [
-        { "level": 8, "text": { "ru": "Поглощение 0.7% ОЗ", "en": "Absorbs 0.7% HP" } },
-        { "level": 8, "text": { "ru": "Привязка 1 эмблемы на 10 с при попадании", "en": "1 Insignia for 10s on hit" } },
-        { "level": 8, "text": { "ru": "Увеличение шанса крит. удара", "en": "Higher crit chance" } },
-        { "level": 12, "text": { "ru": "Гарантированный мультиудар при попадании", "en": "Guaranteed multi-hit" } },
-        { "level": 16, "text": { "ru": "Завершение перезарядки [Пронзания сердца]", "en": "Resets [Heart Gore] cooldown" } }
+        {
+          "level": 8,
+          "text": {
+            "ru": "Поглощение 0.7% ОЗ",
+            "en": "Absorbs 0.7% HP"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Привязка 1 эмблемы на 10 с при попадании",
+            "en": "1 Insignia for 10s on hit"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Увеличение шанса крит. удара (макс. до 20%) с увелич. числа целей попадания",
+            "en": "Up to +20% Critical Hit when less targets hit"
+          }
+        },
+        {
+          "level": 12,
+          "text": {
+            "ru": "Гарантир. мультиудар при попадании",
+            "en": "Multi-Hit on hit"
+          }
+        },
+        {
+          "level": 16,
+          "text": {
+            "ru": "Завершение перезарядки [Пронзания сердца] при попадании крит. ударом",
+            "en": "Resets [Heart Gore] cooldown on landing a Critical Hit"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "storm-rampage", "type": "active", "unlockLevel": 5, "cooldown": null, "mpCost": null,
-      "name": { "ru": "Неистовый шквал", "en": "Storm Rampage" },
-      "effect": { "ru": "Урон цели в состоянии Ошеломления в радиусе 4 м.", "en": "Damages a Staggered target within 4 m." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "storm-rampage",
+      "gameId": 13340000,
+      "type": "active",
+      "unlockLevel": 5,
+      "cooldown": null,
+      "mpCost": null,
+      "name": {
+        "ru": "Неистовый шквал",
+        "en": "Storm Rampage"
+      },
+      "effect": {
+        "ru": "Урон цели в состоянии Ошеломления в радиусе 4 м.",
+        "en": "Damages a Staggered target within 4 m."
+      },
       "specs": [
-        { "level": 8, "text": { "ru": "Поглощение 5% ОЗ", "en": "Absorbs 5% HP" } },
-        { "level": 8, "text": { "ru": "Восстановление 120 ОМ при попадании", "en": "Restores 120 MP on hit" } },
-        { "level": 8, "text": { "ru": "Замена на умение с возможностью…", "en": "Replaced by a variant skill" } },
-        { "level": 12, "text": { "ru": "Гарантированный мультиудар при попадании", "en": "Guaranteed multi-hit" } },
-        { "level": 16, "text": { "ru": "Перезарядка всех умений −1 с", "en": "All cooldowns −1s" } }
+        {
+          "level": 8,
+          "text": {
+            "ru": "Поглощение 5% ОЗ",
+            "en": "Absorbs 5% HP"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Восстановление 120 ОМ при попадании",
+            "en": "Restores 120 MP on hit"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Замена на умение с возможностью перемещения",
+            "en": "Changes to mobile skill"
+          }
+        },
+        {
+          "level": 12,
+          "text": {
+            "ru": "Гарантир. мультиудар при попадании",
+            "en": "Multi-Hit on hit"
+          }
+        },
+        {
+          "level": 16,
+          "text": {
+            "ru": "Перезарядка всех умений −1 с",
+            "en": "All cooldowns −1s"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "whirlwind-slice", "type": "active", "unlockLevel": 7, "cooldown": 10, "mpCost": null,
-      "name": { "ru": "Удар торнадо", "en": "Whirlwind Slice" },
-      "effect": { "ru": "После успешного уклонения: урон цели в радиусе 4 м, шанс 40% развернуть и оглушить на 3 с (по NPC — гарантированно).", "en": "After a successful dodge: damages a target within 4 m, 40% chance to turn and stun for 3s (guaranteed vs NPCs)." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "whirlwind-slice",
+      "gameId": 13210000,
+      "type": "active",
+      "unlockLevel": 7,
+      "cooldown": 10,
+      "mpCost": null,
+      "name": {
+        "ru": "Удар торнадо",
+        "en": "Whirlwind Slice"
+      },
+      "effect": {
+        "ru": "После успешного уклонения: урон цели в радиусе 4 м, шанс 40% развернуть и оглушить на 3 с (по NPC — гарантированно).",
+        "en": "After a successful dodge: damages a target within 4 m, 40% chance to turn and stun for 3s (guaranteed vs NPCs)."
+      },
       "specs": [
-        { "level": 8, "text": { "ru": "Шанс мультиудара +50% при попадании", "en": "Multi-hit chance +50% on hit" } },
-        { "level": 8, "text": { "ru": "Смена на урон по области", "en": "Becomes AoE" } },
-        { "level": 8, "text": { "ru": "Дальность атаки +16 м", "en": "Range +16 m" } },
-        { "level": 12, "text": { "ru": "Шанс Оглушения +20%", "en": "Stun chance +20%" } },
-        { "level": 16, "text": { "ru": "Шанс 25% сбросить перезарядку", "en": "25% chance to reset cooldown" } }
+        {
+          "level": 8,
+          "text": {
+            "ru": "Шанс мультиудара +50% при попадании",
+            "en": "+50% Multi-Hit on hit"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Смена на урон по области",
+            "en": "Changes to AoE damage"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Дальность атаки +16 м",
+            "en": "+16m range"
+          }
+        },
+        {
+          "level": 12,
+          "text": {
+            "ru": "Шанс Оглушения +20%",
+            "en": "+20% Stun Chance"
+          }
+        },
+        {
+          "level": 16,
+          "text": {
+            "ru": "Шанс 25% сбросить время перезарядки [Удара торнадо] при успешном уклонении",
+            "en": "25% chance to reset [Whirlwind Slice] cooldown on Evasion"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "flash-slice", "type": "active", "unlockLevel": 8, "cooldown": 10, "mpCost": 50,
-      "name": { "ru": "Ослепляющий разрез", "en": "Flash Slice" },
-      "effect": { "ru": "Перемещение на другую сторону от цели, урон врагам (макс. 4), шанс 40% ослепить на 3 с (по NPC — гарантированно).", "en": "Moves to the far side of the target, damages up to 4 enemies, 40% chance to Blind for 3s (guaranteed vs NPCs)." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "flash-slice",
+      "gameId": 13050000,
+      "type": "active",
+      "unlockLevel": 8,
+      "cooldown": 10,
+      "mpCost": 50,
+      "name": {
+        "ru": "Ослепляющий разрез",
+        "en": "Flash Slice"
+      },
+      "effect": {
+        "ru": "Перемещение на другую сторону от цели, урон врагам (макс. 4), шанс 40% ослепить на 3 с (по NPC — гарантированно).",
+        "en": "Moves to the far side of the target, damages up to 4 enemies, 40% chance to Blind for 3s (guaranteed vs NPCs)."
+      },
       "specs": [
-        { "level": 8, "text": { "ru": "Длительность Слепоты +2 с", "en": "Blind duration +2s" } },
-        { "level": 8, "text": { "ru": "Дальность атаки +6 м", "en": "Range +6 m" } },
-        { "level": 8, "text": { "ru": "Чем больше целей попадания, тем больше эффект", "en": "More targets hit — stronger effect" } },
-        { "level": 12, "text": { "ru": "Непрерывное использование +1 раз", "en": "+1 consecutive use" } },
-        { "level": 16, "text": { "ru": "Шанс 50% развернуть и оглушить", "en": "50% chance to turn and stun" } }
+        {
+          "level": 8,
+          "text": {
+            "ru": "Длительность Слепоты +2 сек.",
+            "en": "+2s Blind duration"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Дальность атаки +6 м",
+            "en": "+6m Range"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Чем больше целей попадания, тем больше увеличение урона (макс. до 20%)",
+            "en": "Up to +20% damage when more targets hit"
+          }
+        },
+        {
+          "level": 12,
+          "text": {
+            "ru": "Непрерывное использование +1 раз",
+            "en": "+1 consecutive use"
+          }
+        },
+        {
+          "level": 16,
+          "text": {
+            "ru": "Шанс 50% развернуть и оглушить",
+            "en": "50% chance to turn and stun"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "infiltrate", "type": "active", "unlockLevel": 10, "cooldown": 20, "mpCost": null,
-      "name": { "ru": "Вторжение", "en": "Infiltrate" },
-      "effect": { "ru": "При [Срочном уклонении] или в полёте: рывок за спину цели в радиусе 10 м, урон, шанс 50% ослепить на 3 с (по NPC — гарантированно).", "en": "During an emergency dodge or flight: blinks behind a target within 10 m, damages it, 50% chance to Blind for 3s (guaranteed vs NPCs)." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "infiltrate",
+      "gameId": 13360000,
+      "type": "active",
+      "unlockLevel": 10,
+      "cooldown": 20,
+      "mpCost": null,
+      "name": {
+        "ru": "Вторжение",
+        "en": "Infiltrate"
+      },
+      "effect": {
+        "ru": "При [Срочном уклонении] или в полёте: рывок за спину цели в радиусе 10 м, урон, шанс 50% ослепить на 3 с (по NPC — гарантированно).",
+        "en": "During an emergency dodge or flight: blinks behind a target within 10 m, damages it, 50% chance to Blind for 3s (guaranteed vs NPCs)."
+      },
       "specs": [
-        { "level": 8, "text": { "ru": "Восстановление 300 ОД при попадании", "en": "Restores 300 FP on hit" } },
-        { "level": 8, "text": { "ru": "Дальность [Вторжения] +10 м", "en": "[Infiltrate] range +10 m" } },
-        { "level": 8, "text": { "ru": "Разрушение защитной оболочки", "en": "Breaks shields" } },
-        { "level": 12, "text": { "ru": "Добавление 2-й комбинации", "en": "Adds a 2nd combo" } },
-        { "level": 16, "text": { "ru": "Шанс Ослепления от [Вторжения] +…", "en": "[Infiltrate] Blind chance up" } }
+        {
+          "level": 8,
+          "text": {
+            "ru": "Восстановление 300 ОД при попадании",
+            "en": "Restores 300 FP on hit"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Дальность атаки [Вторжения] +10 м",
+            "en": "+10m [Infiltrate] range"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Разрушение защитной оболочки при попадании [Вторжением]",
+            "en": "Breaks Protective Shields on landing [Infiltrate]"
+          }
+        },
+        {
+          "level": 12,
+          "text": {
+            "ru": "Добавление 2-й комбинации [Скрытная атака]",
+            "en": "Adds [Dark Strike] Chain Skill"
+          }
+        },
+        {
+          "level": 16,
+          "text": {
+            "ru": "Шанс Ослепления от [Вторжения] +20%",
+            "en": "+20% [Infiltrate] Blind Chance"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "shadow-fall", "type": "active", "unlockLevel": 12, "cooldown": 20, "mpCost": 100,
-      "name": { "ru": "Бросок тени", "en": "Shadow Fall" },
-      "effect": { "ru": "Рывок к оглушённой цели в радиусе 10 м, урон и сбивание с ног на 3 с. С шансом 5% срабатывает по цели с иммунитетом к обездвиживанию.", "en": "Dashes to a stunned target within 10 m, damages it and knocks it down for 3s. 5% chance to work on CC-immune targets." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "shadow-fall",
+      "gameId": 13220000,
+      "type": "active",
+      "unlockLevel": 12,
+      "cooldown": 20,
+      "mpCost": 100,
+      "name": {
+        "ru": "Бросок тени",
+        "en": "Shadow Fall"
+      },
+      "effect": {
+        "ru": "Рывок к оглушённой цели в радиусе 10 м, урон и сбивание с ног на 3 с. С шансом 5% срабатывает по цели с иммунитетом к обездвиживанию.",
+        "en": "Dashes to a stunned target within 10 m, damages it and knocks it down for 3s. 5% chance to work on CC-immune targets."
+      },
       "specs": [
-        { "level": 8, "text": { "ru": "Поглощение 10% ОЗ", "en": "Absorbs 10% HP" } },
-        { "level": 8, "text": { "ru": "Привязка 3 эмблем на 10 с при попадании", "en": "3 Insignias for 10s on hit" } },
-        { "level": 8, "text": { "ru": "Перезарядка −5 с", "en": "Cooldown −5s" } },
-        { "level": 12, "text": { "ru": "Длительность Сбивания с ног +1 с", "en": "Knockdown +1s" } },
-        { "level": 16, "text": { "ru": "Можно использовать на ослеплённой цели", "en": "Usable on Blinded targets" } }
+        {
+          "level": 8,
+          "text": {
+            "ru": "Поглощение 10% ОЗ",
+            "en": "Absorbs 10% HP"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Привязка 3 эмблем на 10 с при попадании",
+            "en": "3 Insignias for 10s on hit"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Перезарядка -5 сек.",
+            "en": "-5s cooldown"
+          }
+        },
+        {
+          "level": 12,
+          "text": {
+            "ru": "Длительность Сбивания с ног +1 сек.",
+            "en": "+1s Knockdown duration"
+          }
+        },
+        {
+          "level": 16,
+          "text": {
+            "ru": "Можно использовать на ослепленной цели",
+            "en": "Can be used on targets afflicted with Blind"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "insignia-explosion", "type": "active", "unlockLevel": 14, "cooldown": 10, "mpCost": null,
-      "name": { "ru": "Взрыв эмблемы", "en": "Insignia Explosion" },
-      "effect": { "ru": "Урон врагам (макс. 4) в радиусе 4 м вокруг цели (до 20 м) и оглушение на 3 с. Урон и шанс оглушения растут с числом зарядов эмблемы (1–5 зарядов: оглушение 10–50%, по NPC шанс ×2).", "en": "Damages up to 4 enemies within 4 m of a target (up to 20 m away) and stuns for 3s. Damage and stun chance scale with Insignia charges (1–5: 10–50% stun, ×2 vs NPCs)." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "insignia-explosion",
+      "gameId": 13130000,
+      "type": "active",
+      "unlockLevel": 14,
+      "cooldown": 10,
+      "mpCost": null,
+      "name": {
+        "ru": "Взрыв эмблемы",
+        "en": "Insignia Explosion"
+      },
+      "effect": {
+        "ru": "Урон врагам (макс. 4) в радиусе 4 м вокруг цели (до 20 м) и оглушение на 3 с. Урон и шанс оглушения растут с числом зарядов эмблемы (1–5 зарядов: оглушение 10–50%, по NPC шанс ×2).",
+        "en": "Damages up to 4 enemies within 4 m of a target (up to 20 m away) and stuns for 3s. Damage and stun chance scale with Insignia charges (1–5: 10–50% stun, ×2 vs NPCs)."
+      },
       "specs": [
-        { "level": 8, "text": { "ru": "Добавление эффекта вращения", "en": "Adds a spin effect" } },
-        { "level": 8, "text": { "ru": "Шанс мультиудара +50% при попадании", "en": "Multi-hit chance +50% on hit" } },
-        { "level": 8, "text": { "ru": "Сохранение привязки 2 эмблем после взрыва", "en": "Keeps 2 Insignias after detonation" } },
-        { "level": 12, "text": { "ru": "Длительность Оглушения +1 с", "en": "Stun duration +1s" } },
-        { "level": 16, "text": { "ru": "Перезарядка −3 с", "en": "Cooldown −3s" } }
+        {
+          "level": 8,
+          "text": {
+            "ru": "Добавление эффекта вращения",
+            "en": "Adds rotate effect"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Шанс мультиудара +50% при попадании",
+            "en": "+50% Multi-Hit on hit"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Сохранение привязки 2 эмблем после [Взрыва эмблемы]",
+            "en": "Keep 2 stacks of Insignias after [Insignia Explosion]"
+          }
+        },
+        {
+          "level": 12,
+          "text": {
+            "ru": "Длительность Оглушения +1 сек.",
+            "en": "+1s Stun duration"
+          }
+        },
+        {
+          "level": 16,
+          "text": {
+            "ru": "Перезарядка -3 сек.",
+            "en": "-3s cooldown"
+          }
+        }
       ],
-      "note": { "ru": "Перезарядка 10 с — по данным metabot.gg, на скриншоте не видна.", "en": "10s cooldown is from metabot.gg, not visible on the screenshot." },
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "defiance", "type": "active", "unlockLevel": 16, "cooldown": 60, "mpCost": null,
-      "name": { "ru": "Снятие шока", "en": "Defiance" },
-      "effect": { "ru": "Снимает Оглушение, Сбивание с ног, Воздушные оковы, захват, Заморозку и Ужас; на 5 с даёт Непреклонность (иммунитет к негативным эффектам). Сокращение перезарядки не действует.", "en": "Removes Stun, Knockdown, Aerial Bind, Capture, Freeze and Fear; grants Tenacity (immunity to debuffs) for 5s. Cooldown reduction does not apply." },
+      "note": {
+        "ru": "Перезарядка 10 с — по данным metabot.gg, на скриншоте не видна.",
+        "en": "10s cooldown is from metabot.gg, not visible on the screenshot."
+      },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "defiance",
+      "gameId": 13260000,
+      "type": "active",
+      "unlockLevel": 16,
+      "cooldown": 60,
+      "mpCost": null,
+      "name": {
+        "ru": "Снятие шока",
+        "en": "Defiance"
+      },
+      "effect": {
+        "ru": "Снимает Оглушение, Сбивание с ног, Воздушные оковы, захват, Заморозку и Ужас; на 5 с даёт Непреклонность (иммунитет к негативным эффектам). Сокращение перезарядки не действует.",
+        "en": "Removes Stun, Knockdown, Aerial Bind, Capture, Freeze and Fear; grants Tenacity (immunity to debuffs) for 5s. Cooldown reduction does not apply."
+      },
       "specs": [
-        { "level": 8, "text": { "ru": "Добавляет 2-е комбо [Ураганный…]", "en": "Adds a 2nd combo" } },
-        { "level": 8, "text": { "ru": "Доп. эффект при использовании (1)", "en": "Extra effect on use (1)" } },
-        { "level": 8, "text": { "ru": "Доп. эффект при использовании (2)", "en": "Extra effect on use (2)" } },
-        { "level": 12, "text": { "ru": "Длительность Непреклонности +2 с", "en": "Tenacity +2s" } },
-        { "level": 16, "text": { "ru": "Стойкость к урону в PvE +50%…", "en": "PvE damage tolerance +50%…" } }
+        {
+          "level": 8,
+          "text": {
+            "ru": "Добавляет 2-ное комбо [Ураганный взмах]",
+            "en": "Adds [Storm Slice] Chain Skill"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Доп. эффект при использовании (1)",
+            "en": "Extra effect on use (1)"
+          }
+        },
+        {
+          "level": 8,
+          "text": {
+            "ru": "Доп. эффект при использовании (2)",
+            "en": "Extra effect on use (2)"
+          }
+        },
+        {
+          "level": 12,
+          "text": {
+            "ru": "Длительность Непреклонности +2 сек.",
+            "en": "+2s Tenacity duration"
+          }
+        },
+        {
+          "level": 16,
+          "text": {
+            "ru": "Стойкость к урону в PvE +50%…",
+            "en": "PvE damage tolerance +50%…"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-
-    { "id": "heightened-sixth-sense", "type": "passive", "unlockLevel": 1, "cooldown": null, "mpCost": null,
-      "name": { "ru": "Шестое чувство", "en": "Heightened Sixth Sense" },
-      "effect": { "ru": "УКЛ +200, ОЗ +150, макс. ОЗ +6%; при уклонении восстанавливает 85–102 ОЗ (раз в 3 с). Значения для ур. 1.", "en": "Evasion +200, HP +150, max HP +6%; heals 85–102 HP on dodge (3s cooldown). Values at level 1." },
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "exploit-weakness", "type": "passive", "unlockLevel": 6, "cooldown": null, "mpCost": null,
-      "name": { "ru": "Выжидание момента", "en": "Exploit Weakness" },
-      "effect": { "ru": "Крит +140. Шанс 25% поднять АТК на 7.5% на 10 с; при крите шанс 7% призвать до 5 двойников, каждый бьёт и накладывает эмблему. Значения для ур. 5.", "en": "Crit +140. 25% chance for +7.5% Attack for 10s; on crit, 7% chance to summon up to 5 clones that hit and engrave an Insignia. Values at level 5." },
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "apply-poison", "type": "passive", "unlockLevel": 9, "cooldown": null, "mpCost": null,
-      "name": { "ru": "Нанесение яда", "en": "Apply Poison" },
-      "effect": { "ru": "Шанс 15% при попадании: −12% получаемого исцеления цели и Отравление на 10 с (44–46 урона в секунду). Значения для ур. 1.", "en": "15% chance on hit: −12% healing received and Poison for 10s (44–46 damage per second). Values at level 1." },
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "rear-smite", "type": "passive", "unlockLevel": 11, "cooldown": null, "mpCost": null,
-      "name": { "ru": "Удар с тыла", "en": "Rear Smite" },
-      "effect": { "ru": "Урон от атаки с тыла +5%, урон в PvE +5%, в PvP +2.5%. Значения для ур. 5.", "en": "Back attack damage +5%, PvE damage +5%, PvP damage +2.5%. Values at level 5." },
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "assault-stance", "type": "passive", "unlockLevel": 13, "cooldown": null, "mpCost": null,
-      "name": { "ru": "Стойка нападения", "en": "Assault Stance" },
-      "effect": { "ru": "Крит. урон +10%. Значение для ур. 5.", "en": "Crit damage +10%. Value at level 5." },
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "impact-hit", "type": "passive", "unlockLevel": 15, "cooldown": null, "mpCost": null,
-      "name": { "ru": "Попадание шоком", "en": "Impact Hit" },
-      "effect": { "ru": "Попадание шоковыми эффектами +11.2%, Мощный удар +0.3%. Значения для ур. 1.", "en": "Impact effect hit +11.2%, Mighty Hit +0.3%. Values at level 1." },
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "ambush-stance", "type": "passive", "unlockLevel": 17, "cooldown": null, "mpCost": null,
-      "name": { "ru": "Внезапная атака", "en": "Ambush Stance" },
-      "effect": { "ru": "После Рывка или умений перемещения на 10 с: шанс 50% нанести 297–303 доп. урона при попадании. Значения для ур. 4.", "en": "For 10s after a dash or movement skill: 50% chance to deal 297–303 extra damage on hit. Values at level 4." },
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "defense-break", "type": "passive", "unlockLevel": 21, "cooldown": null, "mpCost": null,
-      "name": { "ru": "Брешь в защите", "en": "Defense Break" },
-      "effect": { "ru": "Попадание по цели под шоковым эффектом (оглушение, сбивание и т. п.): ЗЩТ цели −20% и сопротивление негативным эффектам −15% на 10 с (раз в 20 с). Значения для ур. 5.", "en": "Hitting a target under an impact effect (stun, knockdown, etc.): −20% Defense and −15% debuff resistance for 10s (20s cooldown). Values at level 5." },
-      "note": { "ru": "Уровень открытия под вопросом: на 22 уровне навык уже 4-го уровня, а по правилу прокачки это возможно, только если он открывается не позже 13-го уровня.", "en": "Unlock level is questionable: at character level 22 the skill is already level 4, which the leveling rule allows only if it unlocks at 13 or earlier." },
-      "status": "single-source", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "revitalization-contract", "type": "passive", "unlockLevel": 23, "cooldown": null, "mpCost": null,
-      "name": { "ru": "Контракт оживления", "en": "Revitalization Contract" },
-      "effect": { "ru": "Сопротивление негативным эффектам +17%; под контролем +10% ещё на 5 с (до 10 раз). При ОЗ ≤ 10% мгновенно восстанавливает 35% ОЗ (раз в минуту).", "en": "Debuff resistance +17%; +10% more for 5s when hit while controlled (stacks 10×). At ≤10% HP instantly restores 35% HP (once per minute)." },
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "determination", "type": "passive", "unlockLevel": 25, "cooldown": null, "mpCost": null,
-      "name": { "ru": "Готовность", "en": "Determination" },
-      "effect": { "ru": "+285–291 урона при каждом попадании по цели с ОЗ 30% и ниже (раз в 1 с). Значения для ур. 1.", "en": "+285–291 damage per hit on targets at 30% HP or lower (1s cooldown). Values at level 1." },
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-
-    { "id": "savage-fang", "type": "stigma", "unlockLevel": 22, "cooldown": 60, "mpCost": 200,
-      "name": { "ru": "Клык хищника", "en": "Savage Fang" },
-      "effect": { "ru": "Урон врагам (макс. 4) в радиусе 4 м и привязка 5 эмблем на 10 с.", "en": "Damages up to 4 enemies within 4 m and engraves 5 Insignias for 10s." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "heightened-sixth-sense",
+      "gameId": 13710000,
+      "type": "passive",
+      "unlockLevel": 1,
+      "cooldown": null,
+      "mpCost": null,
+      "name": {
+        "ru": "Шестое чувство",
+        "en": "Heightened Sixth Sense"
+      },
+      "effect": {
+        "ru": "УКЛ +200, ОЗ +150, макс. ОЗ +6%; при уклонении восстанавливает 85–102 ОЗ (раз в 3 с). Значения для ур. 1.",
+        "en": "Evasion +200, HP +150, max HP +6%; heals 85–102 HP on dodge (3s cooldown). Values at level 1."
+      },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "exploit-weakness",
+      "gameId": 13720000,
+      "type": "passive",
+      "unlockLevel": 6,
+      "cooldown": null,
+      "mpCost": null,
+      "name": {
+        "ru": "Выжидание момента",
+        "en": "Exploit Weakness"
+      },
+      "effect": {
+        "ru": "Крит +140. Шанс 25% поднять АТК на 7.5% на 10 с; при крите шанс 7% призвать до 5 двойников, каждый бьёт и накладывает эмблему. Значения для ур. 5.",
+        "en": "Crit +140. 25% chance for +7.5% Attack for 10s; on crit, 7% chance to summon up to 5 clones that hit and engrave an Insignia. Values at level 5."
+      },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "apply-poison",
+      "gameId": 13730000,
+      "type": "passive",
+      "unlockLevel": 9,
+      "cooldown": null,
+      "mpCost": null,
+      "name": {
+        "ru": "Нанесение яда",
+        "en": "Apply Poison"
+      },
+      "effect": {
+        "ru": "Шанс 15% при попадании: −12% получаемого исцеления цели и Отравление на 10 с (44–46 урона в секунду). Значения для ур. 1.",
+        "en": "15% chance on hit: −12% healing received and Poison for 10s (44–46 damage per second). Values at level 1."
+      },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "rear-smite",
+      "gameId": 13740000,
+      "type": "passive",
+      "unlockLevel": 11,
+      "cooldown": null,
+      "mpCost": null,
+      "name": {
+        "ru": "Удар с тыла",
+        "en": "Rear Smite"
+      },
+      "effect": {
+        "ru": "Урон от атаки с тыла +5%, урон в PvE +5%, в PvP +2.5%. Значения для ур. 5.",
+        "en": "Back attack damage +5%, PvE damage +5%, PvP damage +2.5%. Values at level 5."
+      },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "assault-stance",
+      "gameId": 13750000,
+      "type": "passive",
+      "unlockLevel": 13,
+      "cooldown": null,
+      "mpCost": null,
+      "name": {
+        "ru": "Стойка нападения",
+        "en": "Assault Stance"
+      },
+      "effect": {
+        "ru": "Крит. урон +10%. Значение для ур. 5.",
+        "en": "Crit damage +10%. Value at level 5."
+      },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "impact-hit",
+      "gameId": 13760000,
+      "type": "passive",
+      "unlockLevel": 15,
+      "cooldown": null,
+      "mpCost": null,
+      "name": {
+        "ru": "Попадание шоком",
+        "en": "Impact Hit"
+      },
+      "effect": {
+        "ru": "Попадание шоковыми эффектами +11.2%, Мощный удар +0.3%. Значения для ур. 1.",
+        "en": "Impact effect hit +11.2%, Mighty Hit +0.3%. Values at level 1."
+      },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "ambush-stance",
+      "gameId": 13770000,
+      "type": "passive",
+      "unlockLevel": 17,
+      "cooldown": null,
+      "mpCost": null,
+      "name": {
+        "ru": "Внезапная атака",
+        "en": "Ambush Stance"
+      },
+      "effect": {
+        "ru": "После Рывка или умений перемещения на 10 с: шанс 50% нанести 297–303 доп. урона при попадании. Значения для ур. 4.",
+        "en": "For 10s after a dash or movement skill: 50% chance to deal 297–303 extra damage on hit. Values at level 4."
+      },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "defense-break",
+      "gameId": 13780000,
+      "type": "passive",
+      "unlockLevel": 21,
+      "cooldown": null,
+      "mpCost": null,
+      "name": {
+        "ru": "Брешь в защите",
+        "en": "Defense Break"
+      },
+      "effect": {
+        "ru": "Попадание по цели под шоковым эффектом (оглушение, сбивание и т. п.): ЗЩТ цели −20% и сопротивление негативным эффектам −15% на 10 с (раз в 20 с). Значения для ур. 5.",
+        "en": "Hitting a target under an impact effect (stun, knockdown, etc.): −20% Defense and −15% debuff resistance for 10s (20s cooldown). Values at level 5."
+      },
+      "note": {
+        "ru": "Уровень открытия под вопросом: на 22 уровне навык уже 4-го уровня, а по правилу прокачки это возможно, только если он открывается не позже 13-го уровня.",
+        "en": "Unlock level is questionable: at character level 22 the skill is already level 4, which the leveling rule allows only if it unlocks at 13 or earlier."
+      },
+      "status": "single-source",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "revitalization-contract",
+      "gameId": 13790000,
+      "type": "passive",
+      "unlockLevel": 23,
+      "cooldown": null,
+      "mpCost": null,
+      "name": {
+        "ru": "Контракт оживления",
+        "en": "Revitalization Contract"
+      },
+      "effect": {
+        "ru": "Сопротивление негативным эффектам +17%; под контролем +10% ещё на 5 с (до 10 раз). При ОЗ ≤ 10% мгновенно восстанавливает 35% ОЗ (раз в минуту).",
+        "en": "Debuff resistance +17%; +10% more for 5s when hit while controlled (stacks 10×). At ≤10% HP instantly restores 35% HP (once per minute)."
+      },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "determination",
+      "gameId": 13800000,
+      "type": "passive",
+      "unlockLevel": 25,
+      "cooldown": null,
+      "mpCost": null,
+      "name": {
+        "ru": "Готовность",
+        "en": "Determination"
+      },
+      "effect": {
+        "ru": "+285–291 урона при каждом попадании по цели с ОЗ 30% и ниже (раз в 1 с). Значения для ур. 1.",
+        "en": "+285–291 damage per hit on targets at 30% HP or lower (1s cooldown). Values at level 1."
+      },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "savage-fang",
+      "gameId": 13270000,
+      "type": "stigma",
+      "unlockLevel": 22,
+      "cooldown": 60,
+      "mpCost": 200,
+      "name": {
+        "ru": "Клык хищника",
+        "en": "Savage Fang"
+      },
+      "effect": {
+        "ru": "Урон врагам (макс. 4) в радиусе 4 м и привязка 5 эмблем на 10 с.",
+        "en": "Damages up to 4 enemies within 4 m and engraves 5 Insignias for 10s."
+      },
       "specs": [
-        { "level": 5, "text": { "ru": "Чем больше целей попадания, тем больше эффект", "en": "More targets hit — stronger effect" } },
-        { "level": 10, "text": { "ru": "Урон по шкале Ошеломления +50", "en": "Stagger damage +50" } },
-        { "level": 15, "text": { "ru": "Урон в PvE +10%…", "en": "PvE damage +10%…" } },
-        { "level": 20, "text": { "ru": "Гарантированный крит при попадании", "en": "Guaranteed crit on hit" } }
+        {
+          "level": 5,
+          "text": {
+            "ru": "Чем больше целей попадания, тем больше увеличение урона (макс. до 20%)",
+            "en": "Up to +20% damage when more targets hit"
+          }
+        },
+        {
+          "level": 10,
+          "text": {
+            "ru": "Урон по шкале Ошеломления +50 ед.",
+            "en": "+50 Stagger Gauge Damage"
+          }
+        },
+        {
+          "level": 15,
+          "text": {
+            "ru": "Урон в PvE +10%…",
+            "en": "PvE damage +10%…"
+          }
+        },
+        {
+          "level": 20,
+          "text": {
+            "ru": "Гарантир. крит. удар при попадании",
+            "en": "Critical Hit on hit"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "swift-contract", "type": "stigma", "unlockLevel": 22, "cooldown": 60, "mpCost": null,
-      "name": { "ru": "Обет ускорения", "en": "Swift Contract" },
-      "effect": { "ru": "СКР боя +20% на 10 с. Можно использовать в движении.", "en": "Combat speed +20% for 10s. Usable while moving." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "swift-contract",
+      "gameId": 13390000,
+      "type": "stigma",
+      "unlockLevel": 22,
+      "cooldown": 60,
+      "mpCost": null,
+      "name": {
+        "ru": "Обет ускорения",
+        "en": "Swift Contract"
+      },
+      "effect": {
+        "ru": "СКР боя +20% на 10 с. Можно использовать в движении.",
+        "en": "Combat speed +20% for 10s. Usable while moving."
+      },
       "specs": [
-        { "level": 5, "text": { "ru": "Затрата ОМ −20% во время действия", "en": "MP cost −20% while active" } },
-        { "level": 10, "text": { "ru": "Усиление [Удара с тыла] во время действия", "en": "Boosts [Rear Smite] while active" } },
-        { "level": 15, "text": { "ru": "Усиление [Стойки нападения] во время действия", "en": "Boosts [Assault Stance] while active" } },
-        { "level": 20, "text": { "ru": "+10% к СКР боя", "en": "+10% combat speed" } }
+        {
+          "level": 5,
+          "text": {
+            "ru": "Затрата ОМ −20% во время действия",
+            "en": "MP cost −20% while active"
+          }
+        },
+        {
+          "level": 10,
+          "text": {
+            "ru": "Эффект [Удара с тыла] во время действия умения x1,5",
+            "en": "x1.5 [Rear Smite] effect for the duration"
+          }
+        },
+        {
+          "level": 15,
+          "text": {
+            "ru": "Эффект [Стойки нападения] во время действия умения x1,5",
+            "en": "x1.5 [Assault Stance] effect for the duration"
+          }
+        },
+        {
+          "level": 20,
+          "text": {
+            "ru": "+10% к СКР боя",
+            "en": "+10% additional Combat Speed"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "smoke-bomb", "type": "stigma", "unlockLevel": 22, "cooldown": 30, "mpCost": 100,
-      "name": { "ru": "Дымовая шашка", "en": "Smoke Bomb" },
-      "effect": { "ru": "Урон цели в радиусе 10 м и ослепление на 5 с.", "en": "Damages a target within 10 m and Blinds it for 5s." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "smoke-bomb",
+      "gameId": 13250000,
+      "type": "stigma",
+      "unlockLevel": 22,
+      "cooldown": 30,
+      "mpCost": 100,
+      "name": {
+        "ru": "Дымовая шашка",
+        "en": "Smoke Bomb"
+      },
+      "effect": {
+        "ru": "Урон цели в радиусе 10 м и ослепление на 5 с.",
+        "en": "Damages a target within 10 m and Blinds it for 5s."
+      },
       "specs": [
-        { "level": 5, "text": { "ru": "Дальность атаки +10 м", "en": "Range +10 m" } },
-        { "level": 10, "text": { "ru": "Смена на массовое умение", "en": "Becomes AoE" } },
-        { "level": 15, "text": { "ru": "Замедление на 5 с при попадании", "en": "Slow for 5s on hit" } },
-        { "level": 20, "text": { "ru": "Непрерывное использование +1 раз", "en": "+1 consecutive use" } }
+        {
+          "level": 5,
+          "text": {
+            "ru": "Дальность атаки +10 м",
+            "en": "+10m range"
+          }
+        },
+        {
+          "level": 10,
+          "text": {
+            "ru": "Смена на массовое умение",
+            "en": "Changes to AoE Skill"
+          }
+        },
+        {
+          "level": 15,
+          "text": {
+            "ru": "Замедление на 5 с при попадании",
+            "en": "Slow for 5s on hit"
+          }
+        },
+        {
+          "level": 20,
+          "text": {
+            "ru": "Непрерывное использование +1 раз",
+            "en": "+1 consecutive use"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "evasion-stance", "type": "stigma", "unlockLevel": 22, "cooldown": 20, "mpCost": null,
-      "name": { "ru": "Стойка уклонения", "en": "Evasion Stance" },
-      "effect": { "ru": "Какое-то время гарантированно уклоняется от всего урона; при успешном уклонении 1 раз восстанавливает 110 ОМ и ОД.", "en": "Guaranteed dodge of all damage for a short time; restores 110 MP and FP once on a successful dodge." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "evasion-stance",
+      "gameId": 13080000,
+      "type": "stigma",
+      "unlockLevel": 22,
+      "cooldown": 20,
+      "mpCost": null,
+      "name": {
+        "ru": "Стойка уклонения",
+        "en": "Evasion Stance"
+      },
+      "effect": {
+        "ru": "Какое-то время гарантированно уклоняется от всего урона; при успешном уклонении 1 раз восстанавливает 110 ОМ и ОД.",
+        "en": "Guaranteed dodge of all damage for a short time; restores 110 MP and FP once on a successful dodge."
+      },
       "specs": [
-        { "level": 5, "text": { "ru": "Непрерывное использование +1 раз", "en": "+1 consecutive use" } },
-        { "level": 10, "text": { "ru": "Замена на умение с возможностью…", "en": "Replaced by a variant skill" } },
-        { "level": 15, "text": { "ru": "СКР движ. +20% на 3 с при успешном уклонении", "en": "Move speed +20% for 3s on dodge" } },
-        { "level": 20, "text": { "ru": "Восстановление 10% ОЗ при уклонении", "en": "Restores 10% HP on dodge" } }
+        {
+          "level": 5,
+          "text": {
+            "ru": "Непрерывное использование +1 раз",
+            "en": "+1 consecutive use"
+          }
+        },
+        {
+          "level": 10,
+          "text": {
+            "ru": "Замена на умение с возможностью перемещения",
+            "en": "Changes to mobile skill"
+          }
+        },
+        {
+          "level": 15,
+          "text": {
+            "ru": "СКР движ. +20% на 3 с при успешном уклонении",
+            "en": "Move speed +20% for 3s on dodge"
+          }
+        },
+        {
+          "level": 20,
+          "text": {
+            "ru": "Восстановление 10% ОЗ при уклонении",
+            "en": "Restores 10% HP on dodge"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "spiral-slice", "type": "stigma", "unlockLevel": 22, "cooldown": 90, "mpCost": 200,
-      "name": { "ru": "Спиральный разрез", "en": "Spiral Slice" },
-      "effect": { "ru": "Рывок к цели в радиусе 20 м, урон и снятие до 1 положительного эффекта; за каждый снятый — доп. урон.", "en": "Dashes to a target within 20 m, damages it and dispels up to 1 buff; extra damage per buff removed." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "spiral-slice",
+      "gameId": 13280000,
+      "type": "stigma",
+      "unlockLevel": 22,
+      "cooldown": 90,
+      "mpCost": 200,
+      "name": {
+        "ru": "Спиральный разрез",
+        "en": "Spiral Slice"
+      },
+      "effect": {
+        "ru": "Рывок к цели в радиусе 20 м, урон и снятие до 1 положительного эффекта; за каждый снятый — доп. урон.",
+        "en": "Dashes to a target within 20 m, damages it and dispels up to 1 buff; extra damage per buff removed."
+      },
       "specs": [
-        { "level": 5, "text": { "ru": "Отмена до 2 маг. усилений", "en": "Dispels up to 2 magic buffs" } },
-        { "level": 10, "text": { "ru": "Вращение и Оглушение цели на 3 с", "en": "Spins and stuns the target for 3s" } },
-        { "level": 15, "text": { "ru": "Отмена до 3 положительных эффектов", "en": "Dispels up to 3 buffs" } },
-        { "level": 20, "text": { "ru": "Перезарядка −30 с", "en": "Cooldown −30s" } }
+        {
+          "level": 5,
+          "text": {
+            "ru": "Отмена до 2 маг. усилений",
+            "en": "Removes up to 2 buffs"
+          }
+        },
+        {
+          "level": 10,
+          "text": {
+            "ru": "Вращение и Оглушение цели на 3 с",
+            "en": "Spins and stuns the target for 3s"
+          }
+        },
+        {
+          "level": 15,
+          "text": {
+            "ru": "Отмена до 3 полож. эффектов",
+            "en": "Removes up to 3 buffs"
+          }
+        },
+        {
+          "level": 20,
+          "text": {
+            "ru": "Перезарядка -30 сек.",
+            "en": "-30s cooldown"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "shadow-walk", "type": "stigma", "unlockLevel": 22, "cooldown": 120, "mpCost": null,
-      "name": { "ru": "Поступь тени", "en": "Shadow Walk" },
-      "effect": { "ru": "Невидимость на 20 с. Нельзя использовать в бою; вступление в бой снимает эффект.", "en": "Stealth for 20s. Not usable in combat; entering combat cancels it." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "shadow-walk",
+      "gameId": 13180000,
+      "type": "stigma",
+      "unlockLevel": 22,
+      "cooldown": 120,
+      "mpCost": null,
+      "name": {
+        "ru": "Поступь тени",
+        "en": "Shadow Walk"
+      },
+      "effect": {
+        "ru": "Невидимость на 20 с. Нельзя использовать в бою; вступление в бой снимает эффект.",
+        "en": "Stealth for 20s. Not usable in combat; entering combat cancels it."
+      },
       "specs": [
-        { "level": 5, "text": { "ru": "Гарантированный крит при атаке из невидимости", "en": "Guaranteed crit when attacking from stealth" } },
-        { "level": 10, "text": { "ru": "СКР движ. +20% во время действия", "en": "Move speed +20% while active" } },
-        { "level": 15, "text": { "ru": "Можно использовать во время боя", "en": "Usable in combat" } },
-        { "level": 20, "text": { "ru": "Сброс перезарядки при…", "en": "Resets cooldown when…" } }
+        {
+          "level": 5,
+          "text": {
+            "ru": "Гарантированный крит. удар при атаке в состоянии невидимости",
+            "en": "Critical Hit on attack during Stealth"
+          }
+        },
+        {
+          "level": 10,
+          "text": {
+            "ru": "СКР движ. +20% во время действия",
+            "en": "Move speed +20% while active"
+          }
+        },
+        {
+          "level": 15,
+          "text": {
+            "ru": "Можно использовать во время боя",
+            "en": "Available in combat"
+          }
+        },
+        {
+          "level": 20,
+          "text": {
+            "ru": "Сбрасывает время перезарядки при содействии в убийстве игрока",
+            "en": "Resets cooldown on player kill assists"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "throw-shadowblade", "type": "stigma", "unlockLevel": 22, "cooldown": 30, "mpCost": null,
-      "name": { "ru": "Кинжал тьмы", "en": "Throw Shadowblade" },
-      "effect": { "ru": "Урон цели в радиусе 20 м и замедление на 5 с (СКР движ. −40%).", "en": "Damages a target within 20 m and slows it for 5s (move speed −40%)." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "throw-shadowblade",
+      "gameId": 13020000,
+      "type": "stigma",
+      "unlockLevel": 22,
+      "cooldown": 30,
+      "mpCost": null,
+      "name": {
+        "ru": "Кинжал тьмы",
+        "en": "Throw Shadowblade"
+      },
+      "effect": {
+        "ru": "Урон цели в радиусе 20 м и замедление на 5 с (СКР движ. −40%).",
+        "en": "Damages a target within 20 m and slows it for 5s (move speed −40%)."
+      },
       "specs": [
-        { "level": 5, "text": { "ru": "Добавление 2-й комбинации", "en": "Adds a 2nd combo" } },
-        { "level": 10, "text": { "ru": "Завершение перезарядки при убийстве", "en": "Resets cooldown on kill" } },
-        { "level": 15, "text": { "ru": "Гарантированный крит при попадании", "en": "Guaranteed crit on hit" } },
-        { "level": 20, "text": { "ru": "Смена на массовое умение", "en": "Becomes AoE" } }
+        {
+          "level": 5,
+          "text": {
+            "ru": "Добавление 2-й комбинации [Поиск темного кинжала]",
+            "en": "Adds [Shadowblade Pursuit] Chain Skill"
+          }
+        },
+        {
+          "level": 10,
+          "text": {
+            "ru": "Завершение перезарядки при уничтожении врага",
+            "en": "Resets cooldown on defeating an enemy"
+          }
+        },
+        {
+          "level": 15,
+          "text": {
+            "ru": "Гарантир. крит. удар при попадании",
+            "en": "Critical Hit on hit"
+          }
+        },
+        {
+          "level": 20,
+          "text": {
+            "ru": "Смена на массовое умение",
+            "en": "Changes to AoE Skill"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "triniels-dagger", "type": "stigma", "unlockLevel": 22, "cooldown": 45, "mpCost": 200,
-      "name": { "ru": "Кинжал Триниэля", "en": "Triniel's Dagger" },
-      "effect": { "ru": "Сильный удар по цели в радиусе 4 м, перезарядка всех её умений +5%. С тыла урон +30%.", "en": "Heavy hit on a target within 4 m, its cooldowns +5%. +30% damage from behind." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "triniels-dagger",
+      "gameId": 13300000,
+      "type": "stigma",
+      "unlockLevel": 22,
+      "cooldown": 45,
+      "mpCost": 200,
+      "name": {
+        "ru": "Кинжал Триниэля",
+        "en": "Triniel's Dagger"
+      },
+      "effect": {
+        "ru": "Сильный удар по цели в радиусе 4 м, перезарядка всех её умений +5%. С тыла урон +30%.",
+        "en": "Heavy hit on a target within 4 m, its cooldowns +5%. +30% damage from behind."
+      },
       "specs": [
-        { "level": 5, "text": { "ru": "Замена на умение с возможностью…", "en": "Replaced by a variant skill" } },
-        { "level": 10, "text": { "ru": "Перезарядка всех умений −10% при…", "en": "All cooldowns −10% when…" } },
-        { "level": 15, "text": { "ru": "Завершение перезарядки умения при…", "en": "Resets a skill cooldown when…" } },
-        { "level": 20, "text": { "ru": "Перезарядка всех умений цели +3%", "en": "Target's cooldowns +3%" } }
+        {
+          "level": 5,
+          "text": {
+            "ru": "Замена на умение с возможностью перемещения",
+            "en": "Changes to mobile skill"
+          }
+        },
+        {
+          "level": 10,
+          "text": {
+            "ru": "Перезарядка всех умений −10% при…",
+            "en": "All cooldowns −10% when…"
+          }
+        },
+        {
+          "level": 15,
+          "text": {
+            "ru": "Завершение перезарядки умения при уничтожении врага умением [Кинжал Триниэля]",
+            "en": "Resets cooldown on defeating an enemy with [Triniel's Dagger]"
+          }
+        },
+        {
+          "level": 20,
+          "text": {
+            "ru": "Перезарядка всех умений +3%",
+            "en": "+3% all skill cooldowns"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "aerial-bind", "type": "stigma", "unlockLevel": 22, "cooldown": 120, "mpCost": 150,
-      "name": { "ru": "Сковывание в полёте", "en": "Aerial Bind" },
-      "effect": { "ru": "Урон цели в радиусе 4 м, шанс 50% наложить Воздушные оковы на 3 с; по цели с 5 зарядами эмблемы и по NPC — гарантированно.", "en": "Damages a target within 4 m, 50% chance of Aerial Bind for 3s; guaranteed on a target with 5 Insignia charges and on NPCs." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "aerial-bind",
+      "gameId": 13230000,
+      "type": "stigma",
+      "unlockLevel": 22,
+      "cooldown": 120,
+      "mpCost": 150,
+      "name": {
+        "ru": "Сковывание в полете",
+        "en": "Aerial Bind"
+      },
+      "effect": {
+        "ru": "Урон цели в радиусе 4 м, шанс 50% наложить Воздушные оковы на 3 с; по цели с 5 зарядами эмблемы и по NPC — гарантированно.",
+        "en": "Damages a target within 4 m, 50% chance of Aerial Bind for 3s; guaranteed on a target with 5 Insignia charges and on NPCs."
+      },
       "specs": [
-        { "level": 5, "text": { "ru": "Дальность атаки увеличена", "en": "Longer range" } },
-        { "level": 10, "text": { "ru": "Добавление 2-го комбо", "en": "Adds a 2nd combo" } },
-        { "level": 15, "text": { "ru": "Эффект [Внезапной атаки] ×1.5 на 10 с", "en": "[Ambush Stance] effect ×1.5 for 10s" } },
-        { "level": 20, "text": { "ru": "Перезарядка −30 с", "en": "Cooldown −30s" } }
+        {
+          "level": 5,
+          "text": {
+            "ru": "Дальность атаки [Сковывания в полете] +16 м",
+            "en": "+16m [Aerial Bind] range"
+          }
+        },
+        {
+          "level": 10,
+          "text": {
+            "ru": "Добавление 2-го комбо [Смертоносный полет]",
+            "en": "Adds [Aerial Slaughter] Chain Skill"
+          }
+        },
+        {
+          "level": 15,
+          "text": {
+            "ru": "Эффект [Внезапной атаки] ×1.5 на 10 с",
+            "en": "[Ambush Stance] effect ×1.5 for 10s"
+          }
+        },
+        {
+          "level": 20,
+          "text": {
+            "ru": "Перезарядка -30 сек.",
+            "en": "-30s cooldown"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "illusive-clone", "type": "stigma", "unlockLevel": 22, "cooldown": 90, "mpCost": 200,
-      "name": { "ru": "Иллюзорный двойник", "en": "Illusive Clone" },
-      "effect": { "ru": "Убирает перезарядку [Пронзания сердца] на 10 с и наносит доп. урон, равный 20% от АТК.", "en": "Removes the [Heart Gore] cooldown for 10s and deals extra damage equal to 20% of Attack." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "illusive-clone",
+      "gameId": 13310000,
+      "type": "stigma",
+      "unlockLevel": 22,
+      "cooldown": 90,
+      "mpCost": 200,
+      "name": {
+        "ru": "Иллюзорный двойник",
+        "en": "Illusive Clone"
+      },
+      "effect": {
+        "ru": "Убирает перезарядку [Пронзания сердца] на 10 с и наносит доп. урон, равный 20% от АТК.",
+        "en": "Removes the [Heart Gore] cooldown for 10s and deals extra damage equal to 20% of Attack."
+      },
       "specs": [
-        { "level": 5, "text": { "ru": "Бонус при успешном негативном эффекте", "en": "Bonus on a successful debuff" } },
-        { "level": 10, "text": { "ru": "Доп. усиление во время действия", "en": "Extra boost while active" } },
-        { "level": 15, "text": { "ru": "Эффект [Выжидания момента] во время действия", "en": "[Exploit Weakness] effect while active" } },
-        { "level": 20, "text": { "ru": "Шанс 50% нанести доп. урон при крите", "en": "50% chance of extra damage on crit" } }
+        {
+          "level": 5,
+          "text": {
+            "ru": "Бонус при успешном негативном эффекте",
+            "en": "Bonus on a successful debuff"
+          }
+        },
+        {
+          "level": 10,
+          "text": {
+            "ru": "Доп. усиление во время действия",
+            "en": "Extra boost while active"
+          }
+        },
+        {
+          "level": 15,
+          "text": {
+            "ru": "Эффект [Выжидания момента] во время действия умения x1,5",
+            "en": "x1.5 [Exploit Weakness] effect for the duration"
+          }
+        },
+        {
+          "level": 20,
+          "text": {
+            "ru": "Шанс 50% нанести доп. урон при крите",
+            "en": "50% chance of extra damage on crit"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin", "gamesgg-assassin"] },
-    { "id": "evasion-contract", "type": "stigma", "unlockLevel": 22, "cooldown": 90, "mpCost": null,
-      "name": { "ru": "Обет уклонения", "en": "Evasion Contract" },
-      "effect": { "ru": "Снимает Замедление и Сковывание, УКЛ +200 на 10 с, иммунитет к Замедлению и Плену. Увеличение перезарядки не действует.", "en": "Removes Slow and Bind, Evasion +200 for 10s, immunity to Slow and Capture. Cooldown increases do not apply." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin",
+        "gamesgg-assassin"
+      ]
+    },
+    {
+      "id": "evasion-contract",
+      "gameId": 13370000,
+      "type": "stigma",
+      "unlockLevel": 22,
+      "cooldown": 90,
+      "mpCost": null,
+      "name": {
+        "ru": "Обет уклонения",
+        "en": "Evasion Contract"
+      },
+      "effect": {
+        "ru": "Снимает Замедление и Сковывание, УКЛ +200 на 10 с, иммунитет к Замедлению и Плену. Увеличение перезарядки не действует.",
+        "en": "Removes Slow and Bind, Evasion +200 for 10s, immunity to Slow and Capture. Cooldown increases do not apply."
+      },
       "specs": [
-        { "level": 5, "text": { "ru": "Шанс 25% получить иммунитет…", "en": "25% chance to gain immunity…" } },
-        { "level": 10, "text": { "ru": "СКР движ. +30% во время действия", "en": "Move speed +30% while active" } },
-        { "level": 15, "text": { "ru": "Шанс 50% сократить перезарядку…", "en": "50% chance to reduce cooldown…" } },
-        { "level": 20, "text": { "ru": "УКЛ доп. +100", "en": "Evasion +100 more" } }
+        {
+          "level": 5,
+          "text": {
+            "ru": "Шанс 25% получить иммунитет…",
+            "en": "25% chance to gain immunity…"
+          }
+        },
+        {
+          "level": 10,
+          "text": {
+            "ru": "СКР движ. +30% во время действия",
+            "en": "Move speed +30% while active"
+          }
+        },
+        {
+          "level": 15,
+          "text": {
+            "ru": "Шанс 50% сократить перезарядку…",
+            "en": "50% chance to reduce cooldown…"
+          }
+        },
+        {
+          "level": 20,
+          "text": {
+            "ru": "УКЛ доп. +100",
+            "en": "+100 Evasion increase"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "assault-ambush", "type": "stigma", "unlockLevel": 22, "cooldown": 120, "mpCost": null,
-      "name": { "ru": "Вероломная атака", "en": "Assault Ambush" },
-      "effect": { "ru": "Урон врагам (макс. 4) в радиусе 4 м вокруг цели (до 20 м), шанс 30% ослепить на 5 с (по NPC — гарантированно). ЗЩТ +до 20% от числа целей.", "en": "Damages up to 4 enemies within 4 m of a target (up to 20 m away), 30% chance to Blind for 5s (guaranteed vs NPCs). Defense up to +20% based on targets hit." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "assault-ambush",
+      "gameId": 13700000,
+      "type": "stigma",
+      "unlockLevel": 22,
+      "cooldown": 120,
+      "mpCost": null,
+      "name": {
+        "ru": "Вероломная атака",
+        "en": "Assault Ambush"
+      },
+      "effect": {
+        "ru": "Урон врагам (макс. 4) в радиусе 4 м вокруг цели (до 20 м), шанс 30% ослепить на 5 с (по NPC — гарантированно). ЗЩТ +до 20% от числа целей.",
+        "en": "Damages up to 4 enemies within 4 m of a target (up to 20 m away), 30% chance to Blind for 5s (guaranteed vs NPCs). Defense up to +20% based on targets hit."
+      },
       "specs": [
-        { "level": 5, "text": { "ru": "АТК +20% на 5 с при попадании", "en": "Attack +20% for 5s on hit" } },
-        { "level": 10, "text": { "ru": "500 урона по ОМ при попадании", "en": "500 MP damage on hit" } },
-        { "level": 15, "text": { "ru": "Дальность атаки +10 м", "en": "Range +10 m" } },
-        { "level": 20, "text": { "ru": "Шанс Ослепления +20%", "en": "Blind chance +20%" } }
+        {
+          "level": 5,
+          "text": {
+            "ru": "АТК +20% на 5 с при попадании",
+            "en": "Attack +20% for 5s on hit"
+          }
+        },
+        {
+          "level": 10,
+          "text": {
+            "ru": "500 урона по ОМ при попадании",
+            "en": "500 MP damage on hit"
+          }
+        },
+        {
+          "level": 15,
+          "text": {
+            "ru": "Дальность атаки +10 м",
+            "en": "+10m range"
+          }
+        },
+        {
+          "level": 20,
+          "text": {
+            "ru": "Шанс Ослепления +20%",
+            "en": "+20% Blind Chance"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] },
-    { "id": "shadowstep", "type": "stigma", "unlockLevel": 22, "cooldown": 45, "mpCost": 100,
-      "name": { "ru": "Танец теней", "en": "Shadowstep" },
-      "effect": { "ru": "Урон цели в радиусе 4 м, отскок назад и невидимость на 3 с.", "en": "Damages a target within 4 m, leaps back and gains Stealth for 3s." },
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    },
+    {
+      "id": "shadowstep",
+      "gameId": 13140000,
+      "type": "stigma",
+      "unlockLevel": 22,
+      "cooldown": 45,
+      "mpCost": 100,
+      "name": {
+        "ru": "Танец теней",
+        "en": "Shadowstep"
+      },
+      "effect": {
+        "ru": "Урон цели в радиусе 4 м, отскок назад и невидимость на 3 с.",
+        "en": "Damages a target within 4 m, leaps back and gains Stealth for 3s."
+      },
       "specs": [
-        { "level": 5, "text": { "ru": "Шанс 40% развернуть и оглушить цель", "en": "40% chance to turn and stun the target" } },
-        { "level": 10, "text": { "ru": "Привязка 5 эмблем на 10 с при попадании", "en": "5 Insignias for 10s on hit" } },
-        { "level": 15, "text": { "ru": "УКЛ +200 на 10 с при использовании", "en": "Evasion +200 for 10s on use" } },
-        { "level": 20, "text": { "ru": "Перезарядка −15 с", "en": "Cooldown −15s" } }
+        {
+          "level": 5,
+          "text": {
+            "ru": "Шанс 40% развернуть и оглушить цель",
+            "en": "40% chance to turn and stun the target"
+          }
+        },
+        {
+          "level": 10,
+          "text": {
+            "ru": "Привязка 5 эмблем на 10 с при попадании",
+            "en": "5 Insignias for 10s on hit"
+          }
+        },
+        {
+          "level": 15,
+          "text": {
+            "ru": "УКЛ +200 на 10 с при использовании",
+            "en": "Evasion +200 for 10s on use"
+          }
+        },
+        {
+          "level": 20,
+          "text": {
+            "ru": "Перезарядка -15 сек.",
+            "en": "-15s cooldown"
+          }
+        }
       ],
-      "status": "verified", "sources": ["in-game", "metabot-assassin"] }
+      "status": "verified",
+      "sources": [
+        "in-game",
+        "metabot-assassin"
+      ]
+    }
   ]
 }

@@ -3,11 +3,11 @@
     "id": "skill-points",
     "level": 4,
     "title": {
-      "ru": "Окно навыков и первые очки навыков",
+      "ru": "Окно умений и первые очки умений",
       "en": "Skill window and first Skill Points"
     },
     "details": {
-      "ru": "Уровни навыка 1→4 стоят 1 очко, 4→7 — 2, 7→10 — 4. Уровень навыка L доступен с ур. персонажа «открытие + 3·(L−2)».",
+      "ru": "Уровни умения 1→4 стоят 1 очко, 4→7 — 2, 7→10 — 4. Уровень умения L доступен с ур. персонажа «открытие + 3·(L−2)».",
       "en": "Skill levels 1→4 cost 1 point, 4→7 cost 2, 7→10 cost 4. Skill level L unlocks at character level “unlock + 3·(L−2)”."
     },
     "status": "verified",
@@ -20,11 +20,11 @@
     "id": "nezekan",
     "level": 12,
     "title": {
-      "ru": "Доска Daevanion: Nezekan",
+      "ru": "Доска Даэваниона: Неджакан",
       "en": "Daevanion board: Nezekan"
     },
     "details": {
-      "ru": "С этого уровня каждое повышение даёт очки Daevanion.",
+      "ru": "С этого уровня каждое повышение даёт очки Даэваниона.",
       "en": "Daevanion Points are granted per level from here on."
     },
     "status": "multi-source",
@@ -38,7 +38,7 @@
     "id": "zikel",
     "level": 20,
     "title": {
-      "ru": "Доска Daevanion: Zikel",
+      "ru": "Доска Даэваниона: Джикел",
       "en": "Daevanion board: Zikel"
     },
     "status": "multi-source",
@@ -55,7 +55,7 @@
       "en": "Stigma and slot 1"
     },
     "details": {
-      "ru": "Нужен 3-й квест восхождения. Изучение стигмы — 1 осколок; осколки начисляются с 23 уровня.",
+      "ru": "Нужно задание пробуждения «Внемлющий голосу». Изучение стигмы — 1 обломок; обломки начисляются с 23 уровня.",
       "en": "Requires the 3rd Ascension quest. Learning a stigma costs 1 Shard; Shards are granted from level 23."
     },
     "status": "verified",
@@ -82,7 +82,7 @@
     "id": "vaizel",
     "level": 30,
     "title": {
-      "ru": "Доска Daevanion: Vaizel",
+      "ru": "Доска Даэваниона: Байзел",
       "en": "Daevanion board: Vaizel"
     },
     "status": "multi-source",
@@ -121,11 +121,11 @@
     "id": "triniel",
     "level": 40,
     "title": {
-      "ru": "Доска Daevanion: Triniel",
+      "ru": "Доска Даэваниона: Триниэль",
       "en": "Daevanion board: Triniel"
     },
     "details": {
-      "ru": "С 40 уровня — 2 осколка стигм за уровень.",
+      "ru": "С 40 уровня — 2 обломка стигмы за уровень.",
       "en": "From level 40 you get 2 Stigma Shards per level."
     },
     "status": "multi-source",
@@ -143,7 +143,7 @@
       "en": "Season cap: endgame"
     },
     "details": {
-      "ru": "Доска Azphel, кошмарные данжи, Бездна, арена, рынок.",
+      "ru": "Доска Асфель, подземелья Кошмара, Бездна, арена, рынок.",
       "en": "Azphel board, Nightmare dungeons, Abyss, Arena, Market."
     },
     "status": "multi-source",

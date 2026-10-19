@@ -31,6 +31,8 @@ const sources = defineCollection({
 
 const skill = z.object({
   id: z.string(),
+  /** ID навыка в клиенте (ключи текстов SkillString_STR_SKILL_PC_<CLASS>_<gameId>_*). */
+  gameId: z.number().int().optional(),
   type: z.enum(['active', 'passive', 'stigma']),
   /** Уровень персонажа, на котором навык открывается. Для стигм — 22. */
   unlockLevel: z.number().int().min(1).max(60),
@@ -54,6 +56,8 @@ const classes = defineCollection({
   loader: glob({ pattern: '*.json', base: './src/data/classes' }),
   schema: z.object({
     name: text,
+    /** Код класса в клиенте: ASSASSIN, GLADIATOR, … */
+    gameClass: z.string().optional(),
     role: z.enum(['melee-dps', 'ranged-dps', 'magic-dps', 'tank', 'healer', 'support']),
     weapon: text,
     difficulty: z.enum(['easy', 'medium', 'hard']),
