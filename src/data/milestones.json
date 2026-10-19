@@ -1,12 +1,156 @@
 [
-  { "id": "skill-points", "level": 4, "title": { "ru": "Окно навыков и первые очки навыков", "en": "Skill window and first Skill Points" }, "details": { "ru": "Очками навыков навык качается до 10 уровня. Сколько очков даёт каждый уровень — уточняется.", "en": "Skill Points raise a skill up to level 10. Points per character level are still unconfirmed." }, "status": "single-source", "sources": ["fextralife-levels", "gameplaytips-skills"] },
-  { "id": "nezekan", "level": 12, "title": { "ru": "Доска Daevanion: Nezekan", "en": "Daevanion board: Nezekan" }, "details": { "ru": "С этого уровня каждое повышение даёт очки Daevanion.", "en": "Daevanion Points are granted per level from here on." }, "status": "multi-source", "sources": ["metabot-assassin", "metabot-leveling", "fextralife-levels"] },
-  { "id": "zikel", "level": 20, "title": { "ru": "Доска Daevanion: Zikel", "en": "Daevanion board: Zikel" }, "status": "multi-source", "sources": ["metabot-assassin", "metabot-leveling"] },
-  { "id": "stigma-1", "level": 22, "title": { "ru": "Стигмы и 1-й слот", "en": "Stigma and slot 1" }, "details": { "ru": "Нужен 3-й квест восхождения. С 23 уровня начисляются осколки стигм.", "en": "Requires the 3rd Ascension quest. Stigma Shards are granted from level 23." }, "status": "multi-source", "sources": ["metabot-stigma", "fextralife-levels", "keengamer-leveling"] },
-  { "id": "stigma-2", "level": 27, "title": { "ru": "2-й слот стигмы", "en": "Stigma slot 2" }, "status": "multi-source", "sources": ["metabot-stigma", "fextralife-levels"] },
-  { "id": "vaizel", "level": 30, "title": { "ru": "Доска Daevanion: Vaizel", "en": "Daevanion board: Vaizel" }, "status": "multi-source", "sources": ["metabot-assassin", "metabot-leveling"] },
-  { "id": "stigma-3", "level": 32, "title": { "ru": "3-й слот стигмы", "en": "Stigma slot 3" }, "status": "multi-source", "sources": ["metabot-stigma", "fextralife-levels"] },
-  { "id": "stigma-4", "level": 37, "title": { "ru": "4-й слот стигмы (максимум)", "en": "Stigma slot 4 (max)" }, "status": "multi-source", "sources": ["metabot-stigma", "fextralife-levels"] },
-  { "id": "triniel", "level": 40, "title": { "ru": "Доска Daevanion: Triniel", "en": "Daevanion board: Triniel" }, "details": { "ru": "С 40 уровня — 2 осколка стигм за уровень.", "en": "From level 40 you get 2 Stigma Shards per level." }, "status": "multi-source", "sources": ["metabot-assassin", "metabot-leveling", "metabot-stigma"] },
-  { "id": "cap", "level": 45, "title": { "ru": "Кап сезона: эндгейм", "en": "Season cap: endgame" }, "details": { "ru": "Доска Azphel, кошмарные данжи, Бездна, арена, рынок.", "en": "Azphel board, Nightmare dungeons, Abyss, Arena, Market." }, "status": "multi-source", "sources": ["playnews-cap45", "fextralife-levels", "metabot-leveling"] }
+  {
+    "id": "skill-points",
+    "level": 4,
+    "title": {
+      "ru": "Окно навыков и первые очки навыков",
+      "en": "Skill window and first Skill Points"
+    },
+    "details": {
+      "ru": "Уровни навыка 1→4 стоят 1 очко, 4→7 — 2, 7→10 — 4. Уровень навыка L доступен с ур. персонажа «открытие + 3·(L−2)».",
+      "en": "Skill levels 1→4 cost 1 point, 4→7 cost 2, 7→10 cost 4. Skill level L unlocks at character level “unlock + 3·(L−2)”."
+    },
+    "status": "verified",
+    "sources": [
+      "in-game",
+      "fextralife-levels"
+    ]
+  },
+  {
+    "id": "nezekan",
+    "level": 12,
+    "title": {
+      "ru": "Доска Daevanion: Nezekan",
+      "en": "Daevanion board: Nezekan"
+    },
+    "details": {
+      "ru": "С этого уровня каждое повышение даёт очки Daevanion.",
+      "en": "Daevanion Points are granted per level from here on."
+    },
+    "status": "multi-source",
+    "sources": [
+      "metabot-assassin",
+      "metabot-leveling",
+      "fextralife-levels"
+    ]
+  },
+  {
+    "id": "zikel",
+    "level": 20,
+    "title": {
+      "ru": "Доска Daevanion: Zikel",
+      "en": "Daevanion board: Zikel"
+    },
+    "status": "multi-source",
+    "sources": [
+      "metabot-assassin",
+      "metabot-leveling"
+    ]
+  },
+  {
+    "id": "stigma-1",
+    "level": 22,
+    "title": {
+      "ru": "Стигмы и 1-й слот",
+      "en": "Stigma and slot 1"
+    },
+    "details": {
+      "ru": "Нужен 3-й квест восхождения. Изучение стигмы — 1 осколок; осколки начисляются с 23 уровня.",
+      "en": "Requires the 3rd Ascension quest. Learning a stigma costs 1 Shard; Shards are granted from level 23."
+    },
+    "status": "verified",
+    "sources": [
+      "in-game",
+      "metabot-stigma",
+      "fextralife-levels"
+    ]
+  },
+  {
+    "id": "stigma-2",
+    "level": 27,
+    "title": {
+      "ru": "2-й слот стигмы",
+      "en": "Stigma slot 2"
+    },
+    "status": "multi-source",
+    "sources": [
+      "metabot-stigma",
+      "fextralife-levels"
+    ]
+  },
+  {
+    "id": "vaizel",
+    "level": 30,
+    "title": {
+      "ru": "Доска Daevanion: Vaizel",
+      "en": "Daevanion board: Vaizel"
+    },
+    "status": "multi-source",
+    "sources": [
+      "metabot-assassin",
+      "metabot-leveling"
+    ]
+  },
+  {
+    "id": "stigma-3",
+    "level": 32,
+    "title": {
+      "ru": "3-й слот стигмы",
+      "en": "Stigma slot 3"
+    },
+    "status": "multi-source",
+    "sources": [
+      "metabot-stigma",
+      "fextralife-levels"
+    ]
+  },
+  {
+    "id": "stigma-4",
+    "level": 37,
+    "title": {
+      "ru": "4-й слот стигмы (максимум)",
+      "en": "Stigma slot 4 (max)"
+    },
+    "status": "multi-source",
+    "sources": [
+      "metabot-stigma",
+      "fextralife-levels"
+    ]
+  },
+  {
+    "id": "triniel",
+    "level": 40,
+    "title": {
+      "ru": "Доска Daevanion: Triniel",
+      "en": "Daevanion board: Triniel"
+    },
+    "details": {
+      "ru": "С 40 уровня — 2 осколка стигм за уровень.",
+      "en": "From level 40 you get 2 Stigma Shards per level."
+    },
+    "status": "multi-source",
+    "sources": [
+      "metabot-assassin",
+      "metabot-leveling",
+      "metabot-stigma"
+    ]
+  },
+  {
+    "id": "cap",
+    "level": 45,
+    "title": {
+      "ru": "Кап сезона: эндгейм",
+      "en": "Season cap: endgame"
+    },
+    "details": {
+      "ru": "Доска Azphel, кошмарные данжи, Бездна, арена, рынок.",
+      "en": "Azphel board, Nightmare dungeons, Abyss, Arena, Market."
+    },
+    "status": "multi-source",
+    "sources": [
+      "playnews-cap45",
+      "fextralife-levels",
+      "metabot-leveling"
+    ]
+  }
 ]

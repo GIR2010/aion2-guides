@@ -4,6 +4,12 @@ export type LevelInfo = {
   level: number;
   zone: string | null;
   newSkills: { id: string; name: string; type: 'active' | 'passive' | 'stigma' }[];
+  /** Навыки из списка приоритета, чей максимальный уровень вырос на этом уровне персонажа. */
+  skillUps: { id: string; name: string; rank: number; toLevel: number; cost: number; costVerified: boolean }[];
+  /** Рекомендованные особенности, которые открываются на этом уровне. */
+  specs: { skill: string; spec: string; why: string }[];
+  /** Сколько очков навыков нужно, чтобы держать все приоритетные навыки на максимуме. */
+  budget: number | null;
   unlocks: { title: string; details: string | null }[];
   todo: string[];
 };
@@ -12,6 +18,12 @@ type Labels = {
   level: string;
   pick: string;
   newSkills: string;
+  skillUps: string;
+  skillUpsHint: string;
+  points: string;
+  unverified: string;
+  specs: string;
+  budget: string;
   unlocks: string;
   todo: string;
   zone: string;
@@ -56,7 +68,13 @@ export default function LevelTimeline({ levels, labels, storageKey }: Props) {
   }
 
   const info = levels.find((l) => l.level === level);
-  const isEmpty = !info || (info.newSkills.length === 0 && info.unlocks.length === 0 && info.todo.length === 0);
+  const isEmpty =
+    !info ||
+    (info.newSkills.length === 0 &&
+      info.skillUps.length === 0 &&
+      info.specs.length === 0 &&
+      info.unlocks.length === 0 &&
+      info.todo.length === 0);
 
   return (
     <section className="timeline card" aria-label={labels.pick}>
@@ -104,6 +122,37 @@ export default function LevelTimeline({ levels, labels, storageKey }: Props) {
         </div>
       )}
 
+      {info && info.skillUps.length > 0 && (
+        <div>
+          <h3>{labels.skillUps}</h3>
+          <p className="muted hint">{labels.skillUpsHint}</p>
+          <ol className="ups">
+            {info.skillUps.map((u) => (
+              <li key={u.id}>
+                <span className="rank">#{u.rank}</span> <a href={`#${u.id}`}>{u.name}</a> → <strong>{u.toLevel}</strong>{' '}
+                <span className="muted">
+                  ({u.cost} {labels.points}
+                  {!u.costVerified && `, ${labels.unverified}`})
+                </span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
+
+      {info && info.specs.length > 0 && (
+        <div>
+          <h3>{labels.specs}</h3>
+          <ul>
+            {info.specs.map((s) => (
+              <li key={s.skill}>
+                <strong>{s.skill}</strong>: «{s.spec}» <span className="muted">— {s.why}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       {info && info.unlocks.length > 0 && (
         <div>
           <h3>{labels.unlocks}</h3>
@@ -129,6 +178,12 @@ export default function LevelTimeline({ levels, labels, storageKey }: Props) {
         </div>
       )}
 
+      {info?.budget != null && (
+        <p className="muted budget">
+          {labels.budget}: <strong>{info.budget}</strong>
+        </p>
+      )}
+
       <style>{`
         .timeline .controls { margin-bottom: 12px; }
         .timeline .row { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
@@ -140,7 +195,12 @@ export default function LevelTimeline({ levels, labels, storageKey }: Props) {
         .timeline button:disabled { opacity: .4; cursor: default; }
         .timeline .level-out { font-weight: 700; min-width: 5.5em; text-align: right; }
         .timeline h3 { font-size: 1rem; margin: 16px 0 6px; }
+        .timeline .hint { font-size: .85rem; margin: 0 0 6px; }
         .timeline .chips { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 14px; }
+        .timeline .ups { list-style: none; padding: 0; margin: 0; }
+        .timeline .ups li { padding: 2px 0; }
+        .timeline .rank { display: inline-block; min-width: 2.2em; color: var(--muted); font-variant-numeric: tabular-nums; }
+        .timeline .budget { font-size: .85rem; border-top: 1px solid var(--border); padding-top: 10px; margin-top: 16px; }
       `}</style>
     </section>
   );

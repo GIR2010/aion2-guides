@@ -14,13 +14,15 @@ interface Props {
 
 const { skills, locale, hideLevel = false } = Astro.props;
 const sorted = [...skills].sort((a, b) => a.unlockLevel - b.unlockLevel);
+const sec = locale === 'ru' ? 'с' : 's';
+const lvl = t(locale, 'skill.level');
 ---
 
 <div class="table-wrap">
   <table>
     <thead>
       <tr>
-        {!hideLevel && <th>{t(locale, 'skill.level')}</th>}
+        {!hideLevel && <th>{lvl}</th>}
         <th>{t(locale, 'skill.name')}</th>
         <th>{t(locale, 'skill.cooldown')}</th>
         <th>{t(locale, 'skill.effect')}</th>
@@ -34,12 +36,36 @@ const sorted = [...skills].sort((a, b) => a.unlockLevel - b.unlockLevel);
             {!hideLevel && <td>{s.unlockLevel}</td>}
             <td>
               <strong>{pick(s.name, locale)}</strong>
-              {locale === 'ru' && s.name.ru === null && (
-                <div class="muted small">{t(locale, 'skill.ruPending')}</div>
+              {locale === 'ru' && s.name.ru === null && <div class="muted small">{t(locale, 'skill.ruPending')}</div>}
+              {locale === 'ru' && s.name.en && s.name.ru && <div class="muted small">{s.name.en}</div>}
+            </td>
+            <td class="nowrap">
+              {s.cooldown === null ? '—' : `${s.cooldown} ${sec}`}
+              {s.mpCost !== null && (
+                <div class="muted small">
+                  {s.mpCost} {t(locale, 'skill.mp')}
+                </div>
               )}
             </td>
-            <td>{s.cooldown === null ? '—' : `${s.cooldown} ${locale === 'ru' ? 'с' : 's'}`}</td>
-            <td>{pick(s.effect, locale)}</td>
+            <td>
+              {pick(s.effect, locale)}
+              {s.specs.length > 0 && (
+                <details>
+                  <summary>{t(locale, 'skill.specs')}</summary>
+                  <ul>
+                    {s.specs.map((sp) => (
+                      <li>
+                        <span class="muted">
+                          {lvl} {sp.level}:
+                        </span>{' '}
+                        {pick(sp.text, locale)}
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              )}
+              {s.note && <div class="small warn">⚠ {pick(s.note, locale)}</div>}
+            </td>
             <td>
               <StatusBadge status={s.status} locale={locale} />
             </td>
@@ -53,5 +79,24 @@ const sorted = [...skills].sort((a, b) => a.unlockLevel - b.unlockLevel);
 <style>
   .small {
     font-size: 0.8rem;
+  }
+  .nowrap {
+    white-space: nowrap;
+  }
+  .warn {
+    color: var(--warn);
+    margin-top: 4px;
+  }
+  details {
+    margin-top: 6px;
+    font-size: 0.875rem;
+  }
+  summary {
+    cursor: pointer;
+    color: var(--accent);
+  }
+  details ul {
+    margin: 4px 0 0;
+    padding-left: 18px;
   }
 </style>

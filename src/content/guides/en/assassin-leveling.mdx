@@ -1,6 +1,6 @@
 ---
 title: 'Assassin 1→45: Step-by-Step Leveling (Asmodian)'
-description: 'Skills by level, stigma for every slot, route and solo rotation for leveling an Assassin to the cap.'
+description: 'Which skills to raise at every level, which specializations to pick, stigma for each slot, route and rotation for an Assassin to the cap.'
 lang: en
 translationKey: assassin-leveling
 class: assassin
@@ -11,72 +11,95 @@ verifiedPatch: null
 ---
 
 import ClassLevelTimeline from '../../../components/ClassLevelTimeline.astro';
+import SkillCapTable from '../../../components/SkillCapTable.astro';
 
-For players who just started an Asmodian Assassin and want to reach 45 quickly and cleanly. Level-cap progression has its own guide.
+For players who run an Asmodian Assassin and want to reach 45 quickly and cleanly. Skill values and descriptions come from the global client (screenshots taken 2026-10-19). English skill names are community names; the in-game Russian names are on the Russian page. Level-cap progression has its own guide.
 
 ## How leveling works
 
 - **XP.** Yellow (story) quests give almost all the XP to 45. An experienced player gets there in 12–15 hours, a new player in 20–25. Grinding mobs is not worth it.
 - **The slow part is 29–39.** The story covers only about 70% of the XP needed here. Fill the gap with **Sealed Dungeons**: each gives Skill Points and Daevanion Points.
-- **Skill Points** start at level 4. They raise a skill up to level 10; above that, skill levels come from Daevanion boards and gear.
-- **Daevanion boards** open like this: Nezekan at 12, Zikel at 20, Vaizel at 30, Triniel at 40, Azphel at 45.
-- **Stigma** unlocks at 22 after the 3rd Ascension quest. Slots: 22 / 27 / 32 / 37. Raised with Shards: 1 per level from 23 to 39, 2 per level from 40.
+- **Skill Points** start at level 4. They raise a skill up to level 10; above that, levels come from gear and Daevanion boards.
+- **Skill level is capped by character level.** Skill level L becomes available at character level `skill unlock level + 3 × (L − 2)`, i.e. +1 skill level every 3 character levels. Try earlier and the game says “Can be learned at character level N”.
+- **The first specialization unlocks at skill level 8** (pick one of three), with one more each at 12 and 16. “+N skill” bonuses from gear count too.
+- **Daevanion boards:** Nezekan at 12, Zikel at 20, Vaizel at 30, Triniel at 40, Azphel at 45.
+- **Stigma** unlocks at 22 after the 3rd Ascension quest. Slots: 22 / 27 / 32 / 37. Learning a stigma costs 1 Shard; specializations unlock at stigma levels 5 / 10 / 15 / 20.
 
 ## What to do at each level
 
-Pick your character level to see new skills, unlocks and what to do. Your choice is remembered.
+Pick your character level. The block shows new skills, which priority skills you can now raise and at what cost, which specialization to pick, and what to do in game. Your choice is remembered.
 
 <ClassLevelTimeline plan="assassin-asmodian" locale="en" />
 
-## Where to spend Skill Points
+## Skill Points: what to raise and when
 
-Points granted per level and the cost of each skill level are still being verified in game. Until then, follow this order:
+While leveling you have enough points for about 9–10 of the 22 skills. Don't spread them thin.
 
 | # | Skill | Why |
 |---|---|---|
-| 1 | Quick Slice | Hits up to 4 targets — main pack damage while leveling |
-| 2 | Heart Gore | Triggers after a crit, restores MP. Later boosted by the Illusive Clone stigma |
-| 3 | Insignia Explosion (from 14) | Detonates Insignias — the main damage source against tough targets |
-| 4 | Savage Roar | Stacks Insignias for Insignia Explosion |
-| 5 | Shadowstrike | Opener: blink behind and stun |
+| 1 | Quick Slice | Up to 4 targets, no cooldown, restores 120 MP — the core of pack damage |
+| 2 | Savage Roar | Up to 4 targets + 1 Insignia each, +20% skill speed |
+| 3 | Heart Gore | After a crit: up to 4 targets, +100 MP. No cooldown under Illusive Clone |
+| 4 | Insignia Explosion (from 14) | Main damage: up to 4 targets, stun. At 5 Insignias the stun is guaranteed vs NPCs |
+| 5 | Ambush | Heavy hit, +30% and 2 Insignias from behind |
+| 6 | Shadowstrike | Opener: 20 m blink behind the target and a 3s stun |
+| 7 | Exploit Weakness | +crit (feeds Heart Gore), clones engrave Insignias |
+| 8 | Rear Smite | +back attack damage and +5% PvE damage |
+| 9 | Assault Stance | +crit damage |
+| 10 | Defense Break | −20% target Defense after a stun — up almost all the time |
 
-**Passives** in priority order: Rear Smite → Assault Stance → Exploit Weakness → Defense Break → Determination.
-Skip Apply Poison and Ambush Stance in PvE.
+Other passives (Heightened Sixth Sense, Impact Hit, Ambush Stance) get 1–3 points on cheap levels if anything is left. **Apply Poison** is PvP-only.
+
+<SkillCapTable plan="assassin-asmodian" locale="en" />
+
+## Specializations at skill level 8
+
+| Skill | Pick | Why |
+|---|---|---|
+| Quick Slice | Multi-hit chance +50% | Pack damage. If you die a lot, take “Absorbs 0.7% HP” |
+| Savage Roar | Skill speed +20% | Faster animations, faster Insignias |
+| Shadowstrike | Crit damage +20% for 10s | Boosts the whole burst after the opener |
+| Ambush | 2 Insignias on hit | Insignias even when not behind |
+| Heart Gore | 1 Insignia on hit | Every proc feeds Insignia Explosion |
+| Insignia Explosion | Multi-hit chance +50% | More damage on all 4 targets |
 
 ## Stigma while leveling
 
 | Slot (level) | Stigma | Why |
 |---|---|---|
-| 1 (22) | Illusive Clone | Removes the Heart Gore cooldown and gives +20% damage for 10s |
-| 2 (27) | Savage Fang | Heavy hit plus 5 Insignias at once for Insignia Explosion |
-| 3 (32) | Swift Contract | +20% Combat Speed |
-| 4 (37) | Triniel's Dagger | Hardest single hit |
+| 1 (22) | Savage Fang | Up to 4 targets and 5 Insignias at once. Follow with Insignia Explosion — the whole pack is stunned |
+| 2 (27) | Illusive Clone | 10s with no Heart Gore cooldown + damage equal to 20% of Attack |
+| 3 (32) | Swift Contract | +20% combat speed for 10s |
+| 4 (37) | Assault Ambush | Up to 4 targets, guaranteed Blind vs NPCs. For bosses and at cap — Triniel's Dagger |
 
-You collect about 29 Shards by 45, while one stigma needs 75 to reach level 20. So don't spread Shards thin while leveling:
-first take **Illusive Clone to 5** (specialization unlocks at 5), then **Swift Contract to 5**, and put the rest into Illusive Clone.
+Shards are scarce while leveling: about 29 by 45. Don't spread them:
+first **Savage Fang to 5** (first specialization), then **Illusive Clone to 5**, then **Swift Contract to 5**. Put the rest into Savage Fang.
 
 ## Solo leveling rotation
 
-**Single target (elite, quest boss):**
-Shadowstrike → Ambush (+30% from behind) → Savage Roar ×N → Insignia Explosion → Heart Gore after a crit.
-From 22, pop Illusive Clone before the fight so you can spam Heart Gore.
+**Mob pack (from 22):**
+Shadowstrike on the center target → **Savage Fang** (5 Insignias on 4 targets) → **Insignia Explosion** (100% stun vs NPCs, triggers Defense Break) → Savage Roar and Quick Slice → Heart Gore after every crit.
 
-**Mob pack:**
-pull 2–3 mobs → Quick Slice (up to 4 targets) between Savage Roars → Insignia Explosion on the tankiest target.
+**Elite or quest boss:**
+Illusive Clone → Shadowstrike (behind, stun) → Ambush (+30% from behind) → Shadow Fall (knockdown on the stunned target) → Savage Roar ×N → Insignia Explosion → Heart Gore as often as the clone allows.
 
-**When things get dangerous:** Flash Slice (3s Blind), Defiance (breaks crowd control).
+**Before 22:** the same, but stack Insignias with Savage Roar and Ambush.
+
+**When things get dangerous:** Flash Slice (guaranteed Blind vs NPCs), Defiance (breaks CC, 5s immunity), Revitalization Contract saves you at ≤10% HP.
 
 ## Common mistakes
 
-- Attacking from the front. Almost all Assassin damage is built around back attacks.
-- Grinding instead of questing. Story quests give far more XP.
-- Skipping Sealed Dungeons at 29–39.
-- Putting points into Apply Poison and Ambush Stance.
+- **Attacking from the front.** Shadowstrike, Ambush and Triniel's Dagger are built around back attacks.
+- **Spreading points across every skill.** Whirlwind Slice, Infiltrate, Defiance and Flash Slice work fine at level 1.
+- **Grinding instead of questing.** Story quests give far more XP.
+- **Skipping Sealed Dungeons at 29–39.** They also give Skill Points.
 
 ## Still being verified
 
-- Skill Points granted per level and the cost of each skill level.
-- Gear by leveling stage — this section will be added after in-game checks.
+- The cost of skill level 9→10 (assumed 4 points).
+- Skill Points granted per character level.
+- **Defense Break** unlock level: it is already level 4 at character level 22, which doesn't fit an unlock at 21.
+- Gear by leveling stage.
 - The Asmodian route is confirmed by a single source so far.
 
-See the [class page](../../classes/assassin/) for every skill and its data status.
+See the [class page](../../classes/assassin/) for every skill with descriptions and specializations.

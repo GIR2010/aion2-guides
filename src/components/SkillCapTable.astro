@@ -1,0 +1,121 @@
+---
+import { getEntry } from 'astro:content';
+import { pick, type Locale } from '../i18n/ui';
+import { charLevelFor, levelUpCost, totalCost } from '../lib/skills';
+
+interface Props {
+  /** id плана прокачки: из него берётся порядок навыков. */
+  plan: string;
+  locale: Locale;
+}
+
+const { plan: planId, locale } = Astro.props;
+const plan = await getEntry('levelingPlans', planId);
+if (!plan) throw new Error(`Unknown leveling plan: ${planId}`);
+const cls = await getEntry(plan.data.class);
+if (!cls) throw new Error(`Unknown class in plan ${planId}`);
+
+const milestonesLevels = [4, 7, 8, 10];
+const rows = plan.data.skillPriority.map((id, i) => {
+  const skill = cls.data.skills.find((s) => s.id === id);
+  if (!skill) throw new Error(`Unknown skill ${id}`);
+  return {
+    rank: i + 1,
+    name: pick(skill.name, locale),
+    unlock: skill.unlockLevel,
+    at: milestonesLevels.map((l) => charLevelFor(l, skill.unlockLevel)),
+  };
+});
+
+const ru = locale === 'ru';
+const costRows = Array.from({ length: 9 }, (_, i) => ({
+  from: i + 1,
+  cost: levelUpCost(i + 1),
+  total: totalCost(i + 2),
+  verified: i + 1 <= 8,
+}));
+---
+
+<h3>{ru ? 'Стоимость уровней навыка' : 'Skill level costs'}</h3>
+<div class="table-wrap">
+  <table class="compact">
+    <thead>
+      <tr>
+        <th>{ru ? 'Уровень' : 'Level'}</th>
+        {costRows.map((r) => <th>{r.from}→{r.from + 1}</th>)}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{ru ? 'Очков' : 'Points'}</td>
+        {costRows.map((r) => <td class={r.verified ? '' : 'unverified'}>{r.cost}{!r.verified && '?'}</td>)}
+      </tr>
+      <tr>
+        <td>{ru ? 'Всего с 1 ур.' : 'Total from 1'}</td>
+        {costRows.map((r) => <td class={r.verified ? '' : 'unverified'}>{r.total}{!r.verified && '?'}</td>)}
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="muted small">
+  {
+    ru
+      ? '«?» — переход 9→10 на скриншотах не встречался, значение предположительное.'
+      : '“?” — the 9→10 step was not on the screenshots, the value is assumed.'
+  }
+</p>
+
+<h3>{ru ? 'С какого уровня персонажа доступен уровень навыка' : 'Character level required for a skill level'}</h3>
+<div class="table-wrap">
+  <table class="compact skills">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>{ru ? 'Навык' : 'Skill'}</th>
+        <th>{ru ? 'Открытие' : 'Unlock'}</th>
+        {milestonesLevels.map((l) => <th>{ru ? `Ур. ${l}` : `Lv. ${l}`}{l === 8 && '*'}</th>)}
+      </tr>
+    </thead>
+    <tbody>
+      {
+        rows.map((r) => (
+          <tr>
+            <td class="muted">{r.rank}</td>
+            <td>{r.name}</td>
+            <td>{r.unlock}</td>
+            {r.at.map((lvl) => (
+              <td class={lvl > 45 ? 'unverified' : ''}>{lvl > 45 ? (ru ? 'после 45' : 'after 45') : lvl}</td>
+            ))}
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>
+<p class="muted small">
+  {
+    ru
+      ? '* На 8 уровне навыка открывается первая особенность. Бонусы «+N к навыку» с экипировки тоже считаются — с ними особенность откроется раньше.'
+      : '* The first specialization unlocks at skill level 8. “+N skill” bonuses from gear count too, so with them it unlocks earlier.'
+  }
+</p>
+
+<style>
+  .compact th,
+  .compact td {
+    padding: 6px 8px;
+    text-align: center;
+  }
+  .skills td:nth-child(2),
+  .skills th:nth-child(2),
+  .compact td:first-child,
+  .compact th:first-child {
+    text-align: left;
+  }
+  .unverified {
+    color: var(--warn);
+  }
+  .small {
+    font-size: 0.85rem;
+  }
+</style>

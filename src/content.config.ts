@@ -36,8 +36,17 @@ const skill = z.object({
   unlockLevel: z.number().int().min(1).max(60),
   /** Перезарядка в секундах; null — без перезарядки. */
   cooldown: z.number().nullable(),
+  /** Затрата ОМ (маны); null — не тратит. */
+  mpCost: z.number().nullable().default(null),
   name: text,
   effect: text,
+  /**
+   * Уникальные особенности (специализации): открываются на уровне навыка `level`
+   * (активные — 8/12/16, стигмы — 5/10/15/20). Тексты в игре обрезаны, поэтому краткие.
+   */
+  specs: z.array(z.object({ level: z.number().int(), text })).default([]),
+  /** Пометка о расхождениях или непроверенных деталях. */
+  note: text.optional(),
   ...factMeta,
 });
 
@@ -89,6 +98,12 @@ const levelingPlans = defineCollection({
   schema: z.object({
     class: reference('classes'),
     route: reference('routes'),
+    /** Порядок вложения очков навыков: id навыков от важного к неважному. */
+    skillPriority: z.array(z.string()),
+    /** Какую особенность брать, когда навык дойдёт до её уровня. `spec` — индекс в `skills[].specs`. */
+    specPicks: z
+      .array(z.object({ skill: z.string(), spec: z.number().int(), why: text }))
+      .default([]),
     steps: z.array(
       z.object({
         level: z.number().int(),
