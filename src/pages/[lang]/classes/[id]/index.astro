@@ -45,10 +45,10 @@ const stigmaNote =
   <h2>{t(locale, 'class.skills')}</h2>
   <p class="note">{t(locale, 'draft.note')}</p>
   <h3>{t(locale, 'class.active')}</h3>
-  <SkillTable skills={byType('active')} locale={locale} />
+  <SkillTable skills={byType('active')} locale={locale} classId={cls.id} />
   <h3>{t(locale, 'class.passive')}</h3>
-  <SkillTable skills={byType('passive')} locale={locale} />
+  <SkillTable skills={byType('passive')} locale={locale} classId={cls.id} />
   <h3>{t(locale, 'class.stigma')}</h3>
   <p class="muted">{stigmaNote}</p>
-  <SkillTable skills={byType('stigma')} locale={locale} hideLevel />
+  <SkillTable skills={byType('stigma')} locale={locale} hideLevel classId={cls.id} />
 </Base>

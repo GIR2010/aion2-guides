@@ -1,0 +1,49 @@
+---
+/**
+ * Умение с иконкой для текста гайда: <Skill id="quick-slice" />.
+ * Название берётся из данных класса на языке страницы; `label` заменяет его.
+ */
+import { getCollection } from 'astro:content';
+import { pick, isLocale, defaultLocale } from '../i18n/ui';
+import { skillIconUrl } from '../lib/icons';
+
+interface Props {
+  id: string;
+  label?: string;
+  /** Только иконка, без названия (подпись уходит в title). */
+  iconOnly?: boolean;
+}
+
+const { id, label, iconOnly = false } = Astro.props;
+const lang = Astro.params.lang ?? Astro.currentLocale;
+const locale = isLocale(lang) ? lang : defaultLocale;
+
+const classes = await getCollection('classes');
+const cls = classes.find((c) => c.data.skills.some((s) => s.id === id));
+const skill = cls?.data.skills.find((s) => s.id === id);
+if (!cls || !skill) throw new Error(`<Skill>: неизвестное умение ${id}`);
+
+const name = label ?? pick(skill.name, locale);
+const icon = skillIconUrl(cls.id, id);
+---
+
+<span class="skill" title={iconOnly ? name : undefined}>
+  {icon && <img src={icon} width="24" height="24" alt={iconOnly ? name : ''} loading="lazy" decoding="async" />}
+  {!iconOnly && <span>{name}</span>}
+</span>
+
+<style>
+  .skill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    vertical-align: middle;
+  }
+  .skill img {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    flex: none;
+    box-shadow: 0 0 0 1px var(--border);
+  }
+</style>

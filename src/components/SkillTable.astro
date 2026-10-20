@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { pick, t, type Locale } from '../i18n/ui';
 import StatusBadge from './StatusBadge.astro';
+import { skillIconUrl } from '../lib/icons';
 
 type Skill = CollectionEntry<'classes'>['data']['skills'][number];
 
@@ -10,9 +11,11 @@ interface Props {
   locale: Locale;
   /** Скрыть колонку уровня (для стигм — у всех 22). */
   hideLevel?: boolean;
+  /** id класса — для иконок умений. */
+  classId?: string;
 }
 
-const { skills, locale, hideLevel = false } = Astro.props;
+const { skills, locale, hideLevel = false, classId } = Astro.props;
 const sorted = [...skills].sort((a, b) => a.unlockLevel - b.unlockLevel);
 const sec = locale === 'ru' ? 'с' : 's';
 const lvl = t(locale, 'skill.level');
@@ -35,7 +38,12 @@ const lvl = t(locale, 'skill.level');
           <tr id={s.id}>
             {!hideLevel && <td>{s.unlockLevel}</td>}
             <td>
-              <strong>{pick(s.name, locale)}</strong>
+              <div class="name">
+                {classId && skillIconUrl(classId, s.id) && (
+                  <img src={skillIconUrl(classId, s.id)} width="40" height="40" alt="" loading="lazy" decoding="async" />
+                )}
+                <strong>{pick(s.name, locale)}</strong>
+              </div>
               {locale === 'ru' && s.name.ru === null && <div class="muted small">{t(locale, 'skill.ruPending')}</div>}
               {locale === 'ru' && s.name.en && s.name.ru && <div class="muted small">{s.name.en}</div>}
             </td>
@@ -77,6 +85,17 @@ const lvl = t(locale, 'skill.level');
 </div>
 
 <style>
+  .name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .name img {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    flex: none;
+  }
   .small {
     font-size: 0.8rem;
   }

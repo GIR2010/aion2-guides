@@ -16,6 +16,48 @@
     "determination",
     "storm-rampage"
   ],
+  "wisdomStones": [
+    { "level": 10, "count": 26 },
+    { "level": 15, "count": 22 },
+    { "level": 20, "count": 14 },
+    { "level": 25, "count": 10 },
+    { "level": 30, "count": 14 },
+    { "level": 35, "count": 20 },
+    { "level": 40, "count": 14 }
+  ],
+  "stigmaPlan": {
+    "slots": ["savage-fang", "illusive-clone", "swift-contract", "assault-ambush"],
+    "shards": [
+      { "skill": "savage-fang", "toLevel": 5 },
+      { "skill": "illusive-clone", "toLevel": 5 },
+      { "skill": "swift-contract", "toLevel": 5 },
+      { "skill": "assault-ambush", "toLevel": 1 },
+      { "skill": "savage-fang", "toLevel": 10 }
+    ]
+  },
+  "macros": [
+    {
+      "name": { "ru": "Основная связка", "en": "Main macro" },
+      "fromLevel": 4,
+      "slots": ["storm-rampage", "heart-gore", "insignia-explosion", "savage-roar"]
+    }
+  ],
+  "daevanion": [
+    {
+      "level": 12,
+      "text": {
+        "ru": "Неджакан: +1 к Реву зверя, Удару из сумрака, Пронзанию сердца, Быстрому разрезу, Внезапному нападению и Взрыву эмблемы (32 кристалла), затем Стойка нападения, Удар с тыла и Выжидание момента ×2 (ещё 25).",
+        "en": "Nezekan: +1 to Savage Roar, Shadowstrike, Heart Gore, Quick Slice, Ambush and Insignia Explosion (32 crystals), then Assault Stance, Rear Smite and Exploit Weakness ×2 (25 more)."
+      }
+    },
+    {
+      "level": 20,
+      "text": {
+        "ru": "Джикел: +1 к тем же шести умениям и Брешь в защите ×2 (52 кристалла), затем «Усиление всего урона» +1.5% ×2 (ещё 9).",
+        "en": "Zikel: +1 to the same six skills and Defense Break ×2 (52 crystals), then “Amplify All Damage” +1.5% ×2 (9 more)."
+      }
+    }
+  ],
   "specPicks": [
     {
       "skill": "quick-slice",

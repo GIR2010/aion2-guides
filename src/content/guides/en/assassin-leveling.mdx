@@ -12,6 +12,7 @@ verifiedPatch: '2.0.7'
 
 import ClassLevelTimeline from '../../../components/ClassLevelTimeline.astro';
 import SkillCapTable from '../../../components/SkillCapTable.astro';
+import Skill from '../../../components/Skill.astro';
 
 For players who run an Asmodian Assassin and want to reach 45 quickly and cleanly. Skill names and descriptions come from the global client (version 2.0.7), numbers from in-game skill window screenshots. Level-cap progression has its own guide.
 
@@ -39,16 +40,16 @@ Character levels alone give enough points for about 9–10 of the 22 skills. Wit
 
 | # | Skill | Why |
 |---|---|---|
-| 1 | Quick Slice | Up to 4 targets, no cooldown, restores 100 MP — the core of pack damage |
-| 2 | Savage Roar | Up to 4 targets, 1 Insignia on each |
-| 3 | Insignia Explosion (from 14) | Best use of points: at levels 2–4 each point adds ~260–310 damage to 4 targets every 10s. At 5 Insignias damage is +60% and the stun is guaranteed vs NPCs |
-| 4 | Heart Gore | After a crit: up to 4 targets, +100 MP. No cooldown under Illusive Clone |
-| 5 | Defense Break (from 21) | Target Defense after a stun: −12% at level 1, −20% at level 5, **−30% at level 10**. 21 points for all levels at once |
-| 6 | Rear Smite | Back attack damage and PvE damage: +3% → +7.5% each at level 10 |
-| 7 | Assault Stance | Crit damage: +6% → +15% at level 10 |
-| 8 | Exploit Weakness | Crit +100 → +190 (feeds Heart Gore), damage buff 5.5% → 10% |
-| 9 | Ambush | Heavy hit, +30% from behind, but single-target only |
-| 10 | Shadowstrike | You need it for the blink behind and the stun, but its damage is the weakest of the core skills: keep it at level 1–4 until you have spare points |
+| 1 | <Skill id="quick-slice" /> | Up to 4 targets, no cooldown, restores 100 MP — the core of pack damage |
+| 2 | <Skill id="savage-roar" /> | Up to 4 targets, 1 Insignia on each |
+| 3 | <Skill id="insignia-explosion" /> (from 14) | Best use of points: at levels 2–4 each point adds ~260–310 damage to 4 targets every 10s. At 5 Insignias damage is +60% and the stun is guaranteed vs NPCs |
+| 4 | <Skill id="heart-gore" /> | After a crit: up to 4 targets, +100 MP. No cooldown under Illusive Clone |
+| 5 | <Skill id="defense-break" /> (from 21) | Target Defense after a stun: −12% at level 1, −20% at level 5, **−30% at level 10**. 21 points for all levels at once |
+| 6 | <Skill id="rear-smite" /> | Back attack damage and PvE damage: +3% → +7.5% each at level 10 |
+| 7 | <Skill id="assault-stance" /> | Crit damage: +6% → +15% at level 10 |
+| 8 | <Skill id="exploit-weakness" /> | Crit +100 → +190 (feeds Heart Gore), damage buff 5.5% → 10% |
+| 9 | <Skill id="ambush" /> | Heavy hit, +30% from behind, but single-target only |
+| 10 | <Skill id="shadowstrike" /> | You need it for the blink behind and the stun, but its damage is the weakest of the core skills: keep it at level 1–4 until you have spare points |
 
 Other passives (Heightened Sixth Sense, Impact Hit, Ambush Stance) get 1–3 points on cheap levels if anything is left. **Determination** levels raise the execute threshold from 30% to 39% of the target's HP — useful against elites. **Apply Poison** is PvP-only.
 
@@ -58,12 +59,12 @@ Other passives (Heightened Sixth Sense, Impact Hit, Ambush Stance) get 1–3 poi
 
 | Skill | Pick | Why |
 |---|---|---|
-| Quick Slice | Multi-hit chance +50% | Pack damage. If you die a lot, take “Absorbs 0.7% HP” |
-| Savage Roar | Skill speed +20% | Faster animations, faster Insignias |
-| Shadowstrike | Crit damage +20% for 10s | Boosts the whole burst after the opener |
-| Ambush | 2 Insignias on a back attack | Ready charges for Insignia Explosion |
-| Heart Gore | 1 Insignia on hit | Every proc feeds Insignia Explosion |
-| Insignia Explosion | Multi-hit chance +50% | More damage on all 4 targets |
+| <Skill id="quick-slice" /> | Multi-hit chance +50% | Pack damage. If you die a lot, take “Absorbs 0.7% HP” |
+| <Skill id="savage-roar" /> | Skill speed +20% | Faster animations, faster Insignias |
+| <Skill id="shadowstrike" /> | Crit damage +20% for 10s | Boosts the whole burst after the opener |
+| <Skill id="ambush" /> | 2 Insignias on a back attack | Ready charges for Insignia Explosion |
+| <Skill id="heart-gore" /> | 1 Insignia on hit | Every proc feeds Insignia Explosion |
+| <Skill id="insignia-explosion" /> | Multi-hit chance +50% | More damage on all 4 targets |
 
 **Second slot (skill level 12).** It opens once Nezekan's +1 and Zikel's +1 are added to level 10 from points. The second slot can hold the level-12 specialization or another of the three level-8 ones — for example “Absorbs 0.7% HP” next to multi-hit on Quick Slice, or “+1s Stun duration” on Insignia Explosion. The third slot opens only at skill level 20, which is cap territory.
 
@@ -82,10 +83,10 @@ Crystals are scarce while leveling: 4 per level from 12 (136 by 45) plus 2 from 
 
 | Slot (level) | Stigma | Why |
 |---|---|---|
-| 1 (22) | Savage Fang | Up to 4 targets and 5 Insignias at once. Follow with Insignia Explosion — the whole pack is stunned |
-| 2 (27) | Illusive Clone | 10s with no Heart Gore cooldown + damage equal to 20% of Attack |
-| 3 (32) | Swift Contract | +20% combat speed for 10s |
-| 4 (37) | Assault Ambush | Up to 4 targets, guaranteed Blind vs NPCs. For bosses and at cap — Triniel's Dagger |
+| 1 (22) | <Skill id="savage-fang" /> | Up to 4 targets and 5 Insignias at once. Follow with Insignia Explosion — the whole pack is stunned |
+| 2 (27) | <Skill id="illusive-clone" /> | 10s with no Heart Gore cooldown + damage equal to 20% of Attack |
+| 3 (32) | <Skill id="swift-contract" /> | +20% combat speed for 10s |
+| 4 (37) | <Skill id="assault-ambush" /> | Up to 4 targets, guaranteed Blind vs NPCs. For bosses and at cap — Triniel's Dagger |
 
 Shards are scarce while leveling: character levels give exactly **29** by 45 (1 per level from 23 to 39, 2 per level from 40). Learning a stigma costs 1 Shard, levels 2–5 cost 1 each, 6–10 cost 2, 11–15 cost 4, 16–20 cost 8 (75 to reach 20). Don't spread them:
 first **Savage Fang to 5** (5 Shards, first specialization), then **Illusive Clone to 5**, then **Swift Contract to 5**, plus 1 to learn the 4th stigma — 16 total. Put the remaining 13 into **Savage Fang up to 10** (10 Shards).
@@ -103,24 +104,28 @@ While leveling it helps to split your controls into **Quick Slice**, **a short s
 3. Bind a key in **Settings → Key Settings → General → Macro**, for example `R`. In AION 2 control mode you can use a mouse button; in AION 1 control mode the client does not allow mouse buttons for macros.
 4. In combat, hold the macro key. Pressing any skill manually always takes precedence over the macro. Switching presets interrupts the macro.
 
-**The main layout rule:** conditional skills go **at the bottom**, skills without a cooldown go **at the top**. Heart Gore (after a crit), Storm Rampage (on a Staggered target), Shadow Fall (on a stunned target) and Whirlwind Slice (after a dodge) are unavailable until their condition is met. The macro simply skips them, and once they light up it uses them first. Quick Slice and Savage Roar have no cooldown, so at the top they fill the gaps. Put them at the bottom and the macro will press nothing else.
+**Quick Slice cannot go into a macro.** It is the basic attack: it is locked to LMB and cannot be moved into a macro or onto another key. Press it between macro casts — manual input takes precedence over the macro anyway.
 
-### Ready-made macros
+**The main layout rule:** conditional skills go **at the bottom**, skills without a cooldown go **at the top**. Heart Gore (after a crit), Storm Rampage (on a Staggered target), Shadow Fall (on a stunned target) and Whirlwind Slice (after a dodge) are unavailable until their condition is met. The macro simply skips them, and once they light up it uses them first. Savage Roar has no cooldown, so at the top it fills the gaps. Put it at the bottom and the macro will press nothing else.
 
-**“Pack”, from level 14** (bottom to top):
+**One skill, one slot.** A skill can sit in only one macro, so you can't build two macros that share Savage Roar and Heart Gore. One main macro is enough: its conditional skills fire only when they light up, so it works for packs and elites alike.
+
+### Main macro
+
+From level 14, bottom to top:
 
 | Slot | Skill | Why here |
 |---|---|---|
-| 0 (bottom, top priority) | Heart Gore | Fires only after a crit; +100 MP |
-| 1 | Insignia Explosion | Every 10s. Insignias last 10s, and Savage Roar with no cooldown restacks 5 charges before Explosion is back |
-| 2 | Savage Roar | Puts an Insignia on each of 4 targets |
-| 3 (top) | Quick Slice | Fills the gaps and restores MP |
+| 0 (bottom, top priority) | <Skill id="storm-rampage" /> (from 5) | Only on a Staggered target — the window is short, so it goes first |
+| 1 | <Skill id="heart-gore" /> (from 4) | Fires only after a crit; +100 MP |
+| 2 | <Skill id="insignia-explosion" /> (from 14) | Every 10s. Insignias last 10s, and Savage Roar with no cooldown restacks 5 charges before Explosion is back |
+| 3 (top) | <Skill id="savage-roar" /> | Puts an Insignia on each of 4 targets and fills the gaps |
 
-From level 4 to 14 use the same macro without Explosion: Heart Gore → Savage Roar → Quick Slice.
+Quick Slice stays on LMB, between macro casts. Before 14 the macro is the same without Explosion; add slots as you learn the skills.
 
-**“Elite and quest boss”** (bottom to top): Storm Rampage → Shadow Fall → Heart Gore → Ambush → Savage Roar → Quick Slice. Rampage and Shadow Fall fire only when the target is in the right state; the rest of the time the macro moves down the list.
+**Against elites and quest bosses** use the same macro. Keep Ambush (needs the target's back) and Shadow Fall (on a stunned target, 10 m dash) on their own keys and press them yourself — manual input beats the macro.
 
-**Watch your MP.** Savage Roar costs 120 MP and has no cooldown, while Insignia Explosion costs 200 MP. If MP drains in a long fight and Explosion stops firing, swap Savage Roar and Quick Slice, or take the Savage Roar specialization “-20% MP consumed”.
+**Watch your MP.** Savage Roar costs 120 MP and has no cooldown, while Insignia Explosion costs 200 MP. The macro keeps pressing Savage Roar while MP lasts. Quick Slice on LMB and Heart Gore restore MP (100 each). If MP drains in a long fight and Explosion stops firing, press Quick Slice more often or take the Savage Roar specialization “-20% MP consumed”.
 
 Built-in follow-ups of basic attacks and a custom Macro are different things. Keep Shadowstrike, Infiltrate, Savage Fang, buffs and Defiance out of macros: a 20 m blink or a defensive skill should fire when you decide.
 
@@ -139,19 +144,19 @@ In these groups **don't treat different conditions as a fixed rotation**: a crit
 
 | Group | Setup | How to use |
 |---|---|---|
-| Basic attack | **Quick Slice — its own key** | Use it between other skills: pack damage and MP restore |
-| Sustained damage, from 4 | **“Pack”** macro: Heart Gore, (from 14) Insignia Explosion, Savage Roar, Quick Slice | Hold the macro key. Quick Slice can stay on its own key too. Before 4, use Savage Roar and Quick Slice separately |
-| Opener | **Shadowstrike → Ambush**, manually | From 3: get behind, then strike from behind. Keep both on separate keys so you don't waste the blink every time it comes off cooldown |
-| Dodge reaction | **Whirlwind Slice**, separately | From 7, press it when it's available after a successful dodge. Don't wait for it to fire in the main macro |
-| Blind and repositioning | **Flash Slice**, separately | From 8, use it when you need to survive hits or switch to the other side of the target; check where its back is after moving |
-| Conditional blink | **Infiltrate**, separately | From 10, during an emergency dodge or in flight. It is not an unconditional replacement for Shadowstrike |
-| Extending control | **Shadow Fall**, separately | From 12, while the target is stunned. Don't waste the stun window waiting for its turn in a long macro |
-| Spending Insignias | **Insignia Explosion** in the “Pack” macro | From 14. Do the first Explosion on a fresh pack after Savage Fang or 4–5 Savage Roars; after that the macro lands on 5 charges by itself |
-| Breaking CC | **Defiance**, its own key | From 16: press it when needed, regardless of the attack macro |
-| Fast five Insignias | **Savage Fang**, separately | In this setup from 22: Fang, then Insignia Explosion manually. If the target already has 5 charges, spend those first |
-| Burst window | **Illusive Clone** and **Swift Contract**, separate keys | In this setup from 27 and 32 respectively. Use them before a fight with a durable target when you can attack nonstop |
-| Fourth stigma | **Assault Ambush** or **Triniel's Dagger**, separately | In this setup from 37: the first to blind a pack, the second for a back attack on a durable single target |
-| Hitting a vulnerable target | **Storm Rampage**, separately | From 5, on a target that is **Staggered**. Don't confuse it with the stun from Shadowstrike |
+| Basic attack | <Skill id="quick-slice" iconOnly /> **Quick Slice — LMB**, locked to it | Use it between other skills: pack damage and MP restore. It cannot be moved into a macro |
+| Sustained damage, from 4 | **Main macro**: Storm Rampage, Heart Gore, (from 14) Insignia Explosion, Savage Roar | Hold the macro key and click LMB between its casts. Before 4, use Savage Roar on its own key |
+| Opener | <Skill id="shadowstrike" iconOnly /> <Skill id="ambush" iconOnly /> **Shadowstrike → Ambush**, manually | From 3: get behind, then strike from behind. Keep both on separate keys so you don't waste the blink every time it comes off cooldown |
+| Dodge reaction | <Skill id="whirlwind-slice" iconOnly /> **Whirlwind Slice**, separately | From 7, press it when it's available after a successful dodge. Don't wait for it to fire in the main macro |
+| Blind and repositioning | <Skill id="flash-slice" iconOnly /> **Flash Slice**, separately | From 8, use it when you need to survive hits or switch to the other side of the target; check where its back is after moving |
+| Conditional blink | <Skill id="infiltrate" iconOnly /> **Infiltrate**, separately | From 10, during an emergency dodge or in flight. It is not an unconditional replacement for Shadowstrike |
+| Extending control | <Skill id="shadow-fall" iconOnly /> **Shadow Fall**, separately | From 12, while the target is stunned. Don't waste the stun window waiting for its turn in a long macro |
+| Spending Insignias | <Skill id="insignia-explosion" iconOnly /> **Insignia Explosion** in the main macro | From 14. Do the first Explosion on a fresh pack after Savage Fang or 4–5 Savage Roars; after that the macro lands on 5 charges by itself |
+| Breaking CC | <Skill id="defiance" iconOnly /> **Defiance**, its own key | From 16: press it when needed, regardless of the attack macro |
+| Fast five Insignias | <Skill id="savage-fang" iconOnly /> **Savage Fang**, separately | In this setup from 22: Fang, then Insignia Explosion manually. If the target already has 5 charges, spend those first |
+| Burst window | <Skill id="illusive-clone" iconOnly /> **Illusive Clone** and <Skill id="swift-contract" iconOnly /> **Swift Contract**, separate keys | In this setup from 27 and 32 respectively. Use them before a fight with a durable target when you can attack nonstop |
+| Fourth stigma | <Skill id="assault-ambush" iconOnly /> **Assault Ambush** or <Skill id="triniels-dagger" iconOnly /> **Triniel's Dagger**, separately | In this setup from 37: the first to blind a pack, the second for a back attack on a durable single target |
+| Hitting a vulnerable target | <Skill id="storm-rampage" iconOnly /> **Storm Rampage** — bottom slot of the main macro | From 5. Fires only on a **Staggered** target (not the stun from Shadowstrike); the rest of the time the macro skips it |
 
 Passives — Exploit Weakness, Rear Smite, Assault Stance, Defense Break and the rest — don't go on keys.
 
@@ -161,8 +166,8 @@ Passives — Exploit Weakness, Rear Smite, Assault Stance, Defense Break and the
 
 | Character level | What to change | Short combat plan |
 |---|---|---|
-| 1–3 | Quick Slice and Savage Roar separately; Shadowstrike separately, add Ambush at 3 | Shadowstrike → Ambush once learned → basic attacks and Savage Roar |
-| 4–11 | Create the macro, bottom to top: Heart Gore, Savage Roar, Quick Slice; keep blinks and defensive skills separate | Open from behind → hold the macro; it uses Heart Gore by itself after a crit |
+| 1–3 | Quick Slice on LMB, Savage Roar and Shadowstrike on their own keys; add Ambush at 3 | Shadowstrike → Ambush once learned → basic attacks and Savage Roar |
+| 4–11 | Create the macro, bottom to top: Heart Gore, Savage Roar; at 5 put Storm Rampage at the very bottom. Keep blinks and defensive skills separate | Open from behind → hold the macro and click LMB; it uses Heart Gore by itself after a crit |
 | 12–13 | Add Shadow Fall on its own key | Shadowstrike → Ambush → Shadow Fall if the stun is still up |
 | 14–21 | Insert Insignia Explosion into the macro above Heart Gore; from 16, Defiance on its own key | A few Savage Roars on a new pack → macro; after the Explosion stun, Shadow Fall |
 | 22–26 | Put Savage Fang into the first stigma slot and on its own key | Savage Fang → Insignia Explosion; then the main macro |
@@ -170,7 +175,7 @@ Passives — Exploit Weakness, Rear Smite, Assault Stance, Defense Break and the
 | 32–36 | Third slot — Swift Contract, own key | Approach the target → Swift Contract → Illusive Clone → attack. This is a manual mini-combo, not a required macro |
 | 37–45 | Fourth slot — Assault Ambush for packs; swap to Triniel's Dagger for bosses | The core keys stay the same: you add situational control or a separate back attack |
 
-**Example keys:** Quick Slice — LMB, main macro — `R`, elite macro — `F`, Shadowstrike — `1`, Ambush — `2`, Insignia Explosion (for the manual first Explosion) — `3`, Savage Fang — `4`. Put Flash Slice, Shadow Fall and Defiance on three convenient separate keys, and buffs on, say, `Shift+1` and `Shift+2`. This is an example, not the game's default bindings: pick free keys in your control mode. Don't move a Defiance key you're already used to just to save one slot.
+**Example keys:** Quick Slice — LMB, main macro — `R`, Shadowstrike — `1`, Ambush — `2`, Insignia Explosion (for the manual first Explosion) — `3`, Savage Fang — `4`. Put Flash Slice, Shadow Fall and Defiance on three convenient separate keys, and buffs on, say, `Shift+1` and `Shift+2`. This is an example, not the game's default bindings: pick free keys in your control mode. Don't move a Defiance key you're already used to just to save one slot.
 
 ### Mini-combos worth remembering
 
@@ -207,7 +212,7 @@ From 27, once Illusive Clone is slotted per the plan: clone → Shadowstrike (be
 ## Still being verified
 
 - Wisdom Stones and crystals from Sealed Dungeons are counted from the client reward tables; whether they are first-clear only is still being checked in game.
-- Whether MP holds up for the “Pack” macro in a long fight.
+- Whether MP holds up for the main macro in a long fight.
 - Gear by leveling stage.
 - The Asmodian route is confirmed by a single source so far.
 

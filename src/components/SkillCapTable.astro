@@ -2,6 +2,7 @@
 import { getEntry } from 'astro:content';
 import { pick, type Locale } from '../i18n/ui';
 import { charLevelFor, levelUpCost, totalCost } from '../lib/skills';
+import Skill from './Skill.astro';
 
 interface Props {
   /** id плана прокачки: из него берётся порядок умений. */
@@ -24,6 +25,7 @@ const skills = plan.data.skillPriority.map((id) => {
 const shownLevels = [4, 7, 8, 10];
 const rows = skills.map((skill, i) => ({
   rank: i + 1,
+  id: skill.id,
   name: pick(skill.name, locale),
   unlock: skill.unlockLevel,
   at: shownLevels.map((l) => charLevelFor(skill, l)),
@@ -77,7 +79,7 @@ const ru = locale === 'ru';
         rows.map((r) => (
           <tr>
             <td class="muted">{r.rank}</td>
-            <td>{r.name}</td>
+            <td><Skill id={r.id} /></td>
             <td>{r.unlock}</td>
             {r.at.map((lvl) => (
               <td class={lvl > 45 ? 'later' : ''}>{lvl > 45 ? (ru ? 'после 45' : 'after 45') : lvl}</td>

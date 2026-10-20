@@ -118,6 +118,21 @@ const levelingPlans = defineCollection({
     specPicks: z
       .array(z.object({ skill: z.string(), spec: z.number().int(), why: text }))
       .default([]),
+    /** Камни мудрости (+1 очко умения) из запечатанных подземелий по рекомендуемому уровню (RewardDungeon *_02). */
+    wisdomStones: z.array(z.object({ level: z.number().int(), count: z.number().int() })).default([]),
+    /** Стигмы по порядку слотов и порядок вложения обломков. */
+    stigmaPlan: z
+      .object({
+        slots: z.array(z.string()),
+        shards: z.array(z.object({ skill: z.string(), toLevel: z.number().int() })),
+      })
+      .optional(),
+    /** Связки: `slots` — снизу вверх (первый — высший приоритет). Умение показывается, когда оно открыто. */
+    macros: z
+      .array(z.object({ name: text, fromLevel: z.number().int().default(1), slots: z.array(z.string()) }))
+      .default([]),
+    /** Что брать на досках Даэваниона, начиная с уровня. */
+    daevanion: z.array(z.object({ level: z.number().int(), text })).default([]),
     steps: z.array(
       z.object({
         level: z.number().int(),
