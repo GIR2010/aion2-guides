@@ -1,13 +1,13 @@
 ---
 title: 'Assassin 1→45: Step-by-Step Leveling (Asmodian)'
-description: 'Which skills to raise at every level, which specializations to pick, stigma for each slot, route and rotation for an Assassin to the cap.'
+description: 'Assassin leveling 1–45: skills, specializations, stigma, Daevanion boards, macro setup, separate keys and combat combos.'
 lang: en
 translationKey: assassin-leveling
 class: assassin
 order: 1
 draft: true
-updated: 2026-10-19
-verifiedPatch: 2.0.7
+updated: 2026-10-20
+verifiedPatch: '2.0.7'
 ---
 
 import ClassLevelTimeline from '../../../components/ClassLevelTimeline.astro';
@@ -19,10 +19,12 @@ For players who run an Asmodian Assassin and want to reach 45 quickly and cleanl
 
 - **XP.** Yellow (story) quests give almost all the XP to 45. An experienced player gets there in 12–15 hours, a new player in 20–25. Grinding mobs is not worth it.
 - **Where the time goes.** Per the client XP table, levels 1–28 are only 2% of the way, 29–39 about 22%, and **40–44 almost 70%**. At 29–39 the story falls short — fill the gap with **Sealed Dungeons**: they give Skill Points, Daevanion Points and Wisdom Stones.
-- **Skill Points** start at level 4: character levels give **203 points** by 45, Wisdom Stones give the rest. Points raise a skill up to level 10; above that, levels come from gear and Daevanion boards.
+- **Skill Points** start at level 4: character levels give **203 points** by 45. The world gives almost as many again: each of the **60 Asmodian Sealed Dungeons** awards **2 Wisdom Stones** (+1 point each) and 2 Daevanion Crystals, and district quests add about 27 more Stones. In total you can collect **about 350 points** by 45. Points raise a skill up to level 10; above that, levels come from gear and Daevanion boards.
+- **Sealed Dungeons are not just for 29–39.** Per the client tables: 13 dungeons at level 10, 11 at 15, 7 at 20, 5 at 25, 7 at 30, 10 at 35, 7 at 40. Run them as they open: two Wisdom Stones from one dungeon equal one level of a core skill.
 - **Skill level is capped by character level.** For most skills one more level opens every 3 character levels (exact values in the table below). Exceptions are **Defense Break, Revitalization Contract and Determination**: all 10 levels are available as soon as the skill unlocks. Try earlier and the game says “Can be learned at character level N”.
-- **The first specialization unlocks at skill level 8** (pick one of three), with one more each at 12 and 16. “+N skill” bonuses from gear count too.
-- **Daevanion boards:** Nezekan at 12, Zikel at 20, Vaizel at 30, Triniel at 40, Azphel at 45.
+- **Skill damage = base + a percentage of Attack.** The percentage does not change with skill level; only the base grows, and while leveling the base outweighs the Attack part. So a core skill at level 10 hits about **twice** as hard as at level 1 — far more than a weapon upgrade gives.
+- **Specializations.** Slots open at skill levels 8, 12 and **20**. Specializations 1–3 are available from 8, the 4th from 12, the 5th from 16. The second slot can take another level-8 specialization instead of the level-12 one. “+N skill” bonuses from gear and boards count too.
+- **Daevanion boards:** Nezekan at 12, Zikel at 20, Vaizel at 30, Triniel at 40, Azphel at 45. Each of the first four has **+1 to every active skill**. Level 10 from points plus Nezekan and Zikel means skill level 12 and a second specialization slot while still leveling.
 - **Stigma** unlocks at 22 after the Ascension quest “The One Who Hears the Voice”. Slots: 22 / 27 / 32 / 37. Learning a stigma costs 1 Shard; specializations unlock at stigma levels 5 / 10 / 15 / 20.
 
 ## What to do at each level
@@ -33,22 +35,22 @@ Pick your character level. The block shows new skills, which priority skills you
 
 ## Skill Points: what to raise and when
 
-While leveling you have enough points for about 9–10 of the 22 skills. Don't spread them thin.
+Character levels alone give enough points for about 9–10 of the 22 skills. With Wisdom Stones from Sealed Dungeons you can cover every core attack and the percentage passives. The order below is based on damage gained per point: how much base a level adds, how many targets the skill hits and how often.
 
 | # | Skill | Why |
 |---|---|---|
 | 1 | Quick Slice | Up to 4 targets, no cooldown, restores 100 MP — the core of pack damage |
 | 2 | Savage Roar | Up to 4 targets, 1 Insignia on each |
-| 3 | Heart Gore | After a crit: up to 4 targets, +100 MP. No cooldown under Illusive Clone |
-| 4 | Insignia Explosion (from 14) | Main damage: up to 4 targets, stun. At 5 Insignias the stun is guaranteed vs NPCs |
-| 5 | Ambush | Heavy hit, +30% from behind |
-| 6 | Shadowstrike | Opener: 20 m blink behind the target and a 3s stun |
-| 7 | Exploit Weakness | +crit (feeds Heart Gore), clones engrave Insignias |
-| 8 | Rear Smite | +back attack damage and +5% PvE damage |
-| 9 | Assault Stance | +crit damage |
-| 10 | Defense Break | −20% target Defense after a stun — up almost all the time |
+| 3 | Insignia Explosion (from 14) | Best use of points: at levels 2–4 each point adds ~260–310 damage to 4 targets every 10s. At 5 Insignias damage is +60% and the stun is guaranteed vs NPCs |
+| 4 | Heart Gore | After a crit: up to 4 targets, +100 MP. No cooldown under Illusive Clone |
+| 5 | Defense Break (from 21) | Target Defense after a stun: −12% at level 1, −20% at level 5, **−30% at level 10**. 21 points for all levels at once |
+| 6 | Rear Smite | Back attack damage and PvE damage: +3% → +7.5% each at level 10 |
+| 7 | Assault Stance | Crit damage: +6% → +15% at level 10 |
+| 8 | Exploit Weakness | Crit +100 → +190 (feeds Heart Gore), damage buff 5.5% → 10% |
+| 9 | Ambush | Heavy hit, +30% from behind, but single-target only |
+| 10 | Shadowstrike | You need it for the blink behind and the stun, but its damage is the weakest of the core skills: keep it at level 1–4 until you have spare points |
 
-Other passives (Heightened Sixth Sense, Impact Hit, Ambush Stance) get 1–3 points on cheap levels if anything is left. **Apply Poison** is PvP-only.
+Other passives (Heightened Sixth Sense, Impact Hit, Ambush Stance) get 1–3 points on cheap levels if anything is left. **Determination** levels raise the execute threshold from 30% to 39% of the target's HP — useful against elites. **Apply Poison** is PvP-only.
 
 <SkillCapTable plan="assassin-asmodian" locale="en" />
 
@@ -63,6 +65,19 @@ Other passives (Heightened Sixth Sense, Impact Hit, Ambush Stance) get 1–3 poi
 | Heart Gore | 1 Insignia on hit | Every proc feeds Insignia Explosion |
 | Insignia Explosion | Multi-hit chance +50% | More damage on all 4 targets |
 
+**Second slot (skill level 12).** It opens once Nezekan's +1 and Zikel's +1 are added to level 10 from points. The second slot can hold the level-12 specialization or another of the three level-8 ones — for example “Absorbs 0.7% HP” next to multi-hit on Quick Slice, or “+1s Stun duration” on Insignia Explosion. The third slot opens only at skill level 20, which is cap territory.
+
+## Daevanion boards while leveling
+
+Crystals are scarce while leveling: 4 per level from 12 (136 by 45) plus 2 from each Sealed Dungeon. Spend them on **+1 skill** nodes first: every board has one for each active skill.
+
+| Board | What to take | Cost via the shortest path |
+|---|---|---|
+| Nezekan (12) | +1 to Savage Roar, Shadowstrike, Heart Gore, Quick Slice, Ambush, Insignia Explosion | 32 crystals out of 134 |
+| Nezekan, next | +1 Assault Stance, +1 Rear Smite, +2 Exploit Weakness | 25 more (57 total) |
+| Zikel (20) | +1 to the same six skills and **+2 Defense Break** | 52 crystals |
+| Zikel, next | “Amplify All Damage” +1.5% ×2 | 9 more (61 total) |
+
 ## Stigma while leveling
 
 | Slot (level) | Stigma | Why |
@@ -75,29 +90,124 @@ Other passives (Heightened Sixth Sense, Impact Hit, Ambush Stance) get 1–3 poi
 Shards are scarce while leveling: character levels give exactly **29** by 45 (1 per level from 23 to 39, 2 per level from 40). Learning a stigma costs 1 Shard, levels 2–5 cost 1 each, 6–10 cost 2, 11–15 cost 4, 16–20 cost 8 (75 to reach 20). Don't spread them:
 first **Savage Fang to 5** (5 Shards, first specialization), then **Illusive Clone to 5**, then **Swift Contract to 5**, plus 1 to learn the 4th stigma — 16 total. Put the remaining 13 into **Savage Fang up to 10** (10 Shards).
 
+For Illusive Clone and Swift Contract the stigma level extends the duration: **10s at level 1, 12s at level 5, 14.5s at level 10**. Clone at level 5 means a 20% longer window without the Heart Gore cooldown. For Savage Fang the level raises the hit's base: 1074 at level 1, 1692 at level 5, 2202 at level 10.
+
+## Macros, combos and separate keys
+
+While leveling it helps to split your controls into **Quick Slice**, **a short sustained-damage macro** and **skills whose timing you choose yourself**. This is the recommended starting layout for solo 1–45; it does not require skill-level 12–16 specializations or endgame gear.
+
+### How to set up a macro in game
+
+1. Open the skill window, the Macro section, and press **Add Macro**.
+2. A macro is a column of slots. **Priority goes from bottom to top:** while you hold the key, the macro uses the lowest available skill, and skips any skill on cooldown or without its condition met. Each step can have a delay from 10 to 9900 ms.
+3. Bind a key in **Settings → Key Settings → General → Macro**, for example `R`. In AION 2 control mode you can use a mouse button; in AION 1 control mode the client does not allow mouse buttons for macros.
+4. In combat, hold the macro key. Pressing any skill manually always takes precedence over the macro. Switching presets interrupts the macro.
+
+**The main layout rule:** conditional skills go **at the bottom**, skills without a cooldown go **at the top**. Heart Gore (after a crit), Storm Rampage (on a Staggered target), Shadow Fall (on a stunned target) and Whirlwind Slice (after a dodge) are unavailable until their condition is met. The macro simply skips them, and once they light up it uses them first. Quick Slice and Savage Roar have no cooldown, so at the top they fill the gaps. Put them at the bottom and the macro will press nothing else.
+
+### Ready-made macros
+
+**“Pack”, from level 14** (bottom to top):
+
+| Slot | Skill | Why here |
+|---|---|---|
+| 0 (bottom, top priority) | Heart Gore | Fires only after a crit; +100 MP |
+| 1 | Insignia Explosion | Every 10s. Insignias last 10s, and Savage Roar with no cooldown restacks 5 charges before Explosion is back |
+| 2 | Savage Roar | Puts an Insignia on each of 4 targets |
+| 3 (top) | Quick Slice | Fills the gaps and restores MP |
+
+From level 4 to 14 use the same macro without Explosion: Heart Gore → Savage Roar → Quick Slice.
+
+**“Elite and quest boss”** (bottom to top): Storm Rampage → Shadow Fall → Heart Gore → Ambush → Savage Roar → Quick Slice. Rampage and Shadow Fall fire only when the target is in the right state; the rest of the time the macro moves down the list.
+
+**Watch your MP.** Savage Roar costs 120 MP and has no cooldown, while Insignia Explosion costs 200 MP. If MP drains in a long fight and Explosion stops firing, swap Savage Roar and Quick Slice, or take the Savage Roar specialization “-20% MP consumed”.
+
+Built-in follow-ups of basic attacks and a custom Macro are different things. Keep Shadowstrike, Infiltrate, Savage Fang, buffs and Defiance out of macros: a 20 m blink or a defensive skill should fire when you decide.
+
+### Fewer keys: context mini-groups
+
+The default Assassin bar also has **context slots**: one key can show a different skill once its condition is met. This is not sequential execution of every skill either.
+
+| Default bar mini-group | What can appear on the key | How to play it |
+|---|---|---|
+| Infiltrate / Shadow Fall | Infiltrate on its own condition; Shadow Fall on a stunned target | You can keep them on one context slot to save space. Check the icon before pressing: a conditional blink and a control follow-up do different jobs |
+| Storm Rampage / Whirlwind Slice / Heart Gore | Rampage on Stagger, Whirlwind after a dodge, Heart Gore after a crit | A compact option to start with. Don't expect one press to do all three; if you want to pick a specific reaction, use the bar settings and separate keys |
+
+In these groups **don't treat different conditions as a fixed rotation**: a crit, a dodge and a Stagger don't have to happen in sequence. Check before combat which action the bound slot actually triggers. If the slot switches to a reaction you don't want, keep those skills on manual control.
+
+### What to combine and what to press separately
+
+| Group | Setup | How to use |
+|---|---|---|
+| Basic attack | **Quick Slice — its own key** | Use it between other skills: pack damage and MP restore |
+| Sustained damage, from 4 | **“Pack”** macro: Heart Gore, (from 14) Insignia Explosion, Savage Roar, Quick Slice | Hold the macro key. Quick Slice can stay on its own key too. Before 4, use Savage Roar and Quick Slice separately |
+| Opener | **Shadowstrike → Ambush**, manually | From 3: get behind, then strike from behind. Keep both on separate keys so you don't waste the blink every time it comes off cooldown |
+| Dodge reaction | **Whirlwind Slice**, separately | From 7, press it when it's available after a successful dodge. Don't wait for it to fire in the main macro |
+| Blind and repositioning | **Flash Slice**, separately | From 8, use it when you need to survive hits or switch to the other side of the target; check where its back is after moving |
+| Conditional blink | **Infiltrate**, separately | From 10, during an emergency dodge or in flight. It is not an unconditional replacement for Shadowstrike |
+| Extending control | **Shadow Fall**, separately | From 12, while the target is stunned. Don't waste the stun window waiting for its turn in a long macro |
+| Spending Insignias | **Insignia Explosion** in the “Pack” macro | From 14. Do the first Explosion on a fresh pack after Savage Fang or 4–5 Savage Roars; after that the macro lands on 5 charges by itself |
+| Breaking CC | **Defiance**, its own key | From 16: press it when needed, regardless of the attack macro |
+| Fast five Insignias | **Savage Fang**, separately | In this setup from 22: Fang, then Insignia Explosion manually. If the target already has 5 charges, spend those first |
+| Burst window | **Illusive Clone** and **Swift Contract**, separate keys | In this setup from 27 and 32 respectively. Use them before a fight with a durable target when you can attack nonstop |
+| Fourth stigma | **Assault Ambush** or **Triniel's Dagger**, separately | In this setup from 37: the first to blind a pack, the second for a back attack on a durable single target |
+| Hitting a vulnerable target | **Storm Rampage**, separately | From 5, on a target that is **Staggered**. Don't confuse it with the stun from Shadowstrike |
+
+Passives — Exploit Weakness, Rear Smite, Assault Stance, Defense Break and the rest — don't go on keys.
+
+**Why Insignia Explosion can stay in the macro.** Each charge adds 12% of the base to Explosion (5 charges: +60% damage) and 20% to the chance to stun an NPC (5 charges: 100%). With no charges Explosion still hits but does not stun. An Insignia lasts 10s and Explosion's cooldown is 10s: while the macro waits for it, 2–3 Savage Roars on the same pack bring back 5 charges. The only risky moment is the first Explosion on a freshly gathered pack. Open it with Savage Fang (from 22) or a few Savage Roars, and if targets keep changing, keep Explosion on its own key.
+
+### How to change the layout from 1 to 45
+
+| Character level | What to change | Short combat plan |
+|---|---|---|
+| 1–3 | Quick Slice and Savage Roar separately; Shadowstrike separately, add Ambush at 3 | Shadowstrike → Ambush once learned → basic attacks and Savage Roar |
+| 4–11 | Create the macro, bottom to top: Heart Gore, Savage Roar, Quick Slice; keep blinks and defensive skills separate | Open from behind → hold the macro; it uses Heart Gore by itself after a crit |
+| 12–13 | Add Shadow Fall on its own key | Shadowstrike → Ambush → Shadow Fall if the stun is still up |
+| 14–21 | Insert Insignia Explosion into the macro above Heart Gore; from 16, Defiance on its own key | A few Savage Roars on a new pack → macro; after the Explosion stun, Shadow Fall |
+| 22–26 | Put Savage Fang into the first stigma slot and on its own key | Savage Fang → Insignia Explosion; then the main macro |
+| 27–31 | Second slot — Illusive Clone, own key | Use the clone before a durable target; Heart Gore becomes available more often in its window |
+| 32–36 | Third slot — Swift Contract, own key | Approach the target → Swift Contract → Illusive Clone → attack. This is a manual mini-combo, not a required macro |
+| 37–45 | Fourth slot — Assault Ambush for packs; swap to Triniel's Dagger for bosses | The core keys stay the same: you add situational control or a separate back attack |
+
+**Example keys:** Quick Slice — LMB, main macro — `R`, elite macro — `F`, Shadowstrike — `1`, Ambush — `2`, Insignia Explosion (for the manual first Explosion) — `3`, Savage Fang — `4`. Put Flash Slice, Shadow Fall and Defiance on three convenient separate keys, and buffs on, say, `Shift+1` and `Shift+2`. This is an example, not the game's default bindings: pick free keys in your control mode. Don't move a Defiance key you're already used to just to save one slot.
+
+### Mini-combos worth remembering
+
+- **Get behind:** Shadowstrike → Ambush. If the target has already turned, reposition before the second hit.
+- **Burst a pack from 22:** Savage Fang → Insignia Explosion. Press the second skill after Fang lands and the Insignias appear, not at the same time.
+- **Extend control from 12:** Shadowstrike → Shadow Fall; from 14, Insignia Explosion → Shadow Fall also works. The second skill needs the right target state; an immune boss may not give you that window.
+- **Boost damage from 27:** Illusive Clone → available Heart Gores with the main macro and Quick Slice. The clone removes the cooldown but not the after-crit condition. From 32, add Swift Contract before the clone.
+- **Survive a dangerous pack:** Flash Slice, or Assault Ambush from 37 → reposition. Use Defiance when you are actually controlled, not in advance as part of an attack combo.
+
+Effects and unlock levels are checked against the project data for client 2.0.7. Key layout and the choice of short macros are leveling recommendations; test the layout on regular mobs before a dungeon.
+
 ## Solo leveling rotation
 
 **Mob pack (from 22):**
 Shadowstrike on the center target → **Savage Fang** (5 Insignias on 4 targets) → **Insignia Explosion** (100% stun vs NPCs, triggers Defense Break) → Savage Roar and Quick Slice → Heart Gore after every crit.
 
 **Elite or quest boss:**
-Illusive Clone → Shadowstrike (behind, stun) → Ambush (+30% from behind) → Shadow Fall (knockdown on the stunned target) → Savage Roar ×N → Insignia Explosion → Heart Gore as often as the clone allows.
+From 27, once Illusive Clone is slotted per the plan: clone → Shadowstrike (behind) → Ambush (+30% from behind) → Shadow Fall **if the stun landed and is still up** → main macro with Quick Slice. Use Heart Gore when it's available after a crit, Insignia Explosion on stacked charges. From 32 you can use Swift Contract before the clone. If the boss is immune to stun, keep dealing damage and stay behind it instead of waiting for Shadow Fall.
 
-**Before 22:** the same, but stack Insignias with Savage Roar (and Ambush with its specialization).
+**Before 22:** stack Insignias with Savage Roar (and Ambush with its specialization). There is no Insignia Explosion before 14 and no Heart Gore before 4. At 22–26 Illusive Clone is not slotted yet in this setup: use Savage Fang and regular Heart Gore procs.
 
-**When things get dangerous:** Flash Slice (guaranteed Blind vs NPCs), Defiance (breaks CC, 5s immunity), Revitalization Contract saves you at ≤10% HP.
+**When things get dangerous:** Flash Slice (guaranteed Blind vs NPCs), Defiance (breaks CC, 5s of Tenacity), Revitalization Contract saves you at ≤10% HP.
 
 ## Common mistakes
 
 - **Attacking from the front.** Shadowstrike, Ambush and Triniel's Dagger are built around back attacks.
 - **Spreading points across every skill.** Whirlwind Slice, Infiltrate, Defiance and Flash Slice work fine at level 1.
 - **Grinding instead of questing.** Story quests give far more XP.
-- **Skipping Sealed Dungeons at 29–39.** They also give Skill Points.
-- **Forgetting Defense Break.** From level 21 all 10 of its levels are available at once (21 points total). Put every spare point into it after your core actives.
+- **Skipping Sealed Dungeons.** Each gives 2 Wisdom Stones and 2 Daevanion Crystals, and the first 24 open as early as level 10–15.
+- **Putting points into Shadowstrike before Insignia Explosion.** The blink is for positioning and the stun; Explosion gives several times more damage per point.
+- **Forgetting Defense Break.** From level 21 all 10 of its levels are available at once (21 points total): −30% Defense on a stunned target instead of −12% at level 1.
+- **Keeping story daggers after 30.** The story reward lags 7–9 item levels behind. Take daggers from dungeons and the Abyss (Unique 30 — 127–164, Unique 35 — 146–187) or the crafted Artisan's Splendent Orichalcum Dagger (157–202, from 34).
 
 ## Still being verified
 
-- How many Wisdom Stones you can realistically collect while leveling.
+- Wisdom Stones and crystals from Sealed Dungeons are counted from the client reward tables; whether they are first-clear only is still being checked in game.
+- Whether MP holds up for the “Pack” macro in a long fight.
 - Gear by leveling stage.
 - The Asmodian route is confirmed by a single source so far.
 

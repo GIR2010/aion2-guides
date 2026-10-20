@@ -852,7 +852,7 @@
       "type": "active",
       "unlockLevel": 14,
       "cooldown": 10,
-      "mpCost": null,
+      "mpCost": 200,
       "name": {
         "ru": "Взрыв эмблемы",
         "en": "Insignia Explosion"

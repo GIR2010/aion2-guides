@@ -1,0 +1,146 @@
+# Передача разбора таблиц Aion 2 второму агенту
+
+Актуально на 20.10.2026. Проект: `E:\Projects\aion2-guide`.
+Клиент: 2.0.7, Steam build 25926599. Клиент игры и данные сайта этой работой не изменялись.
+
+## Где находятся результаты
+
+Корень снимка:
+`E:\Projects\aion2-guide\raw\client\steam-25926599\`
+
+- `tables/<тема>/*.bin` — все 363 расшифрованные таблицы, исходники для парсера.
+- `source/files/Aion2/...` — исходные DAT после извлечения из архивов.
+- `text/ru-RU/game.json`, `text/en-US/game.json` — полные локализации.
+- `structured/tables/<тема>/*.json` — предыдущая партия, 242 таблицы.
+- **`structured/recovery/round-02/tables/<тема>/*.json` — новая партия, 15 таблиц и 194159 строк.**
+- **`structured/recovery/round-02/summary.json` — актуальный итог: 257/363, осталось 106.**
+- **`structured/recovery/round-02/remaining-tables.json` — актуальные ошибки оставшихся 106 таблиц.**
+
+Новые таблицы: ArcanaStatFilter, DaevanionBoard, Exp, CraftRecipe, RewardItem, RewardPackageItem, Wing, VehicleList, RewardPackage, TradeTab, SkillAbnormalEffect, SkillEffectFilter, Dungeon, Subzone, WorldMapFilterType.
+
+## Что проверено
+
+Все новые файлы прочитаны ровно до EOF, с числом строк из заголовка, контролем строк, bool и известных enum, без NaN/Infinity. SHA-256 исходных BIN и результатов есть в `recovery/round-02/decode-report.json`.
+
+Новые схемы проверены на старых 242 таблицах: регрессий чтения нет (`baseline-regressions.json`). Exp независимо совпал с опубликованными данными `src/data/game/levels.json` по уровням, опыту, очкам навыков, обоим видам обломков и слотам стигм.
+
+`relation-audit.json`: все проверенные ссылки нашлись, без пропусков:
+- CraftRecipe.Product → Item.Name: 1098.
+- CraftRecipe.ComponentList[].Item → Item.Name: 2136.
+- CraftRecipe.ComboRecipe → CraftRecipe.Name: 296.
+- RewardItem.Items[].ItemName → Item.Name: 103939.
+- RewardPackageItem.Items[].ItemName → Item.Name: 62311.
+- RewardPackage.PackageItems[].Item → RewardPackageItem.PackageName: 195569.
+- Skill.SkillEffectTimeDataList[].SkillEffectFilterId → SkillEffectFilter.ID: 25534.
+- SkillAbnormalEffect.AbnormalId → SkillAbnormal.ID: 12771.
+
+## Как воспроизвести и продолжить
+
+Самодостаточная рабочая папка:
+`raw/client/steam-25926599/structured/recovery/round-02/tools/`
+
+- `recover.py` — изменения схем и разбор 121 первоначально оставшейся таблицы; сохраняет JSON только при полном успешном чтении.
+- `verify_and_link.py` — проверка SHA-256, независимая сверка Exp и аудит новых связей.
+- `vendor/parse_tables.py` — зафиксированный предыдущий парсер.
+- `vendor/schemas/AION2-5.3.2.0.usmap` — зафиксированная публичная схема.
+
+Зависимости нового этапа — только стандартная библиотека Python 3. Не нужен сетевой доступ, ключи архивов, запущенная игра или дамп памяти.
+
+Из корня проекта:
+
+```powershell
+$env:PYTHONIOENCODING = 'utf-8'
+& 'C:\Users\Giro\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' 'raw/client/steam-25926599/structured/recovery/round-02/tools/recover.py'
+& 'C:\Users\Giro\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' 'raw/client/steam-25926599/structured/recovery/round-02/tools/verify_and_link.py'
+```
+
+Для отдельной таблицы добавьте имя: `recover.py Map`. Такой запуск обновляет соответствующую запись отчёта, сохраняя остальные. Итоговую summary пересчитывает второй скрипт.
+
+Лучше вести следующую партию в `recovery/round-03/`, чтобы не изменять одновременно файлы другого агента. Проверить вычисление STRUCTURED/SNAPSHOT при копировании: глубина папок в round-03 такая же.
+
+## Важные находки нового этапа
+
+- RewardItemData: старый `IsProb` больше не занимает байт перед ItemProb. После его удаления прочитались RewardItem и RewardPackageItem целиком. Масштаб вероятностей не интерпретирован.
+- RewardItem и RewardPackage: перед массивом есть enum расы.
+- SkillEffectFilter: вместо предполагавшихся нескольких bool в позиции bTargetDeadPc хранится массив enum EPCDieType, затем отдельный bool. Это объяснило сбой на первой строке с непустым списком.
+- CraftRecipe: перед действительным ComponentList есть другой массив, имя и затем сам список компонентов; ComponentItem имеет дополнительное имя. После компонентов — массив имён рецептов. У ряда новых полей пока сохранены нейтральные имена.
+- ArcanaStatFilter: в конце строк массив имён наборов, а не одиночное имя.
+- У Dungeon, Subzone, VehicleList, Wing и других восстановлены дополнительные хвостовые поля.
+- Exp уже частично разбирался проектным `scripts/extract-tables.mjs`; этот формат использован как независимое основание вместо старого usmap.
+
+## Что пока нельзя считать доказанным
+
+`layout-validated` означает согласованную структуру, а не проверку значения каждого поля в игре. Новые поля обозначены `Unknown_R02_*` или прежними `Unknown_Current_*`. Не переименовывать их по одному похожему числу. Не переводить автоматически время, вероятность и расстояния в пользовательские единицы.
+
+`layout-candidates.json` содержит ВСЕ проверявшиеся изменения, включая кандидаты, которые пока не дали полного чтения (например GatherSource и WorldMapUIType). Это НЕ готовый комплект миграций для всех таблиц. Ориентироваться на статусы decode-report и успешные JSON.
+
+## Индексы предыдущего этапа пока не объединены
+
+`structured/catalog.sqlite`, `structured/linked/`, `structured/summary.json`, `structured/pending-tables.json`, основной decode-report и прежние checksums относятся к исходным 242 таблицам. Они намеренно не перезаписаны. SQLite не содержит новые 15 таблиц. Считать актуальными суммарные числа из round-02/summary.json, а список оставшегося — round-02/remaining-tables.json.
+
+Следующий этап интеграции: загрузить объединение старых 242 и новых 15 JSON, расширить SQLite и links новыми цепочками, пересчитать манифесты и основной pending-list. До этого второй агент уже может читать новые JSON напрямую.
+
+## Приоритеты оставшихся таблиц
+
+1. Map, MapEntrance, ItemGetRoute: нужны для маршрутов и источников предметов.
+2. SkillLink, SkillProjectile, SkillAutoUse: поведение навыков и цепочки.
+3. Новые ItemSoulAdd/ItemSuccession/ItemSurpass и вероятности: в публичном usmap нет соответствующих схем, не угадывать типы только по кратности размера.
+4. PeriodSpawn, WorldMapFieldNamed: расписания и полевые боссы, схем также нет.
+
+У многих остальных файлов ошибка начинается на второй строке: вероятно, устаревшая схема не дочитала хвост первой строки. Прогонять ВСЕ строки: одна успешная строка часто имеет пустые массивы и маскирует неверный формат.
+
+Папка raw исключена из git. Для передачи на другом компьютере скопировать сам raw-снимок, одного коммита с этим документом недостаточно.
+
+## Продолжение: round-03 — таблицы и иконки (20 октября 2026)
+
+Актуальная дополнительная партия: `raw/client/steam-25926599/structured/recovery/round-03/`.
+Она дополняет исходные 242 таблицы и 15 таблиц round-02:
+
+- `tables/skills/SkillAutoUse.json` — 23 строки настроек автоматического применения навыков. Исправлено имя enum ESkillAutoUsePriority; изменённое поле расхода пока обозначено Unknown_R03_CostType. Это не готовая рекомендация ротации.
+- `tables/system-other/UIIcon.json` — 205 строк.
+- `tables/rewards-economy/BMShopCategory.json` — 93 строки; исправлены фактические поля с именами ресурсов.
+- `tables/equipment-items/ItemAutoRegisterSetting.json` — 31 строка; восстановлены два bool поля в конце каждой записи.
+- `tables/world-npcs-dungeons/WorldMapUIType.json` — 25 строк, включая массив EWorldMapInfoDisplayType.
+
+Итого 262 из 363 таблиц, осталось 101. Новая партия содержит 377 строк. Полный список оставшихся теперь в `round-03/remaining-tables.json`. Старые списки round-02 и базового structured описывают свои этапы. SQLite и базовые links по-прежнему содержат только исходные 242 таблицы.
+
+### Где изображения
+
+Сами картинки не встроены в строки таблиц. Skill.SkillIcon, Item.IconRes и SkillAbnormal.AbnormalIcon задают ссылки на отдельные текстуры клиента. Ресурсы находятся в пакетах Unreal IoStore: каталог в .utoc, содержимое в .ucas. Путь с расширением .uasset в индексе — виртуальный путь пакета, а не уже извлечённый файл на диске.
+
+В `round-03/assets/`:
+
+- `ui-textures.jsonl` — 10 466 записей текстур из каталогов 282 .utoc, 10 432 различных пути пакетов. Содержит archive, path, tocEntry и deleted.
+- `iostore-summary.json` — результаты чтения каталогов: 711 042 записи файлов, ошибок чтения нет.
+- `icon-references.jsonl` — 28 731 ссылка из трёх таблиц с найденными кандидатами ресурсов. Есть несколько контейнеров для одного пути: приоритет патчей пока не разрешён.
+- `assassin-icons.json` — соответствия для всех 35 навыков Убийцы из src/data/classes/assassin.json, включая стигмы и пассивные навыки. Все 35 имеют найденный ресурс.
+- `summary.json` — статистика сопоставлений. Skill: 15 532 совпадения и 110 без соответствия; Item: 6 172 и 3 136; SkillAbnormal: 3 756 и 25. Отсутствие совпадения не доказывает отсутствие картинки в игре: возможны алиасы и атласы.
+
+PNG ещё не декодированы: imagesDecoded=0, поле png=null. Индекс позволяет найти контейнер и запись пакета; следующим этапом нужны извлечение выбранной версии пакета и чтение Texture2D с учётом формата/сжатия. Не выдавать виртуальные .uasset-пути за готовые изображения сайта.
+
+### Воспроизведение round-03
+
+Из корня проекта выполнить Python-скрипты в `round-03/tools/`:
+
+1. `recover.py` — все 106 входных таблиц, оставшихся после round-02; сохраняет только полностью прочитанные таблицы. Можно передать имя одной таблицы.
+2. `verify.py` — точное сравнение результатов чтения прежних 257 таблиц, контроль SHA-256 новых JSON, пересчёт summary и remaining-tables.
+3. `iostore_directory.py` — индекс каталогов контейнеров; для AES требуется установленный Python-пакет cryptography. Скрипт не извлекает .ucas и не меняет клиент.
+4. `index_icons.py` — сопоставления имён ресурсов с таблицами и каталогом Убийцы.
+
+`base_round02.py`, `vendor/parse_tables.py` и vendor/schemas содержат локально зафиксированную предыдущую основу. Сетевой доступ для повторного запуска не нужен. Формат каталога сверялся с первичным исходным кодом: https://github.com/FabianFG/CUE4Parse/blob/master/CUE4Parse/UE4/IO/Objects/FIoStoreTocResource.cs .
+
+`decode-report.json` содержит статус каждой из 106 таблиц. `layout-candidates.json` включает и неудачные варианты Map, FieldEvent, BMShopCategory, PcSocialAction: использовать только таблицы со статусом layout-validated. Полное чтение доказывает согласованность разметки, но не смысл неизвестных полей. Не публиковать предположительные названия и единицы измерения как факты.
+
+Дополнительные проверки round-03: `tools/verify_assets.py` проверяет наличие всех кандидатов ссылок в индексе контейнеров и 35 соответствий Убийцы; результат в assets/validation.json. После остальных проверок `tools/checksums.py` создаёт checksums.sha256 для файлов партии (кроме Python-кэша и самого манифеста).
+
+Проверки завершены: прежние 257 таблиц повторно прочитаны без изменений содержимого; регрессий 0. Проверены 28 731 ссылки на ресурсы и все 35 соответствий Убийцы; ошибок целостности индекса нет.
+
+
+
+
+Продолжение round-03: `tables/quests-achievements/QuestType.json` — 9 строк. Восстановлено пропущенное поле Name перед bCanDuplicate; каждая строка прочитана до EOF. Итог этапа после проверки: 6 таблиц, 386 строк; всего 263/363, осталось 100. Неудачные гипотезы BMShopGoods и Achievement не включены в рабочую схему; их статусы остаются pending.
+
+
+Продолжение round-03: `tables/system-other/ComponentCombine.json` — 110 строк; `tables/classes-progression/Monolith.json` — 6 строк. У Monolith восстановлены два пропущенных Name поля перед AchievementGroupList. Итого этап содержит 8 таблиц и 502 строки; всего 265/363, осталось 98.
+
+Диагностика очередных таблиц: InputKeyMapping имеет разные поля у разных записей, а общий переход на пропуск struct-tag для пустых массивов ломает 31 из прежних 257 таблиц — такое изменение отменено. InventorySlot, StorageExtensionCost, StatCorrectionNumber и PartyDungeonLevel пока не проходят полное чтение; их частичные варианты не считаются готовыми. Следующий разбор должен сохранять строгую проверку EOF и работать с вариантами схем отдельно.
